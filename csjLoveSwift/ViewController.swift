@@ -15,12 +15,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         println("Hello Swift" + "im csj")
         
         great("dev", day: "wwdc day")
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonOnePressed(sender : AnyObject) {
-        var vc =  self.storyboard.instantiateViewControllerWithIdentifier("FirstViewController")
+        var vc : AnyObject! =  self.storyboard.instantiateViewControllerWithIdentifier("FirstViewController")
         self.navigationController.pushViewController(vc as UIViewController,animated:true)
     }
     //传入方法输出
