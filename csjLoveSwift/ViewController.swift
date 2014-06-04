@@ -15,9 +15,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("Hello Swift" + "im csj")
+        self.title = "ViewController"
+        buttonOne.setTitle("FirstVC",forState: .Normal)
         
-        great("dev", day: "wwdc day")
+        println("Hello Swift" + "im csj")
+        //methods
+        great("dev", day: " wwdc day")
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +29,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonOnePressed(sender : AnyObject) {
-        var vc : AnyObject! =  self.storyboard.instantiateViewControllerWithIdentifier("FirstViewController")
-        self.navigationController.pushViewController(vc as UIViewController,animated:true)
+        let vc = self.storyboard.instantiateViewControllerWithIdentifier("FirstViewController") as FirstViewController
+        self.navigationController.pushViewController(vc,animated:true)
     }
     //传入方法输出
     func great(name: String,day :String){

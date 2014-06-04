@@ -12,17 +12,16 @@ class FirstViewController: UITableViewController {
 
     init(style: UITableViewStyle) {
         super.init(style: style)
-        // Custom initialization
     }
-
+    
+    init(coder aDecoder: NSCoder!)  {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.title = "FirstViewController"
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,26 +32,18 @@ class FirstViewController: UITableViewController {
     // #pragma mark - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return 5
     }
 
-    /*
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    override func tableView(_: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel.text = "Row \(indexPath.row)"
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
