@@ -53,16 +53,26 @@ class ViewController: UIViewController {
         println(你猜+😄)
         
         let components = "~/Documents/Swift".pathComponents
-        println(components)
+        println("components = \(components)")
         
         //arr
         var shoppingList = ["catfish", "water", "tulips", "blue paint"]
         shoppingList[1] = "bottle of water"
-        println(shoppingList)
+        println("数组 \(shoppingList)")
+        shoppingList.removeLast()
+        println("数组 \(shoppingList)")
+        //遍历数组
+        for number in shoppingList{
+            println("i like \(number).")
+        }
+        
         
         //dict
-        var dict = ["dict1":"nicai","dict2":"nicai2",]
-        println(dict)
+        var dict = ["Earth":"1.0","Mars":"1.524"]
+        println("输出dict = \(dict)")
+        for (planet, distance) in dict{
+            println("The planet \(planet) is \(distance) AUs from the sun.")
+        }
         
     }
     
