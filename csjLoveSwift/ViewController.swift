@@ -21,7 +21,10 @@ class ViewController: UIViewController {
         
         //methods
         great("dev", day: " wwdc day")
-        testMethod()
+        
+        myTestMethod()
+        
+        wwdcRoom102()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +37,16 @@ class ViewController: UIViewController {
         self.navigationController.pushViewController(vc,animated:true)
     }
     
+    /**
+    Method
+    */
     
-    func testMethod () {
+    //传入方法输出
+    func great(name: String,day :String){
+        println( "Hello \(name),today is\(day)")
+    }
+    
+    func myTestMethod () {
         println("Hello Swift" + "im csj")
         
         var languageName1:String = "Swift" //inferred as String
@@ -76,12 +87,34 @@ class ViewController: UIViewController {
         
     }
     
-    //传入方法输出
-    func great(name: String,day :String){
-        println( "Hello \(name),today is\(day)")
+    
+    func wwdcRoom102(){
+        var specialWords = ["klaatu","barada","nikto"]
+        var specialNumbers = [4,8,15,16,23,42]
+        func sum(array:Int[])->Int{
+            var result = 0
+            for value in array {result += value}
+            println("result = \(result)")
+            return result
+        }
+        var resultsum = sum(specialNumbers)
+        println("resultsum = \(resultsum)")
+        func sumAndAverage(array:Int[]) -> (sum:Int, average:Double){
+            var result = 0
+            for value in array {result += value}
+            var avg = Double(result) / Double(array.count)
+            return (result, avg)
+        }
+        var result = sumAndAverage(specialNumbers)
+        
+//        var sysFont : NSFont = NSFont.systemFontOfSize(0)
+        var rect = CGRectMake(10.0, 5.0, 10.0, 10.0)
+        var sameRect = CGRect(x:10.0, y:5.0, width:10.0, height: 10.0)
+//        extension CGRect{
+//            var area:Double {return width *height}
+//        }
+        
     }
-    
-    
 
 
 
