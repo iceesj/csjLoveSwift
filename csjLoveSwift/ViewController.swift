@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import UIKit.UIView
 
 class ViewController: UIViewController {
     
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
         myTestMethod()
         
         wwdcRoom102()
+        
+        firstBiji()
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,7 +118,64 @@ class ViewController: UIViewController {
 //        }
         
     }
-
+    
+    func firstBiji () {
+        //笔记一
+        //常量 变量
+        let myLet = 1
+        println("常量myLet = \(myLet)")
+        var myVar = 10
+        myVar = 1
+        println("变量myVar = \(myVar)")
+        
+        //支持连续的变量声明
+        var myTestOne = 1,myTestTwo = 2,myTestThree = 3
+        var myIntVar:Int = 1
+        var myStringValue :String = "你好"
+        
+        /*
+        /*
+        支持连续 /**/咯，亲，你懂的
+        */
+        */
+        
+        //分号
+        println("分号测试1");println("分号测试2")
+        
+        
+        //数据类型转换
+        let myPi = 3.1415
+        let myInt = 1
+        let myjia = myPi + Double(myInt)
+        println("myjia = \(myjia)")
+        
+        let myUInt16Value:UInt16 = 2_000
+        let myUInt8Value:UInt8 = 1
+        let myjia2 = myUInt16Value + UInt16(myUInt8Value)
+        println("myjia2 = \(myjia2)")
+        
+        
+        //类型别名
+        typealias MyUInt = UInt
+        let myTestUInt :MyUInt = 2_000
+        let myTestUInt2 :UInt = 2_000
+        
+        
+        //元组
+        let http404Error = (404,"Not Found")
+        //组员1
+        println("\(http404Error.0)")
+        //组员2
+        println("\(http404Error.1)")
+        
+        let newHttp404Error = (statusCode:404, description:"Not Found")
+        //新组员1
+        println("\(newHttp404Error.statusCode)")
+        //新组员2
+        println("\(newHttp404Error.description)")
+        
+        
+    }
 
 
 }
