@@ -9,14 +9,34 @@
 import UIKit
 //import UIKit.UIView
 
+enum ViewControllerType :Int {
+    case NumOne
+    case NumTwo
+    case NumThree
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet var buttonOne : UIButton
     
     
+    //生命周期
+    
+    //将要消失 -(void)viewWillDisappear:(BOOL)animated
+    override func viewWillDisappear(animated:Bool){
+        super.viewWillDisappear(animated)
+        NSLog("ViewController viewWillDisappear")
+    }
+    
+    //将要出现
+    override func viewWillAppear(animated:Bool){
+        super.viewWillAppear(animated)
+        NSLog("ViewController viewWillAppear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "ViewController"
+        self.navigationItem.title = "ViewController"
         buttonOne.setTitle("FirstVC",forState: .Normal)
         
         
@@ -37,6 +57,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonOnePressed(sender : AnyObject) {
         let vc = self.storyboard.instantiateViewControllerWithIdentifier("FirstViewController") as FirstViewController
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(vc,animated:true)
     }
     
@@ -72,21 +93,27 @@ class ViewController: UIViewController {
         //arr
         var shoppingList = ["catfish", "water", "tulips", "blue paint"]
         shoppingList[1] = "bottle of water"
-        println("数组 \(shoppingList)")
+        println("数组替换组员1位置 \(shoppingList)")
         shoppingList.removeLast()
-        println("数组 \(shoppingList)")
+        println("数组删除最后一个元素 \(shoppingList)")
         //遍历数组
         for number in shoppingList{
             println("i like \(number).")
         }
-        
+        //创建空数组
+        let newShoppingList = String[]()
         
         //dict
         var dict = ["Earth":"1.0","Mars":"1.524"]
         println("输出dict = \(dict)")
+        //添加字典组员
+        dict["Moon"] = "2.000"
         for (planet, distance) in dict{
             println("The planet \(planet) is \(distance) AUs from the sun.")
         }
+        //创建空字典
+        let newDict = Dictionary<String,Float>()
+        
         
     }
     
@@ -147,12 +174,16 @@ class ViewController: UIViewController {
         let myPi = 3.1415
         let myInt = 1
         let myjia = myPi + Double(myInt)
-        println("myjia = \(myjia)")
-        
+        println("数据类型转换 = \(myjia)")
         let myUInt16Value:UInt16 = 2_000
         let myUInt8Value:UInt8 = 1
         let myjia2 = myUInt16Value + UInt16(myUInt8Value)
-        println("myjia2 = \(myjia2)")
+        println("数据类型转换2 = \(myjia2)")
+        let myText = "The width is"
+        let myTextNum = 94
+        let myTextAddNum = myText + String(myTextNum)
+        println("数据类型转换2 = \(myTextAddNum)")
+        
         
         
         //类型别名
@@ -173,6 +204,7 @@ class ViewController: UIViewController {
         println("\(newHttp404Error.statusCode)")
         //新组员2
         println("\(newHttp404Error.description)")
+        
         
         
     }

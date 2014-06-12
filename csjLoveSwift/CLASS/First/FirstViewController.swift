@@ -39,9 +39,9 @@ class FirstViewController: UITableViewController {
         return 5
     }
 
-    override func tableView(_: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = "Row \(indexPath.row)"
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
+        let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel.text = "Row \(indexPath!.row)"
         return cell
     }
 
