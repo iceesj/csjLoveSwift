@@ -25,22 +25,30 @@ class ViewController: UIViewController {
     //view将要消失 -(void)viewWillDisappear:(BOOL)animated
     override func viewWillDisappear(animated:Bool){
         super.viewWillDisappear(animated)
-        NSLog("测试 viewWillDisappear")
     }
-    
     //view将要出现
     override func viewWillAppear(animated:Bool){
         super.viewWillAppear(animated)
-        NSLog("测试 viewWillAppear")
     }
-    
     //view已经出现
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
-        NSLog("测试 viewDidAppear")
     }
     
     
+    func loadData(){
+        var url = "http://itunes.apple.com/lookup?id=853116593"
+        CSJSwiftRequest.requestWithURLbyiOS7Later(url,completionHandler:{data in
+            if data as NSObject == NSNull(){
+                CSJSwiftLog.showAlertView("提示",message:"请求连接错误")
+                return
+            }
+            var arr = data["results"] as NSArray
+            NSLog("arr = \(arr)")
+//            var dict = data as NSDictionary
+//            NSLog("dict = \(dict)")
+        })
+    }
     
     
     override func viewDidLoad() {
@@ -60,6 +68,8 @@ class ViewController: UIViewController {
         firstBiji()
         
         optionalBiji()
+        
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {

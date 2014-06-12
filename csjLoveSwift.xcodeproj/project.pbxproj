@@ -11,6 +11,8 @@
 		D33E842F193DB97200A8BAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E842D193DB97200A8BAF5 /* Main.storyboard */; };
 		D33E8431193DB97200A8BAF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E8430193DB97200A8BAF5 /* Images.xcassets */; };
 		D33E843D193DB97200A8BAF5 /* csjLoveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E843C193DB97200A8BAF5 /* csjLoveSwiftTests.swift */; };
+		D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */; };
+		D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3784D2E1949AC4500030DC9 /* Model.xcdatamodeld */; };
 		D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D94194947B5005FE76E /* FirstViewController.swift */; };
 		D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D95194947B5005FE76E /* ViewController.swift */; };
 		D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D9B194947B5005FE76E /* TestViewController.swift */; };
@@ -38,6 +40,8 @@
 		D33E8436193DB97200A8BAF5 /* csjLoveSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = csjLoveSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E843B193DB97200A8BAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E843C193DB97200A8BAF5 /* csjLoveSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csjLoveSwiftTests.swift; sourceTree = "<group>"; };
+		D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftRequest.swift; sourceTree = "<group>"; };
+		D3784D2F1949AC4500030DC9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D38E7D94194947B5005FE76E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D38E7D95194947B5005FE76E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D38E7D9B194947B5005FE76E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			children = (
 				D38E7DA019494C91005FE76E /* NavGestureViewController.swift */,
 				D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */,
+				D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */,
 			);
 			path = COMMON;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		D38E7D9C194947B5005FE76E /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				D3784D2E1949AC4500030DC9 /* Model.xcdatamodeld */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -292,7 +298,9 @@
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
 				D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */,
+				D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */,
 				D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */,
+				D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */,
 				D38E7DA319494ED4005FE76E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +503,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D3784D2E1949AC4500030DC9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3784D2F1949AC4500030DC9 /* Model.xcdatamodel */,
+			);
+			currentVersion = D3784D2F1949AC4500030DC9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D33E841C193DB97100A8BAF5 /* Project object */;
 }

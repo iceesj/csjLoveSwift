@@ -14,7 +14,6 @@ class CSJSwiftLog: NSObject {
         super.init();
     }
     
-    
     class func showAlertView(title:String,message:String){
         var alert = UIAlertView()
         alert.title = title
