@@ -14,6 +14,9 @@
 		D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D94194947B5005FE76E /* FirstViewController.swift */; };
 		D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D95194947B5005FE76E /* ViewController.swift */; };
 		D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D9B194947B5005FE76E /* TestViewController.swift */; };
+		D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA019494C91005FE76E /* NavGestureViewController.swift */; };
+		D38E7DA319494ED4005FE76E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA219494ED4005FE76E /* SettingsViewController.swift */; };
+		D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		D38E7D94194947B5005FE76E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D38E7D95194947B5005FE76E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D38E7D9B194947B5005FE76E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D38E7DA019494C91005FE76E /* NavGestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavGestureViewController.swift; sourceTree = "<group>"; };
+		D38E7DA219494ED4005FE76E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +136,8 @@
 		D38E7D93194947B5005FE76E /* First */ = {
 			isa = PBXGroup;
 			children = (
-				D38E7D94194947B5005FE76E /* FirstViewController.swift */,
 				D38E7D95194947B5005FE76E /* ViewController.swift */,
+				D38E7D94194947B5005FE76E /* FirstViewController.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -153,6 +159,7 @@
 		D38E7D98194947B5005FE76E /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				D38E7DA219494ED4005FE76E /* SettingsViewController.swift */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -160,6 +167,8 @@
 		D38E7D99194947B5005FE76E /* COMMON */ = {
 			isa = PBXGroup;
 			children = (
+				D38E7DA019494C91005FE76E /* NavGestureViewController.swift */,
+				D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */,
 			);
 			path = COMMON;
 			sourceTree = "<group>";
@@ -279,9 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */,
+				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
 				D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */,
+				D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */,
+				D38E7DA319494ED4005FE76E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
