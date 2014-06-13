@@ -11,18 +11,60 @@ import Foundation
 
 
 class CSJSwiftRequest: NSObject {
+    
+    enum CSJSwiftRequestMethod{
+        case GET
+        case PUT
+        case POST
+        case DELETE
+        
+        func description()->NSString {
+            switch self{
+            case .GET:
+                return "GET"
+            case .PUT:
+                return "PUT"
+            case .POST:
+                return "POST"
+            case .DELETE:
+                return "DELETE"
+            }
+        }
+    }
+    
+    var method:CSJSwiftRequestMethod!
+    var hearders : NSDictionary?
+    var parameters: NSDictionary?
+    
     init()
     {
         super.init();
     }
     
-    //异步
+    
+    //同步NSURLConnection
+    class func requestSynchronousWithURL(urlString:String,completionHandler:(data:AnyObject)->Void){
+        var URL = NSURL.URLWithString(urlString)
+        var req = NSURLRequest(URL: URL)
+        var httpResponse: NSURLResponse? = nil
+//    class func sendSynchronousRequest(request: NSURLRequest!, returningResponse response: AutoreleasingUnsafePointer<NSURLResponse?>, error: NSErrorPointer) -> NSData!
+        var responseData = NSURLConnection.sendSynchronousRequest(req,returningResponse:&httpResponse,error:nil)
+        if responseData{
+            let jsonData = NSJSONSerialization.JSONObjectWithData(responseData, options:NSJSONReadingOptions.MutableLeaves, error: nil) as NSDictionary
+            completionHandler(data:jsonData)
+        }else{
+            println("同步请求错误")
+        }
+        
+    }
+    
+    
+    //异步NSURLConnection
     class func requestWithURL(urlString:String,completionHandler:(data:AnyObject)->Void){
         var URL = NSURL.URLWithString(urlString)
         var req = NSURLRequest(URL: URL)
         var queue = NSOperationQueue();
 //        + (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *response, NSData *data, NSError *connectionError))handler
-        //异步
         NSURLConnection.sendAsynchronousRequest(req, queue: queue, completionHandler: {
             response, data, error in
             if error{
@@ -39,7 +81,7 @@ class CSJSwiftRequest: NSObject {
         })
     }
     
-    //异步
+    //异步NSURLSession
     class func requestWithURLbyiOS7Later(urlString:String, completionHandler:(data:AnyObject)->Void){
         var URL = NSURL.URLWithString(urlString)
         var req = NSURLRequest(URL: URL)

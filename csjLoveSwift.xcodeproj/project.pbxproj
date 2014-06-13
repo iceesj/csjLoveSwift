@@ -17,8 +17,10 @@
 		D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D95194947B5005FE76E /* ViewController.swift */; };
 		D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D9B194947B5005FE76E /* TestViewController.swift */; };
 		D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA019494C91005FE76E /* NavGestureViewController.swift */; };
-		D38E7DA319494ED4005FE76E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA219494ED4005FE76E /* SettingsViewController.swift */; };
 		D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */; };
+		D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */; };
+		D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */; };
+		D3E9A8E2194AA18E004F2A80 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8E1194AA18E004F2A80 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +48,10 @@
 		D38E7D95194947B5005FE76E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D38E7D9B194947B5005FE76E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D38E7DA019494C91005FE76E /* NavGestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavGestureViewController.swift; sourceTree = "<group>"; };
-		D38E7DA219494ED4005FE76E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftLog.swift; sourceTree = "<group>"; };
+		D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D3E9A8E1194AA18E004F2A80 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				D38E7D93194947B5005FE76E /* First */,
-				D38E7D96194947B5005FE76E /* Fourth */,
 				D38E7D97194947B5005FE76E /* Second */,
 				D38E7D98194947B5005FE76E /* Third */,
+				D38E7D96194947B5005FE76E /* Fourth */,
 			);
 			path = CLASS;
 			sourceTree = "<group>";
@@ -149,6 +153,7 @@
 		D38E7D96194947B5005FE76E /* Fourth */ = {
 			isa = PBXGroup;
 			children = (
+				D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */,
 			);
 			path = Fourth;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		D38E7D97194947B5005FE76E /* Second */ = {
 			isa = PBXGroup;
 			children = (
+				D3E9A8E1194AA18E004F2A80 /* SecondViewController.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -163,7 +169,7 @@
 		D38E7D98194947B5005FE76E /* Third */ = {
 			isa = PBXGroup;
 			children = (
-				D38E7DA219494ED4005FE76E /* SettingsViewController.swift */,
+				D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -293,15 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E9A8E2194AA18E004F2A80 /* SecondViewController.swift in Sources */,
 				D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */,
 				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
+				D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */,
+				D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */,
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
 				D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */,
 				D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */,
 				D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */,
 				D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */,
-				D38E7DA319494ED4005FE76E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

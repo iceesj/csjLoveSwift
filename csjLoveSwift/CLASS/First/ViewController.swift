@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     
-    func loadData(){
+    func loadDataAsy(){
         var url = "http://itunes.apple.com/lookup?id=853116593"
         CSJSwiftRequest.requestWithURLbyiOS7Later(url,completionHandler:{data in
             if data as NSObject == NSNull(){
@@ -50,6 +50,17 @@ class ViewController: UIViewController {
         })
     }
     
+    func loadDataSy(){
+        var url = "http://itunes.apple.com/lookup?id=853116593"
+        CSJSwiftRequest.requestSynchronousWithURL(url,completionHandler:{data in
+            if data as NSObject == NSNull(){
+                CSJSwiftLog.showAlertView("提示",message:"请求连接错误")
+                return
+            }
+            var arr = data["results"] as NSArray
+            NSLog("arr = \(arr)")
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +70,11 @@ class ViewController: UIViewController {
         
         
         //methods
+        
+        //同步
+        loadDataSy()
+
+        
         great("dev", day: " wwdc day")
         
         myTestMethod()
@@ -69,7 +85,9 @@ class ViewController: UIViewController {
         
         optionalBiji()
         
-        loadData()
+        //异步
+//        loadDataAsy()
+        
     }
 
     override func didReceiveMemoryWarning() {
