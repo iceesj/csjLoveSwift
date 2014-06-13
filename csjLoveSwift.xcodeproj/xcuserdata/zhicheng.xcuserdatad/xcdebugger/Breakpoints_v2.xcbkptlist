@@ -19,5 +19,67 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "csjLoveSwift/CLASS/First/ViewController.swift"
+            timestampString = "424339381.861731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
+            landmarkName = "backwards(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "csjLoveSwift/CLASS/First/ViewController.swift"
+            timestampString = "424341222.468423"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
+            landmarkName = "Shape"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "csjLoveSwift.ViewController.(thridBiji (csjLoveSwift.ViewController) -&gt; () -&gt; ()).(Shape #1).deinit"
+                  moduleName = "csjLoveSwift"
+                  urlString = "file:///Users/zhicheng/Desktop/GitHub%20Clone/csjLoveSwift/csjLoveSwift/CLASS/First/ViewController.swift"
+                  timestampString = "424341509.797461"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "433"
+                  endingLineNumber = "433"
+                  offsetFromSymbolStart = "7">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "csjLoveSwift.ViewController.(thridBiji (csjLoveSwift.ViewController) -&gt; () -&gt; ()).(Shape #1).__deallocating_deinit"
+                  moduleName = "csjLoveSwift"
+                  urlString = "file:///Users/zhicheng/Desktop/GitHub%20Clone/csjLoveSwift/csjLoveSwift/CLASS/First/ViewController.swift"
+                  timestampString = "424341509.797755"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "433"
+                  endingLineNumber = "433"
+                  offsetFromSymbolStart = "9">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -71,11 +71,8 @@ class ViewController: UIViewController {
         
         //methods
         
-        //同步
+        //同步请求
         loadDataSy()
-
-        
-        great("dev", day: " wwdc day")
         
         myTestMethod()
         
@@ -84,8 +81,12 @@ class ViewController: UIViewController {
         firstBiji()
         
         optionalBiji()
+
+        secondBiji()
         
-        //异步
+        thridBiji()
+        
+        //异步请求
 //        loadDataAsy()
         
     }
@@ -110,12 +111,7 @@ class ViewController: UIViewController {
     /**
     Method
     */
-    
-    //传入方法输出
-    func great(name: String,day :String){
-        println( "Hello \(name),today is\(day)")
-    }
-    
+
     func myTestMethod () {
         println("Hello Swift" + "im csj")
         
@@ -279,10 +275,11 @@ class ViewController: UIViewController {
         
         //断言
         let testAge = -3
-        assert(testAge<0,"age less than zero")//通过编译
+        assert(testAge<0,"age less than zero")//通过编译 满足条件不爆
         
     }
-
+    
+    
     func optionalBiji(){
         //可选项optional
         let myNumber = "123"
@@ -315,21 +312,145 @@ class ViewController: UIViewController {
             println("hashValue = \(hashValue)")
         }
         //同上
-//        let hashValue = strValue?.hashValue
-//        println("hashValue \(hashValue)")
+        //        let hashValue = strValue?.hashValue
+        //        println("hashValue \(hashValue)")
         
         
         //！
         var myLabelText : String! = "nihao"
         //等同于
-//        var myLabelTextOne : ImplicitlyUnwrappedOptional<String> = "nihao"
+        //        var myLabelTextOne : ImplicitlyUnwrappedOptional<String> = "nihao"
+    }
+    
+    
+
+    
+    func secondBiji(){
+        //循环使用
+        var a = 1
+        a += 2
+        println("运算笔记a = \(a)");
         
+        //传入方法输出
+        great("dev", day: " wwdc day")
+        //返回元组
+        getGasPrices()
+        //传入参数数量可变
+        sumOf(42,597,12)
+        
+        //函数嵌套
+        returnFifteen()
+        
+        //函数外调用
+        var incrementTest = makeIncrementerString()
+        incrementTest(7,"hello")
+        
+        //传入Int，返回另一个函数的返回值Int
+        func makeIncrementer() -> (Int -> Int) {
+            func addOne(number: Int) -> Int {
+                return 1 + number
+            }
+            return addOne
+        }
+        var increment = makeIncrementer()
+        increment(7)
+        
+        //函数也可以当做参数传入另一个函数。 swift failed with exit code 254 :-(
+        func hasAnyMatches(list: Int[], condition: Int -> Bool) -> Bool {
+            for item in list {
+                if condition(item) {
+                    return true
+                }
+            }
+            return false
+        }
+        //准备传入的函数
+        func lessThanTen(number: Int) -> Bool {
+            return number < 10
+        }
+        var numbers = [20, 19, 7, 12]
+        hasAnyMatches(numbers, lessThanTen)
+        
+        //用{}来创建一个匿名闭包，使用in将参数和返回值类型与闭包函数函数体进行分离
+        numbers.map({
+            (number:Int) -> Int in
+            let result = 3*number
+            return result
+        })
+        let sortTestArr = [1,5,3,12,2]
+        sort(sortTestArr) { $0 > $1 }
+        //like
+        func backwards (s1:Int, s2:Int)->Bool{
+            println("\(s1):\(s2)")
+            return s1>s2
+        }
+        var backwardsVar = sort(sortTestArr,backwards)
+        println("sortTestArr = \(sortTestArr)")
+        println("backwardsVar =  \(backwardsVar)")
+    }
+    
+    //secondBiji
+    //传入方法输出
+    func great(name: String,day :String){
+        println( "Hello \(name),today is\(day)")
+    }
+    //返回元组
+    func getGasPrices() -> (Double,Double,Double){
+        return (3.59, 3.69, 3.79)
+    }
+    //传入参数数量可变
+    func sumOf(numbers:Int...) -> Int{
+        var sum = 0
+        //遍历传进来的数组
+        for number in numbers{
+            //累加
+            sum += number
+        }
+        println("传入参数数量可变 输出 = \(sum)")
+        return sum
+    }
+    //函数嵌套
+    func returnFifteen() -> Int{
+        var y = 10
+        func add(){
+            y+=5
+        }
+        add()
+        println("函数嵌套 输出 = \(y)")
+        return y
+    }
+    //函数可以作为另一个函数的返回值
+    
+    func makeIncrementerString() -> ((Int,String) -> String) {
+        func addOne(number: Int , str:String) -> String {
+            return str + String(number)
+        }
+        return addOne
+    }
+    
+    //对象和类
+    func thridBiji(){
+        class Shape{
+            var numberOfSides = 0
+            func simpleDescription()->String{
+                return "A shape With \(numberOfSides) sides"
+            }
+        }
+        
+        //创建类实例
+        var shape = Shape()
+        shape.numberOfSides = 7
+        var shapeDescription = shape.simpleDescription()
+        println("A shape With \(shapeDescription) sides")
         
     }
-
+    
+    
 }
-
 @objc protocol Downloadable{
     @optional func download(toPath:String)->Bool;
 }
+
+
+
 
