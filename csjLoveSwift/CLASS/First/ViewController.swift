@@ -443,6 +443,36 @@ class ViewController: UIViewController {
         var shapeDescription = shape.simpleDescription()
         println("A shape With \(shapeDescription) sides")
         
+        class NameShape{
+            var numberOfSides : Int = 0
+            var name : String
+            //通过构造器赋值
+            init(name :String){
+                self.name = name
+            }
+        }
+        
+        class Square :NameShape{
+            var sideLength:Double
+            init (sideLength :Double,name :String){
+                self.sideLength = sideLength
+                super.init(name:name)
+                numberOfSides = 4
+            }
+            func area() -> Double{
+                return sideLength * sideLength
+            }
+//            override func simpleDescription() -> String {
+//                return "A squar with side of length \(sideLength)."
+//            }
+        }
+        
+        let test = Square(sideLength: 5.2, name: "my test square")
+        test.area()
+        test.simpleDescription()
+        
+        
+        
     }
     
     
