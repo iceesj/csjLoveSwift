@@ -443,7 +443,7 @@ class ViewController: UIViewController {
         var shapeDescription = shape.simpleDescription()
         println("A shape With \(shapeDescription) sides")
         
-        class NameShape{
+        class NamedShape{
             var numberOfSides : Int = 0
             var name : String
             //通过构造器赋值
@@ -452,7 +452,7 @@ class ViewController: UIViewController {
             }
         }
         
-        class Square :NameShape{
+        class Square :NamedShape{
             var sideLength:Double
             init (sideLength :Double,name :String){
                 self.sideLength = sideLength
@@ -469,9 +469,27 @@ class ViewController: UIViewController {
         
         let test = Square(sideLength: 5.2, name: "my test square")
         test.area()
-        test.simpleDescription()
-        
-        
+//        test.simpleDescription()
+        class EquilateralTriangle: NamedShape{
+            var sideLength :Double = 0.0
+            init (sideLength:Double, name:String){
+                self.sideLength = sideLength
+                super.init(name:name)
+                numberOfSides = 3
+            }
+            
+            var perimeter: Double{
+            get{
+                return 3.0 * sideLength
+            }
+            set{
+                sideLength = newValue / 3.0
+            }
+            }
+            
+            
+            
+        }
         
     }
     
