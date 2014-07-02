@@ -84,7 +84,21 @@ class ViewController: UIViewController {
 
         secondBiji()
         
-        thridBiji()
+        //对象和类
+//        thridBiji()
+        var shape = Shape()
+        shape.numberOfSides = 7
+        var shapeDescription = shape.simpleDescriptionLet()
+        println("A shape With \(shapeDescription) sides")
+        
+        let test = Square(sideLength:5.2, name:"my test square")
+        test.area()
+        test.simpleDescription()
+        
+        var triangle = EquilateralTriangle(sideLength:3.1, name:"a triangle")
+        triangle.perimeter = 9.9
+        triangle.sideLength = 8.8
+        
         
         //异步请求
 //        loadDataAsy()
@@ -429,69 +443,8 @@ class ViewController: UIViewController {
     }
     
     //对象和类
-    func thridBiji(){
-        class Shape{
-            var numberOfSides = 0
-            func simpleDescription()->String{
-                return "A shape With \(numberOfSides) sides"
-            }
-        }
-        
-        //创建类实例
-        var shape = Shape()
-        shape.numberOfSides = 7
-        var shapeDescription = shape.simpleDescription()
-        println("A shape With \(shapeDescription) sides")
-        
-        class NamedShape{
-            var numberOfSides : Int = 0
-            var name : String
-            //通过构造器赋值
-            init(name :String){
-                self.name = name
-            }
-        }
-        
-        class Square :NamedShape{
-            var sideLength:Double
-            init (sideLength :Double,name :String){
-                self.sideLength = sideLength
-                super.init(name:name)
-                numberOfSides = 4
-            }
-            func area() -> Double{
-                return sideLength * sideLength
-            }
-//            override func simpleDescription() -> String {
-//                return "A squar with side of length \(sideLength)."
-//            }
-        }
-        
-        let test = Square(sideLength: 5.2, name: "my test square")
-        test.area()
-//        test.simpleDescription()
-        class EquilateralTriangle: NamedShape{
-            var sideLength :Double = 0.0
-            init (sideLength:Double, name:String){
-                self.sideLength = sideLength
-                super.init(name:name)
-                numberOfSides = 3
-            }
-            
-            var perimeter: Double{
-            get{
-                return 3.0 * sideLength
-            }
-            set{
-                sideLength = newValue / 3.0
-            }
-            }
-            
-            
-            
-        }
-        
-    }
+//    func thridBiji(){
+//    }
     
     
 }
