@@ -7,11 +7,8 @@
 //
 
 import UIKit
-<<<<<<< HEAD
 //集合类型
-=======
 
->>>>>>> FETCH_HEAD
 class ArrayAndDict: CSJSwiftViewController {
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -23,7 +20,6 @@ class ArrayAndDict: CSJSwiftViewController {
         super.viewDidLoad()
         self.navigationItem.title = "集合类型"
         
-<<<<<<< HEAD
         arrayandDict()
         
     }
@@ -34,8 +30,7 @@ class ArrayAndDict: CSJSwiftViewController {
     }
     
     func arrayandDict(){
-=======
->>>>>>> FETCH_HEAD
+
         var myArrayOld :String [] = ["var1","var2","var3"]
         //简写为
         var myArray = ["var1","var2","var3"];
@@ -45,7 +40,7 @@ class ArrayAndDict: CSJSwiftViewController {
         var myInts = Int[]()
         // repeatedValue重复值
         var myDouble = Double[](count:3,repeatedValue:0.0)
-<<<<<<< HEAD
+
         
         //数量
         println("数组数量 \(myArray.count)")
@@ -81,26 +76,21 @@ class ArrayAndDict: CSJSwiftViewController {
         myArray[2...3] = ["china"]
         println("数组范围后 [x...x]<[] \(myArray)")
 
-        //如果 【x...x】> 【】 那么数组不会出错，连续插入
+        //如果 [x...x]> [] 那么数组不会出错，连续插入
         myArray[1...2] = ["china","shanghai","us"]
         println("数组范围后 [x...x]>[] \(myArray)")
         
-    }
     
-=======
         //数量
         println("数组数量 \(myArray.count)")
         
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
 
->>>>>>> FETCH_HEAD
     /*
     // #pragma mark - Navigation
 
