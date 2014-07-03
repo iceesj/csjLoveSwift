@@ -7,7 +7,11 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 //集合类型
+=======
+
+>>>>>>> FETCH_HEAD
 class ArrayAndDict: CSJSwiftViewController {
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -19,6 +23,7 @@ class ArrayAndDict: CSJSwiftViewController {
         super.viewDidLoad()
         self.navigationItem.title = "集合类型"
         
+<<<<<<< HEAD
         arrayandDict()
         
     }
@@ -29,6 +34,8 @@ class ArrayAndDict: CSJSwiftViewController {
     }
     
     func arrayandDict(){
+=======
+>>>>>>> FETCH_HEAD
         var myArrayOld :String [] = ["var1","var2","var3"]
         //简写为
         var myArray = ["var1","var2","var3"];
@@ -38,6 +45,7 @@ class ArrayAndDict: CSJSwiftViewController {
         var myInts = Int[]()
         // repeatedValue重复值
         var myDouble = Double[](count:3,repeatedValue:0.0)
+<<<<<<< HEAD
         
         //数量
         println("数组数量 \(myArray.count)")
@@ -79,6 +87,20 @@ class ArrayAndDict: CSJSwiftViewController {
         
     }
     
+=======
+        //数量
+        println("数组数量 \(myArray.count)")
+        
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+>>>>>>> FETCH_HEAD
     /*
     // #pragma mark - Navigation
 
