@@ -1,5 +1,5 @@
 //
-//  ArrayAndDict.swift
+//  CSJSwiftViewController.swift
 //  csjLoveSwift
 //
 //  Created by iceesj on 14-7-3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArrayAndDict: CSJSwiftViewController {
+class CSJSwiftViewController: UIViewController {
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -17,21 +17,9 @@ class ArrayAndDict: CSJSwiftViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "集合类型"
-        
-        var myArrayOld :String [] = ["var1","var2","var3"]
-        //简写为
-        var myArray = ["var1","var2","var3"];
-        //混杂类型
-        var myArrayMix = ["string1",1,2]
-        //空array
-        var myInts = Int[]()
-        // repeatedValue重复值
-        var myDouble = Double[](count:3,repeatedValue:0.0)
-        //数量
-        println("数组数量 \(myArray.count)")
-        
-        
+        self.view.backgroundColor = UIColor.whiteColor()//swift
+//        self.view.backgroundColor = [UIColor whiteColor];//oc
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
