@@ -9,7 +9,8 @@
 import UIKit
 
 class FirstViewController: UITableViewController {
-
+    var baseArray = ["wwdcRoom102","基础","运算符","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程ARC","可选链","类型转换、嵌套类型","扩展","协议","泛型","高级运算符",]
+    
     init(style: UITableViewStyle) {
         super.init(style: style)
     }
@@ -20,8 +21,9 @@ class FirstViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "FirstViewController"
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +38,27 @@ class FirstViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return baseArray.count
     }
 
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
         let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = "Row \(indexPath!.row)"
+//        cell.textLabel.text = "Row \(indexPath!.row)"
+//        var index = indexPath!.row
+        cell.textLabel.text = baseArray[indexPath!.row]
         return cell
     }
 
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        var data = baseArray[indexPath!.row]
+        if (data == "wwdcRoom102"){
+            var wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
+            self.navigationController.pushViewController(wwdcVC, animated: true)
+        }else if (data == "集合类型"){
+            var commentsVC = ArrayAndDict(nibName :nil, bundle: nil)
+            self.navigationController.pushViewController(commentsVC, animated: true)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView?, canEditRowAtIndexPath indexPath: NSIndexPath?) -> Bool {
