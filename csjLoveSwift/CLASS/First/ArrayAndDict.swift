@@ -20,8 +20,9 @@ class ArrayAndDict: CSJSwiftViewController {
         super.viewDidLoad()
         self.navigationItem.title = "集合类型"
         
-        arrayandDict()
+        arrayBasic()
         
+        dictBasic()
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,7 +30,9 @@ class ArrayAndDict: CSJSwiftViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func arrayandDict(){
+
+    
+    func arrayBasic(){
 
         var myArrayOld :String [] = ["var1","var2","var3"]
         //简写为
@@ -70,6 +73,8 @@ class ArrayAndDict: CSJSwiftViewController {
         
         //删除所有元素
 //        myArray.removeAll(keepCapacity:false)
+        //另一种方法
+//        myArray = []
 //        println("数组删除所有元素 \(myArray)")
         
         //范围下标
@@ -77,15 +82,68 @@ class ArrayAndDict: CSJSwiftViewController {
         println("数组范围后 [x...x]<[] \(myArray)")
 
         //如果 [x...x]> [] 那么数组不会出错，连续插入
+        //越界依然会崩溃 [2...3]
         myArray[1...2] = ["china","shanghai","us"]
         println("数组范围后 [x...x]>[] \(myArray)")
         
-    
-        //数量
-        println("数组数量 \(myArray.count)")
+        //下标语法subscript syntax
+        var myFirst = myArray[0]
+        println("数组第一个元素是 \(myFirst)")
+        
+        //遍历
+        for item in myArray{
+            println(item)
+        }
+        
+        //enumerate
+        for (index, value)in enumerate(myArray){
+            println("item \(index+1):\(value)")
+        }
+        
         
         
     }
+    
+    func dictBasic(){
+        //key要唯一，如果对一个已有的key操作，会改掉原值
+        //所有Swift的基本数据类型，String, Int, Double, Bool 全都可以做为key
+//        var myDict : Dictionary<String,String> = ["china":"panda","australia":"kangaroo"]
+        var myDict = ["china":"panda","australia":"kangaroo"]
+        
+        //创建空Dict
+        var myKong = Dictionary <String,String>()
+        //清空Dict
+        myKong = [:]
+        
+        //Dict中key-value的数量
+        println("字典数量 \(myDict.count)")
+        
+        //改某个key的值
+        myDict["australia"] = "duckbill"
+        
+        //遍历
+        for (country, animal)in myDict{
+            println("counter:\(country),animal:\(animal)")
+        }
+        
+        //单独遍历key
+        for country in myDict.keys{
+            println("myDict的key \(country)")
+        }
+        
+        //单独遍历value
+        for animal in myDict.values{
+            println("myDict的values \(animal)")
+        }
+        
+        //key拿出创建array
+        var myKeyArr = Array(myDict.keys)
+        //value拿出创建array
+        var myValueArr = Array(myDict.values)
+        
+        
+    }
+    
 
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
