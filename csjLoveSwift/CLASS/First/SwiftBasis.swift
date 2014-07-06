@@ -73,8 +73,7 @@ class SwiftBasis: CSJSwiftViewController {
     
     
     func firstBiji () {
-        //笔记一
-        //常量 变量
+        //let声明常量 var声明变量
         let myLet = 1
         println("常量myLet = \(myLet)")
         var myVar = 10

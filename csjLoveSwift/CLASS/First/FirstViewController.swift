@@ -54,7 +54,12 @@ class FirstViewController: UITableViewController {
         if (data == "wwdcRoom102"){
             var wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
             self.navigationController.pushViewController(wwdcVC, animated: true)
-        }else if (data == "集合类型"){
+        }
+        else if (data == "字符和字符串"){
+            var StringVC = SwiftString(nibName: nil,bundle: nil)
+            self.navigationController.pushViewController(StringVC, animated: true)
+        }
+        else if (data == "集合类型"){
             var commentsVC = ArrayAndDict(nibName :nil, bundle: nil)
             self.navigationController.pushViewController(commentsVC, animated: true)
         }

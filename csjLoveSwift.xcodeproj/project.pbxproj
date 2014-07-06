@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B005207919694BD1005C07E0 /* SwiftString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005207819694BD1005C07E0 /* SwiftString.swift */; };
 		D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8429193DB97200A8BAF5 /* AppDelegate.swift */; };
 		D33E842F193DB97200A8BAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E842D193DB97200A8BAF5 /* Main.storyboard */; };
 		D33E8431193DB97200A8BAF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E8430193DB97200A8BAF5 /* Images.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B005207819694BD1005C07E0 /* SwiftString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftString.swift; sourceTree = "<group>"; };
 		D33E8424193DB97200A8BAF5 /* csjLoveSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = csjLoveSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E8428193DB97200A8BAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E8429193DB97200A8BAF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D3F8436B19653B5A008E140E /* wwdcRoom102.swift */,
 				D3F843691965306C008E140E /* ArrayAndDict.swift */,
 				D3F8437119654D60008E140E /* SwiftBasis.swift */,
+				B005207819694BD1005C07E0 /* SwiftString.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				D3F8436A1965306C008E140E /* ArrayAndDict.swift in Sources */,
 				D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */,
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,
+				B005207919694BD1005C07E0 /* SwiftString.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
 				D38B55BA1963EF7E009A24CA /* EquilateralTriangle.swift in Sources */,
 				D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */,
