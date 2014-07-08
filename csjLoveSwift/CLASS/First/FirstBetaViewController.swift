@@ -33,9 +33,9 @@ class FirstBetaViewController: UITableViewController {
         return baseArray.count
     }
     
-    //Xcode beta1 and beta2
+    //Xcode6 beta1 and beta2
 //    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-    //Xcode beta3
+    //Xcode6 beta3
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
 //        let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell

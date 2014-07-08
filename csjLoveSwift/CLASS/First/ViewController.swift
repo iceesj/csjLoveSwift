@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         myTestMethod()
         
 
-//        secondBiji()
+        secondBiji()
         
         //对象和类
 //        thridBiji()
@@ -201,6 +201,7 @@ class ViewController: UIViewController {
         increment(7)
         
         //函数也可以当做参数传入另一个函数。 swift failed with exit code 254 :-(
+        //Xcode6 beta3
         func hasAnyMatches(list: [Int], condition: Int -> Bool) -> Bool {
             for item in list {
                 if condition(item) {
