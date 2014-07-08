@@ -19,7 +19,7 @@ class wwdcRoom102: CSJSwiftViewController {
         super.viewDidLoad()
         self.navigationItem.title = "wwdcRoom102"
         
-        wwdcRoom102()
+//        wwdcRoom102()
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +28,7 @@ class wwdcRoom102: CSJSwiftViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    /*
     func wwdcRoom102(){
         var specialWords = ["klaatu","barada","nikto"]
         var specialNumbers = [4,8,15,16,23,42]
@@ -57,6 +57,8 @@ class wwdcRoom102: CSJSwiftViewController {
         //        }
         
     }
+    */
+    
     /*
     // #pragma mark - Navigation
 

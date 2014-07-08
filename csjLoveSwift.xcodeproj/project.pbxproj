@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B005207919694BD1005C07E0 /* SwiftString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005207819694BD1005C07E0 /* SwiftString.swift */; };
+		B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B31061196AF05D00485D2E /* ControlFlow.swift */; };
 		D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8429193DB97200A8BAF5 /* AppDelegate.swift */; };
 		D33E842F193DB97200A8BAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E842D193DB97200A8BAF5 /* Main.storyboard */; };
 		D33E8431193DB97200A8BAF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E8430193DB97200A8BAF5 /* Images.xcassets */; };
@@ -19,7 +20,6 @@
 		D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B55B71963EF7E009A24CA /* Shape.swift */; };
 		D38B55BD1963EF7E009A24CA /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B55B81963EF7E009A24CA /* Square.swift */; };
 		D38B55BE1963EF7E009A24CA /* TriangleAndSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B55B91963EF7E009A24CA /* TriangleAndSquare.swift */; };
-		D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D94194947B5005FE76E /* FirstViewController.swift */; };
 		D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D95194947B5005FE76E /* ViewController.swift */; };
 		D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D9B194947B5005FE76E /* TestViewController.swift */; };
 		D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA019494C91005FE76E /* NavGestureViewController.swift */; };
@@ -27,6 +27,7 @@
 		D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */; };
 		D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */; };
 		D3E9A8E2194AA18E004F2A80 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8E1194AA18E004F2A80 /* SecondViewController.swift */; };
+		D3EBA3BE196BD0D8009D2B2B /* FirstBetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA3BD196BD0D8009D2B2B /* FirstBetaViewController.swift */; };
 		D3F8436A1965306C008E140E /* ArrayAndDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F843691965306C008E140E /* ArrayAndDict.swift */; };
 		D3F8436C19653B5A008E140E /* wwdcRoom102.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F8436B19653B5A008E140E /* wwdcRoom102.swift */; };
 		D3F8436E19653B79008E140E /* CSJSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F8436D19653B79008E140E /* CSJSwiftViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		B005207819694BD1005C07E0 /* SwiftString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftString.swift; sourceTree = "<group>"; };
+		B0B31061196AF05D00485D2E /* ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
 		D33E8424193DB97200A8BAF5 /* csjLoveSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = csjLoveSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E8428193DB97200A8BAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E8429193DB97200A8BAF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +62,6 @@
 		D38B55B71963EF7E009A24CA /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		D38B55B81963EF7E009A24CA /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		D38B55B91963EF7E009A24CA /* TriangleAndSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleAndSquare.swift; sourceTree = "<group>"; };
-		D38E7D94194947B5005FE76E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D38E7D95194947B5005FE76E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D38E7D9B194947B5005FE76E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D38E7DA019494C91005FE76E /* NavGestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavGestureViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D3E9A8E1194AA18E004F2A80 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D3EBA3BD196BD0D8009D2B2B /* FirstBetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstBetaViewController.swift; sourceTree = "<group>"; };
 		D3F843691965306C008E140E /* ArrayAndDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayAndDict.swift; sourceTree = "<group>"; };
 		D3F8436B19653B5A008E140E /* wwdcRoom102.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wwdcRoom102.swift; sourceTree = "<group>"; };
 		D3F8436D19653B79008E140E /* CSJSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftViewController.swift; sourceTree = "<group>"; };
@@ -179,11 +181,12 @@
 				D38B55B41963EF7E009A24CA /* objc */,
 				D3F8436D19653B79008E140E /* CSJSwiftViewController.swift */,
 				D38E7D95194947B5005FE76E /* ViewController.swift */,
-				D38E7D94194947B5005FE76E /* FirstViewController.swift */,
+				D3EBA3BD196BD0D8009D2B2B /* FirstBetaViewController.swift */,
 				D3F8436B19653B5A008E140E /* wwdcRoom102.swift */,
 				D3F843691965306C008E140E /* ArrayAndDict.swift */,
 				D3F8437119654D60008E140E /* SwiftBasis.swift */,
 				B005207819694BD1005C07E0 /* SwiftString.swift */,
+				B0B31061196AF05D00485D2E /* ControlFlow.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -351,10 +354,11 @@
 				B005207919694BD1005C07E0 /* SwiftString.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
 				D38B55BA1963EF7E009A24CA /* EquilateralTriangle.swift in Sources */,
-				D38E7D9D194947B5005FE76E /* FirstViewController.swift in Sources */,
 				D38B55BB1963EF7E009A24CA /* NamedShape.swift in Sources */,
 				D38B55BE1963EF7E009A24CA /* TriangleAndSquare.swift in Sources */,
+				B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */,
 				D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */,
+				D3EBA3BE196BD0D8009D2B2B /* FirstBetaViewController.swift in Sources */,
 				D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */,
 				D3F8436E19653B79008E140E /* CSJSwiftViewController.swift in Sources */,
 				D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */,

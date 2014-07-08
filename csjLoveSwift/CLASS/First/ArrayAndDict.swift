@@ -33,16 +33,19 @@ class ArrayAndDict: CSJSwiftViewController {
 
     
     func arrayBasic(){
-
-        var myArrayOld :String [] = ["var1","var2","var3"]
+//        var myArrayOld : String[] = ["var1","var2","var3"]
+        var myArrayOld :[String] = ["var1","var2","var3"]
         //简写为
         var myArray = ["var1","var2","var3"];
         //混杂类型
         var myArrayMix = ["string1",1,2]
         //空array
-        var myInts = Int[]()
+//        var myInts = Int[] ()
+        var myInts = [Int] ()
         // repeatedValue重复值
-        var myDouble = Double[](count:3,repeatedValue:0.0)
+//        var myDouble = Double[](count:3,repeatedValue:0.0)
+        //20140707
+        var myDouble = [Double](count:3,repeatedValue:0.0)
 
         
         //数量

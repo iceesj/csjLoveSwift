@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         myTestMethod()
         
 
-        secondBiji()
+//        secondBiji()
         
         //对象和类
 //        thridBiji()
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     //各种方法
     
     @IBAction func buttonOnePressed(sender : AnyObject) {
-        let vc = self.storyboard.instantiateViewControllerWithIdentifier("FirstViewController") as FirstViewController
+        let vc = self.storyboard.instantiateViewControllerWithIdentifier("FirstBetaViewController") as FirstBetaViewController
         vc.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(vc,animated:true)
     }
@@ -151,8 +151,9 @@ class ViewController: UIViewController {
         for number in shoppingList{
             println("i like \(number).")
         }
-        //创建空数组
-        let newShoppingList = String[]()
+        //创建空数组 20140708
+//        let newShoppingList = String[]()
+        let newShoppingL = [String]()
         
         //dict
         var dict = ["Earth":"1.0","Mars":"1.524"]
@@ -168,7 +169,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+
     func secondBiji(){
         //循环使用
         var a = 1
@@ -200,7 +201,7 @@ class ViewController: UIViewController {
         increment(7)
         
         //函数也可以当做参数传入另一个函数。 swift failed with exit code 254 :-(
-        func hasAnyMatches(list: Int[], condition: Int -> Bool) -> Bool {
+        func hasAnyMatches(list: [Int], condition: Int -> Bool) -> Bool {
             for item in list {
                 if condition(item) {
                     return true
@@ -221,18 +222,20 @@ class ViewController: UIViewController {
             let result = 3*number
             return result
         })
-        let sortTestArr = [1,5,3,12,2]
-        sort(sortTestArr) { $0 > $1 }
+        
+        var sortTestArr = [1,5,3,12,2]
+        sort(&sortTestArr,>)
+//        sort(sortTestArr) { $0 > $1 }
         //like
         func backwards (s1:Int, s2:Int)->Bool{
             println("\(s1):\(s2)")
             return s1>s2
         }
-        var backwardsVar = sort(sortTestArr,backwards)
+//        var backwardsVar = sort(sortTestArr,backwards)
         println("sortTestArr = \(sortTestArr)")
-        println("backwardsVar =  \(backwardsVar)")
+//        println("backwardsVar =  \(backwardsVar)")
     }
-    
+
     //secondBiji
     //传入方法输出
     func great(name: String,day :String){
