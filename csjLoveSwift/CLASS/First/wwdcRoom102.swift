@@ -28,11 +28,12 @@ class wwdcRoom102: CSJSwiftViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    ///*
     func wwdcRoom102(){
         var specialWords = ["klaatu","barada","nikto"]
         var specialNumbers = [4,8,15,16,23,42]
-        func sum(array:Int[])->Int{
+        //Xcode6 beta3
+        func sum(array:[Int])->Int{
             var result = 0
             for value in array {result += value}
             println("result = \(result)")
@@ -40,7 +41,7 @@ class wwdcRoom102: CSJSwiftViewController {
         }
         var resultsum = sum(specialNumbers)
         println("resultsum = \(resultsum)")
-        func sumAndAverage(array:Int[]) -> (sum:Int, average:Double){
+        func sumAndAverage(array:[Int ]) -> (sum:Int, average:Double){
             var result = 0
             for value in array {result += value}
             var avg = Double(result) / Double(array.count)
@@ -57,7 +58,7 @@ class wwdcRoom102: CSJSwiftViewController {
         //        }
         
     }
-    */
+    //*/
     
     /*
     // #pragma mark - Navigation

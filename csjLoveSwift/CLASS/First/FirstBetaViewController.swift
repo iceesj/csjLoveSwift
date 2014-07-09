@@ -33,9 +33,9 @@ class FirstBetaViewController: UITableViewController {
         return baseArray.count
     }
     
-    //Xcode beta1 and beta2
+    //Xcode6 beta1 and beta2
 //    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-    //Xcode beta3
+    //Xcode6 beta3
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
 //        let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
@@ -56,6 +56,10 @@ class FirstBetaViewController: UITableViewController {
         else if (data == "集合类型"){
             var commentsVC = ArrayAndDict(nibName :nil, bundle: nil)
             self.navigationController.pushViewController(commentsVC, animated: true)
+        }
+        else if (data == "控制流[控制语句]"){
+            var controlflow = ControlFlow(nibName: nil, bundle: nil)
+            self.navigationController.pushViewController(controlflow, animated: true)
         }
     }
     /*
