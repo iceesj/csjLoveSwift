@@ -47,20 +47,26 @@ class FirstBetaViewController: UITableViewController {
         var data = baseArray[indexPath!.row]
         if (data == "wwdcRoom102"){
             var wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
-            self.navigationController.pushViewController(wwdcVC, animated: true)
+            self.navigationController.pushViewController(wwdcVC, animated:true)
         }
         else if (data == "字符和字符串"){
             var StringVC = SwiftString(nibName: nil,bundle: nil)
-            self.navigationController.pushViewController(StringVC, animated: true)
+            self.navigationController.pushViewController(StringVC, animated:true)
         }
         else if (data == "集合类型"){
             var commentsVC = ArrayAndDict(nibName :nil, bundle: nil)
-            self.navigationController.pushViewController(commentsVC, animated: true)
+            self.navigationController.pushViewController(commentsVC, animated:true)
         }
         else if (data == "控制流[控制语句]"){
             var controlflow = ControlFlow(nibName: nil, bundle: nil)
-            self.navigationController.pushViewController(controlflow, animated: true)
+            self.navigationController.pushViewController(controlflow, animated:true)
         }
+        else if (data == "函数"){
+            var functionVC = Function(nibName: nil, bundle: nil)
+            self.navigationController.pushViewController(functionVC, animated:true)
+        }
+        
+        
     }
     /*
     // Override to support conditional editing of the table view.

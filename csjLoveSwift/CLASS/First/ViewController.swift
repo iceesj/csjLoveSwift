@@ -225,15 +225,20 @@ class ViewController: UIViewController {
         })
         
         var sortTestArr = [1,5,3,12,2]
-        sort(&sortTestArr,>)
+        //貌似不行
+//        sorted(sortTestArr,<)
+        //貌似行
+        sort(&sortTestArr,<)
 //        sort(sortTestArr) { $0 > $1 }
+        println("sortTestArr1 = \(sortTestArr)")
+
         //like
         func backwards (s1:Int, s2:Int)->Bool{
             println("\(s1):\(s2)")
             return s1>s2
         }
 //        var backwardsVar = sort(sortTestArr,backwards)
-        println("sortTestArr = \(sortTestArr)")
+        println("sortTestArr2 = \(sortTestArr)")
 //        println("backwardsVar =  \(backwardsVar)")
     }
 
