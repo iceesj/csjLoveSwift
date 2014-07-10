@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//字符，字符串
 class SwiftString: CSJSwiftViewController {
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {

@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		B005207919694BD1005C07E0 /* SwiftString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005207819694BD1005C07E0 /* SwiftString.swift */; };
 		B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B31061196AF05D00485D2E /* ControlFlow.swift */; };
+		D30DA910196E721F0060107A /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA90F196E721F0060107A /* Closures.swift */; };
+		D30DA912196E74C10060107A /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA911196E74C10060107A /* Enumerations.swift */; };
+		D30DA914196E75050060107A /* ClassesAndStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA913196E75050060107A /* ClassesAndStructures.swift */; };
+		D30DA916196E75290060107A /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA915196E75290060107A /* Properties.swift */; };
+		D30DA918196E75530060107A /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA917196E75530060107A /* Methods.swift */; };
+		D30DA91A196E75800060107A /* Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA919196E75800060107A /* Subscripts.swift */; };
+		D30DA91C196E75DD0060107A /* Inheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA91B196E75DD0060107A /* Inheritance.swift */; };
+		D30DA91E196E760F0060107A /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA91D196E760F0060107A /* Initialization.swift */; };
+		D30DA920196E77800060107A /* Deinitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA91F196E77800060107A /* Deinitialization.swift */; };
+		D30DA922196E77AD0060107A /* SwiftARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA921196E77AD0060107A /* SwiftARC.swift */; };
+		D30DA924196E78250060107A /* OptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA923196E78250060107A /* OptionalChaining.swift */; };
+		D30DA926196E79990060107A /* TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA925196E79990060107A /* TypeCasting.swift */; };
+		D30DA928196E79B90060107A /* NestedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA927196E79B90060107A /* NestedTypes.swift */; };
+		D30DA92A196E79E90060107A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA929196E79E90060107A /* Extensions.swift */; };
+		D30DA92C196E7A3E0060107A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA92B196E7A3E0060107A /* Protocols.swift */; };
+		D30DA92E196E7A6D0060107A /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA92D196E7A6D0060107A /* Generics.swift */; };
+		D30DA930196E7ABB0060107A /* AdvancedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA92F196E7ABB0060107A /* AdvancedOperators.swift */; };
 		D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8429193DB97200A8BAF5 /* AppDelegate.swift */; };
 		D33E842F193DB97200A8BAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E842D193DB97200A8BAF5 /* Main.storyboard */; };
 		D33E8431193DB97200A8BAF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E8430193DB97200A8BAF5 /* Images.xcassets */; };
@@ -48,6 +65,23 @@
 /* Begin PBXFileReference section */
 		B005207819694BD1005C07E0 /* SwiftString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftString.swift; sourceTree = "<group>"; };
 		B0B31061196AF05D00485D2E /* ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
+		D30DA90F196E721F0060107A /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		D30DA911196E74C10060107A /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		D30DA913196E75050060107A /* ClassesAndStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesAndStructures.swift; sourceTree = "<group>"; };
+		D30DA915196E75290060107A /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		D30DA917196E75530060107A /* Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
+		D30DA919196E75800060107A /* Subscripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscripts.swift; sourceTree = "<group>"; };
+		D30DA91B196E75DD0060107A /* Inheritance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inheritance.swift; sourceTree = "<group>"; };
+		D30DA91D196E760F0060107A /* Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
+		D30DA91F196E77800060107A /* Deinitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deinitialization.swift; sourceTree = "<group>"; };
+		D30DA921196E77AD0060107A /* SwiftARC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftARC.swift; sourceTree = "<group>"; };
+		D30DA923196E78250060107A /* OptionalChaining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalChaining.swift; sourceTree = "<group>"; };
+		D30DA925196E79990060107A /* TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCasting.swift; sourceTree = "<group>"; };
+		D30DA927196E79B90060107A /* NestedTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedTypes.swift; sourceTree = "<group>"; };
+		D30DA929196E79E90060107A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D30DA92B196E7A3E0060107A /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D30DA92D196E7A6D0060107A /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		D30DA92F196E7ABB0060107A /* AdvancedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators.swift; sourceTree = "<group>"; };
 		D33E8424193DB97200A8BAF5 /* csjLoveSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = csjLoveSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E8428193DB97200A8BAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E8429193DB97200A8BAF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +224,23 @@
 				D3F843691965306C008E140E /* ArrayAndDict.swift */,
 				B0B31061196AF05D00485D2E /* ControlFlow.swift */,
 				D3E3003E196D30B200B5BD4A /* Function.swift */,
+				D30DA90F196E721F0060107A /* Closures.swift */,
+				D30DA911196E74C10060107A /* Enumerations.swift */,
+				D30DA913196E75050060107A /* ClassesAndStructures.swift */,
+				D30DA915196E75290060107A /* Properties.swift */,
+				D30DA917196E75530060107A /* Methods.swift */,
+				D30DA919196E75800060107A /* Subscripts.swift */,
+				D30DA91B196E75DD0060107A /* Inheritance.swift */,
+				D30DA91D196E760F0060107A /* Initialization.swift */,
+				D30DA91F196E77800060107A /* Deinitialization.swift */,
+				D30DA921196E77AD0060107A /* SwiftARC.swift */,
+				D30DA923196E78250060107A /* OptionalChaining.swift */,
+				D30DA925196E79990060107A /* TypeCasting.swift */,
+				D30DA927196E79B90060107A /* NestedTypes.swift */,
+				D30DA929196E79E90060107A /* Extensions.swift */,
+				D30DA92B196E7A3E0060107A /* Protocols.swift */,
+				D30DA92D196E7A6D0060107A /* Generics.swift */,
+				D30DA92F196E7ABB0060107A /* AdvancedOperators.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -343,27 +394,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30DA924196E78250060107A /* OptionalChaining.swift in Sources */,
 				D38B55BD1963EF7E009A24CA /* Square.swift in Sources */,
 				D3F8436C19653B5A008E140E /* wwdcRoom102.swift in Sources */,
+				D30DA920196E77800060107A /* Deinitialization.swift in Sources */,
+				D30DA91C196E75DD0060107A /* Inheritance.swift in Sources */,
 				D3E9A8E2194AA18E004F2A80 /* SecondViewController.swift in Sources */,
+				D30DA91E196E760F0060107A /* Initialization.swift in Sources */,
 				D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */,
+				D30DA914196E75050060107A /* ClassesAndStructures.swift in Sources */,
+				D30DA92C196E7A3E0060107A /* Protocols.swift in Sources */,
 				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
 				D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */,
 				D3F8437219654D60008E140E /* SwiftBasis.swift in Sources */,
+				D30DA928196E79B90060107A /* NestedTypes.swift in Sources */,
+				D30DA918196E75530060107A /* Methods.swift in Sources */,
+				D30DA92A196E79E90060107A /* Extensions.swift in Sources */,
 				D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */,
 				D3F8436A1965306C008E140E /* ArrayAndDict.swift in Sources */,
 				D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */,
+				D30DA926196E79990060107A /* TypeCasting.swift in Sources */,
+				D30DA91A196E75800060107A /* Subscripts.swift in Sources */,
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,
 				B005207919694BD1005C07E0 /* SwiftString.swift in Sources */,
+				D30DA930196E7ABB0060107A /* AdvancedOperators.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
+				D30DA912196E74C10060107A /* Enumerations.swift in Sources */,
 				D38B55BA1963EF7E009A24CA /* EquilateralTriangle.swift in Sources */,
 				D38B55BB1963EF7E009A24CA /* NamedShape.swift in Sources */,
 				D38B55BE1963EF7E009A24CA /* TriangleAndSquare.swift in Sources */,
+				D30DA916196E75290060107A /* Properties.swift in Sources */,
 				D3E3003F196D30B200B5BD4A /* Function.swift in Sources */,
+				D30DA92E196E7A6D0060107A /* Generics.swift in Sources */,
+				D30DA910196E721F0060107A /* Closures.swift in Sources */,
 				B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */,
 				D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */,
 				D3EBA3BE196BD0D8009D2B2B /* FirstBetaViewController.swift in Sources */,
 				D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */,
+				D30DA922196E77AD0060107A /* SwiftARC.swift in Sources */,
 				D3F8436E19653B79008E140E /* CSJSwiftViewController.swift in Sources */,
 				D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */,
 			);

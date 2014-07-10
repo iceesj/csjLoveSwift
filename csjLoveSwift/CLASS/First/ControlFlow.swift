@@ -17,7 +17,7 @@ class ControlFlow: CSJSwiftViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "控制语句"
         
         control()
     }

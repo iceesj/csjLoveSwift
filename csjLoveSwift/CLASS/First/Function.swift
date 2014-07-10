@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+//函数
 class Function: CSJSwiftViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "函数"
+
         function()
     }
 
