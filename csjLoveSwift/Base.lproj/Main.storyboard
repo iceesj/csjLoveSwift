@@ -68,7 +68,6 @@
         <!--First Beta View Controller-->
         <scene sceneID="H8A-27-OHd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5c4-Ed-rbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="FirstBetaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y8A-tA-7S6" customClass="FirstBetaViewController" customModule="csjLoveSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lTJ-qU-nTS">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
@@ -89,6 +88,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="2CL-Y1-yAX"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5c4-Ed-rbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="504" y="-1222"/>
         </scene>
