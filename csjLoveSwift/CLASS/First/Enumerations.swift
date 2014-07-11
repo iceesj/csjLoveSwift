@@ -24,6 +24,87 @@ class Enumerations: CSJSwiftViewController {
     
     func enumMethod(){
         println("----枚举----")
+        
+        //首字母大写
+        enum SomeEnumeration{
+            
+        }
+        /*
+        enum CompassPoint{
+            case North
+            case South
+            case East
+            case West
+        }
+        */
+        //or
+        enum CompassPoint{
+            case North,South,East,West
+        }
+        enum Planet {
+            case Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+        }
+        
+        //既然是类型,就用enum定义变量
+        var directionToHead = CompassPoint.West
+        //初始化了CompassPoint后，就不再需要再写枚举的类型了
+        directionToHead = .East
+        
+        //switch中也是类似
+        switch directionToHead{
+        case .North:println("Lots of planets have a north")
+        case .South:println("Watch out for penguins")
+        case .East:println("Where the sun rises")
+        case .West:println("Where the skies are blue")
+        //prints "Where the sun rises"
+        }
+        
+        let somePlanet = Planet.Earth
+        switch somePlanet{
+        case .Earth:println("Mostly harmless")
+        default:println("Not a safe place for humans")
+        }
+        
+        //关联值，Associated Values
+        //Barcod不存储任何东西，仅仅定义了类型，需要再定义变量
+        enum Barcode{
+            case UPCA(Int,Int,Int,Int)
+            case QRCode(String)
+        }
+        var productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
+        productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
+        
+//        switch productBarcode{
+//            case .UPCA(let numberSystem, let manufacturer, let product, let check):
+//            println("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
+//            case .QRCode(let productCde):
+//            println("QR code:\(productBarcode)")
+//        }
+        //值是var or let 可以提前
+        switch productBarcode{
+        case let .UPCA(numberSystem, manufacturer, product, check):
+            println("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
+        case let .QRCode(productCde):
+            println("QR code:\(productBarcode)")
+        }
+        
+        
+        //可以为enum定义值，Raw Values
+        enum ASCIIControlCharacter :Character{
+            case Tab = "\t", LineFeed = "\n", CarriageReturn = "\r"
+        }
+        enum NewPlanet:Int{
+            case Mercury = 1, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+        }
+        //toRaw 取到枚举的值
+        let earthsOrder = NewPlanet.Earth.toRaw()
+        println("earthsOrder 取值 ＝ \(earthsOrder)")
+        //fromRaw 通过值取到NewPlanet成员
+        let possiblePlanet = NewPlanet.fromRaw(7)
+        println("possiblePlanet 取枚举 = \(possiblePlanet)")
+        
+        var whichPlanet: NewPlanet? = NewPlanet.fromRaw(10000)
+        println("whichPlanet = \(whichPlanet)")
     }
 
     /*
