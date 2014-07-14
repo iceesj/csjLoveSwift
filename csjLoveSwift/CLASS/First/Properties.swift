@@ -24,6 +24,8 @@ class Properties: CSJSwiftViewController {
     
     func propertiesMethod(){
         println("----属性----")
+        
+        //存储属性
     }
 
     /*
