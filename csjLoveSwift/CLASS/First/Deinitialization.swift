@@ -24,6 +24,10 @@ class Deinitialization: CSJSwiftViewController {
     
     func deinitializationMethod() {
         println("----析构过程----")
+        
+        //析构过程是构造过程的逆向过程，当一个类的实例被释放的时候，在内存中消失前，析构器会被调用
+        
+        
     }
 
     /*
