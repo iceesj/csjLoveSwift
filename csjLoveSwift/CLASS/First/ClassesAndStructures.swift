@@ -122,7 +122,9 @@ class ClassesAndStructures: CSJSwiftViewController {
         var myArrayCopy = myArray
         myArray[1] = 8
         println(myArray[1]) //得到结果是8
-        println(myArray === myArrayCopy)//false
+        
+        //xcode6 beta4 删除
+//        println(myArray === myArrayCopy)//false
         
         //swift对Array做了优化，只有在必要时，才会分配一份拷贝
         //Array只有在数组长度变化的时候才拷贝

@@ -16,8 +16,8 @@ enum ViewControllerType :Int {
 }
 
 class ViewController: UIViewController {
-    
-    @IBOutlet var buttonOne : UIButton
+    //xcode6 beta4 UIButton? before UIButton
+    @IBOutlet var buttonOne : UIButton?
     
     
     //生命周期
@@ -66,8 +66,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         NSLog("测试 viewDidLoad")
         self.navigationItem.title = "ViewController"
-        buttonOne.setTitle("Basic knowledge",forState: .Normal)
-        
+        //xcode6 beta 1,2,3
+//        buttonOne.setTitle("Basic knowledge",forState: .Normal)
+        //xcode6 beta 4
+        buttonOne?.setTitle("Basic knowledge", forState: .Normal)
         
         //methods
         
@@ -287,7 +289,8 @@ class ViewController: UIViewController {
     
 }
 @objc protocol Downloadable{
-    @optional func download(toPath:String)->Bool;
+    //20140722 xcode6 beta3 @optional ，，xcode6 beta4 optional
+    optional func download(toPath:String)->Bool;
 }
 
 

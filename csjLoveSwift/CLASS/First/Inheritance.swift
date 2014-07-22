@@ -119,7 +119,10 @@ class Inheritance: CSJSwiftViewController {
         class FinalTest {
             var numberOfWheels : Int
             var maxPassengers : Int
-            @final func nicai()->String{
+            //20140722
+            //xcode6 beta3 @final
+            //xcode6 beta4 final
+            final func nicai()->String{
                 return "你猜"
             }
             init(){

@@ -23,13 +23,18 @@ class SwiftString: CSJSwiftViewController {
         println("\(wiseWords)")
         // "Imagination is more important than knowledge" - Einstein
         
-        let dollarSign = "\x24"        //$ ,Unicode scalar U+0024
+//        let dollarSign = "\x24"        //$ ,Unicode scalar U+0024
+        let dollarSign = "\u{24}"
         println("dollarSign : \(dollarSign)")
         
-        let blackHeart = "\u2665"      //♥ ,Unicode scalar U+2665
+        let blackHeart = "\u{2665}"      //♥ ,Unicode scalar U+2665
         println("blackHeart : \(blackHeart)")
         
-        let sparklingHeart = "\U0001F496"//💖
+        //xcode6 beta 1,2,3
+//        let sparklingHeart = "\U0001F496"
+        //xcode6 beta4
+        let sparklingHeart = "\u{0001F496}"
+        //💖
         println("sparklingHeart : \(sparklingHeart)")
         
         //空字符串
