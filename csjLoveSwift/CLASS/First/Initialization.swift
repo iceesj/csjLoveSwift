@@ -175,6 +175,75 @@ class Initialization: CSJSwiftViewController {
         //2，便利构造器必须调用它同一个类中定义的其他构造器
         //3，便利构造器的结尾部分必须调用一个指定构造器
         
+        //指定构造器必须总是向上代理 向上代理的意思就是调用父类指定的构造器
+        //便利构造器必须总是横向代理 横向代理的意思就是调用它自己类内的构造器
+        
+        //指定构造器和便利构造器，Designated Initializers and Convenience Initializers
+        //指定构造器 <-- 便利构造器 <-- 便利构造器   【一个类】
+        //        ^
+        //        |
+        //         \
+        //便利构造器 ->指定构造器  <-- 便利构造器 【一个类】
+        
+        
+        //两段式构造过程，Two-Phase Initialization
+        //swift类包含2个阶段
+        //1，每个存储型属性通过她们自己的类构造器来设置初始值
+        //2，每个存储型属性都可以进一步设置他们定制化的初始化
+        //so两段式构造过程，就是告诉我们，使用变量，常量之前要确保它被定义并且被初始化了
+        var csjNumA:Int = 1
+        var csjNumB:Int = 2
+        func csjNumFunc(){
+            csjNumA = csjNumB
+        }
+        
+        //构造器的继承和重写，Initializer Inheritance and Overriding
+        //swift中，子类不会默认的继承父类的构造器。但是有时觉得父类的构造器功能不够强大，这个时候就要在子类中重写构造器，以达到目的。
+        //重写一个指定构造器， 写完之后要调用父类构造器
+        //重写一个便利构造器，必须要调用这个类中的其他指定构造器
+        //构造器重写不需要添加 override关键字
+        
+        //自动构造器的继承，Automatic Initializer Inheritance
+        //swift构造器继承机制要满足2点：
+        //1，如果子类没有定义任何指定构造器，它将自动继承所有父类的指定构造器
+        //2，如果子类中定义了所有父类的指定构造器的实现，它将会自动继承所有父类的便利构造器
+        
+        
+        //指定构造器和便利构造器的语法，Syntax for Designated and Convenience Initializers
+        //指定构造器
+        //init(参数){
+        //    函数体
+        //}
+        
+        //便利构造器
+        //convenience init(参数){
+        //    函数体
+        //}
+        //convenience型的构造器，只能调用它自己这个类中的非convenience
+        
+        
+        //指定和便利构造器初始化，Designated and Convenience Initializers in Action
+        
+        
+        //用闭包或者函数设置属性的默认值，Setting a Default Property Value with a Closure or Function
+        class MyClass{
+            var myNumbers:[Int] = {
+                var tempNum = [Int]() //生成一个临时的数组，在闭包最后给myNumbers赋值
+                for i in 1...10{
+                    tempNum.append(i) //添加元素
+                }
+                return tempNum //闭包的返回值
+            }() //（）表示myNumbers是闭包的返回值，要不然就成了闭包这个函数了
+            
+            func getNumbers()->[Int]{
+                return myNumbers
+            }
+        }
+        let myClass = MyClass()
+        println("myClass.getNumbers =  \(myClass.getNumbers())")//获取到了MyClass的myNumbers数组
+        
+        
+        
     }
 
     /*
