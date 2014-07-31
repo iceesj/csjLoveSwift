@@ -65,6 +65,7 @@ class SwiftARC: CSJSwiftViewController {
             
             var apartment: Apartment?
             deinit {
+//                apartment = nil;
                 println("\(name) is being deinitialized")
             }
         }
@@ -74,13 +75,85 @@ class SwiftARC: CSJSwiftViewController {
             init (number : Int){
                 self.number = number
             }
-            var tenant : Person?
+            weak var tenant : Person?
             deinit {
+//                tenant = nil;
                 println("Apartment #\(number) is being deinitialized")
             }
         }
+        //上2个类分别都有另一个类的optional类型的变量。结果就是互相持有对方
+        //在ARC中，当把John和number73都赋值为nil时，看似断了2个引用，但在实例中，还有apartment和tenant2个引用没断，于是，把释放写入deinit中
+        //deinit并不会被调用。因为ARC中只有引用计数到0时，deinit才会被调用
+        //为了解决上面的循环引用，引入了关键字weak
+        var john : Person?
+        var number73 : Apartment?
+        john = Person(name: "John Appleseed")
+        number73 = Apartment(number: 73)
+        
+        john!.apartment = number73
+        number73!.tenant = john
+        
+//        john          number73
+//         \strong         \strong
+// name:John Appleseed  --->strong     number:73
+// apartmen<Apartment 实例> <---weak  tenant:<Person 实例>
+        //引入了weak引用不会阻止ARC回收实例，也就是说，一个实例，如果没有被强引用，再多的引用持有它的话，它依然可以被释放。
         
         
+        //无主引用，Unowned References
+        //weak是给optional类型用的（！？），而unowned是给非可选型用的
+        class Customer{
+            let name :String
+            var card : CreditCard?
+            init (name : String){
+                self.name = name
+            }
+            
+            deinit {
+                println("\(name) is being deinitialized")
+            }
+        }
+        class CreditCard{
+            let number : UInt64
+            unowned let customer : Customer
+//            weak var customer : Customer?
+            init (number : UInt64 , customer : Customer){
+                self.number = number
+                self.customer = customer
+            }
+            deinit {
+                 println("Card #\(number) is being deinitialized")
+            }
+        }
+        var johnOne : Customer?
+        johnOne = Customer(name: "John Appleseed")
+        johnOne!.card = CreditCard(number: 1234_5678_9012_3456, customer: johnOne!)
+        
+        
+        //闭包导致的循环强引用，Strong Reference Cycles for Closures
+        /*
+        class HTMLElement{
+            let name: String
+            let text: String?
+            //闭包
+            lazy var asHTML: () -> String = {
+                if let text = self.text {
+                    return "<\(self.name)>\(text)</\(self.name)>"
+                } else {
+                    return "<\(self.name) />"
+                }
+            }
+            
+            init(name: String, text: String? = nil) {
+                self.name = name
+                self.text = text
+            }
+            
+            deinit {
+                println("\(name) is being deinitialized")
+            }
+        }
+        */
         
     }
 
