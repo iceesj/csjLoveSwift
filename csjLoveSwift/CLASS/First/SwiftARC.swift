@@ -137,6 +137,7 @@ class SwiftARC: CSJSwiftViewController {
             let text: String?
             //闭包
             lazy var asHTML: () -> String = {
+//                [unowned self] in
                 if let text = self.text {
                     return "<\(self.name)>\(text)</\(self.name)>"
                 } else {
@@ -154,6 +155,8 @@ class SwiftARC: CSJSwiftViewController {
             }
         }
         */
+        
+        
         
     }
 

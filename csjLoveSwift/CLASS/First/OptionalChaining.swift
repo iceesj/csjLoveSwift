@@ -24,6 +24,22 @@ class OptionalChaining: CSJSwiftViewController {
     
     func optionalChainingMethod(){
         println("----可选链----")
+        
+        
+        //可选型是！？
+        
+        class Person{
+            var residence : Residence?
+        }
+        
+        class Residence {
+            var numberOfRooms = 1
+        }
+        
+//        let john = Person()
+//        let roomCount = john.residence!.numberOfRooms
+        
+        
     }
 
     /*
