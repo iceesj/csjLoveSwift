@@ -41,6 +41,7 @@
 		D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D9B194947B5005FE76E /* TestViewController.swift */; };
 		D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA019494C91005FE76E /* NavGestureViewController.swift */; };
 		D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */; };
+		D39C1362199073CD00D5A7CE /* TestBeta5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C1361199073CD00D5A7CE /* TestBeta5ViewController.swift */; };
 		D3E3003F196D30B200B5BD4A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3003E196D30B200B5BD4A /* Function.swift */; };
 		D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */; };
 		D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */; };
@@ -101,6 +102,7 @@
 		D38E7D9B194947B5005FE76E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D38E7DA019494C91005FE76E /* NavGestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavGestureViewController.swift; sourceTree = "<group>"; };
 		D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftLog.swift; sourceTree = "<group>"; };
+		D39C1361199073CD00D5A7CE /* TestBeta5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBeta5ViewController.swift; sourceTree = "<group>"; };
 		D3E3003E196D30B200B5BD4A /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		D3E9A8DF194AA181004F2A80 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				D38B55B41963EF7E009A24CA /* objc */,
+				D39C1361199073CD00D5A7CE /* TestBeta5ViewController.swift */,
 				D3F8436D19653B79008E140E /* CSJSwiftViewController.swift */,
 				D38E7D95194947B5005FE76E /* ViewController.swift */,
 				D3EBA3BD196BD0D8009D2B2B /* FirstBetaViewController.swift */,
@@ -413,6 +416,7 @@
 				D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */,
 				D3F8436A1965306C008E140E /* ArrayAndDict.swift in Sources */,
 				D3E9A8E0194AA181004F2A80 /* SettingsViewController.swift in Sources */,
+				D39C1362199073CD00D5A7CE /* TestBeta5ViewController.swift in Sources */,
 				D30DA926196E79990060107A /* TypeCasting.swift in Sources */,
 				D30DA91A196E75800060107A /* Subscripts.swift in Sources */,
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,

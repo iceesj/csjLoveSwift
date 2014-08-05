@@ -10,12 +10,13 @@ import UIKit
 
 class TestViewController: UIViewController {
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-    }
+    //Xcode6 beta5
+//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
     
-    init(coder aDecoder: NSCoder!)  {
+    //Xcode6 beta5
+    required init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder)
         
     }

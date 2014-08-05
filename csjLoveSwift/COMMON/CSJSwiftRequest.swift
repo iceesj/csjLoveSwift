@@ -36,7 +36,7 @@ class CSJSwiftRequest: NSObject {
     var hearders : NSDictionary?
     var parameters: NSDictionary?
     
-    init()
+    override init()
     {
         super.init();
     }
@@ -109,9 +109,10 @@ class CSJSwiftRequest: NSObject {
         var error:NSError?
 //NSJSONReadingOptions.MutableLeaves,,NSJSONReadingOptions.MutableContainers
         var dictJSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options:NSJSONReadingOptions.MutableLeaves, error:&error) as NSDictionary
-        if error {
-            NSLog("Error parsing JSON")
-        }
+        //Xcode6 beta5
+//        if error {
+//            NSLog("Error parsing JSON")
+//        }
         return dictJSON
     }
     

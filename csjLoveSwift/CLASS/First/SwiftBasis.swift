@@ -9,11 +9,16 @@
 import UIKit
 
 class SwiftBasis: CSJSwiftViewController {
-
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    
+    //Xcode6 beta5
+    /*
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        // Custom initialization
     }
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +52,10 @@ class SwiftBasis: CSJSwiftViewController {
         }
         
         
-        var strValue : Optional<String> = "nicai"
+//        var strValue : Optional<String> = "nicai"
+        //Xcode6 beta5
+        /*
+        var strValue :String? = "nicai1" //效果同上
         var strValue1 :String? = "nicai1" //效果同上
         if strValue {
             NSLog("strValue 有值")
@@ -60,6 +68,7 @@ class SwiftBasis: CSJSwiftViewController {
             let hashValue = str.hashValue
             println("hashValue = \(hashValue)")
         }
+        */
         //同上
         //        let hashValue = strValue?.hashValue
         //        println("hashValue \(hashValue)")

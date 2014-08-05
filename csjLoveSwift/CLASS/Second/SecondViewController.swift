@@ -9,11 +9,12 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    
+    //Xcode6 beta5
+//    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
-    }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

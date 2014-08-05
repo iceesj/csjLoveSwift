@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class CSJSwiftLog: NSObject {
-    init(){
+    override init(){
         super.init();
     }
     

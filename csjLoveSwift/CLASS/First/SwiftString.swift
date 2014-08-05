@@ -9,11 +9,11 @@
 import UIKit
 //字符，字符串
 class SwiftString: CSJSwiftViewController {
-
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        // Custom initialization
-    }
+    
+    //Xcode6 beta5
+//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

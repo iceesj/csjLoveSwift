@@ -43,14 +43,14 @@ class Inheritance: CSJSwiftViewController {
         //继承
         class Car : Vehicle{//继承的语法
             //swift既不会继承父类的初始化，也不会自动执行父类的初始化方法
-            init(){//MyCar 类初始化方法
+            override init(){//MyCar 类初始化方法
                 super.init()
                 numberOfWheels = 4 //从Vehicle继承过来的属性
             }
         }
         
         class CarTwo : Vehicle{
-            init (){
+            override init (){
                 super.init()
                 numberOfWheels = 4
                 maxPassengers = 5
@@ -62,7 +62,7 @@ class Inheritance: CSJSwiftViewController {
         //方法重写 Overriding
         class CarThree : Vehicle{
             var speed : Double = 0
-            init(){
+            override init(){
                 super.init()
                 numberOfWheels = 4
                 maxPassengers = 5

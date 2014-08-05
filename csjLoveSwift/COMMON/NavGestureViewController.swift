@@ -9,16 +9,16 @@
 import UIKit
 
 class NavGestureViewController: UINavigationController,UIGestureRecognizerDelegate {
-    
-    init(coder aDecoder: NSCoder!) {
+    //Xcode6 beta5
+    required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        // Custom initialization
-    }
+    //Xcode6 beta5
+//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

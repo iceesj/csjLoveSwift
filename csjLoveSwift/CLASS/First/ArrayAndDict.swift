@@ -11,10 +11,9 @@ import UIKit
 
 class ArrayAndDict: CSJSwiftViewController {
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        // Custom initialization
-    }
+//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +60,10 @@ class ArrayAndDict: CSJSwiftViewController {
         println("数组最后添加元素 \(myArray)")
         
         //+＝ 也可以添加元素
-        myArray += "world"
-        println("数组最后添加元素 \(myArray)")
+        //Xcode6 beta5
+        // error: '[String]' is not identical to 'UInt8'
+//        myArray += "world"
+//        println("数组最后添加元素 \(myArray)")
         
         //指定位置插入
         myArray.insert("need",atIndex:0)
