@@ -28,17 +28,25 @@ class OptionalChaining: CSJSwiftViewController {
         
         //可选型是！？
         
-        class Person{
-            var residence : Residence?
+        struct MyName{
+            var name:String = "nicai"
         }
-        
-        class Residence {
-            var numberOfRooms = 1
+        struct MyInfo{
+            var myName : MyName? = MyName()
         }
+        class MyClass{
+            var structInstance:MyInfo? = MyInfo()
+        }
+        var myInstance = MyClass()
+        println("myInstance = \(myInstance)")
         
-//        let john = Person()
-//        let roomCount = john.residence!.numberOfRooms
-        
+        //使用一连串的可选值，叫做可选链
+        //在可选链中，任何一个环节解析失败（nil），那么整个可选链的结果为nil
+        if let name = myInstance.structInstance?.myName?.name{
+            println(name)
+        }else{
+            println("nil")
+        }
         
     }
 

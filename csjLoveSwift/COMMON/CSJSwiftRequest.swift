@@ -110,9 +110,9 @@ class CSJSwiftRequest: NSObject {
 //NSJSONReadingOptions.MutableLeaves,,NSJSONReadingOptions.MutableContainers
         var dictJSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options:NSJSONReadingOptions.MutableLeaves, error:&error) as NSDictionary
         //Xcode6 beta5
-//        if error {
-//            NSLog("Error parsing JSON")
-//        }
+        if error != nil {
+            NSLog("Error parsing JSON")
+        }
         return dictJSON
     }
     

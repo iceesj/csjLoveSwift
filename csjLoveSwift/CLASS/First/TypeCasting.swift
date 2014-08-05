@@ -24,6 +24,95 @@ class TypeCasting: CSJSwiftViewController {
     
     func typeCastingMethod(){
         println("----类型转换----")
+        
+        //swift 提供了 is 和 as 两个操作符，用以检测值的类型或者转换它的类型
+        class MyBasic{
+            var name : String
+            init (name : String){
+                self.name = name
+            }
+        }
+        
+        class MyFriend : MyBasic {
+            var level = 9
+        }
+        
+        class MySelf : MyBasic {
+            var height = 9
+        }
+        
+        var myArray = [MyFriend(name: "Hello"),MySelf(name: "Kitty")];
+        
+        for elem in myArray{
+            if elem is MyFriend{//判断elem是否是MyFriend类型
+                let obj = elem as MyFriend //将obj视为elem向下转型为MyFriend
+                println("name: \(obj.name) level: \(obj.level)")
+                continue
+            }
+            
+            if elem is MySelf{
+                let obj = elem as MySelf
+                println("name \(obj.name) level:\(obj.height)")
+                continue
+            }
+        }
+        //判断了类型之后转型，放在一条语句执行
+        let obj = myArray[0] as? MySelf
+        println("obj = \(obj)")
+        
+        
+        //Any和AnyObject
+        //AnyObject可以代表任何类的实例
+        //Any可以代表任何类型，除了函数
+        //OC中会返回一个AnyObject类型的数组，因为OC中没有明确类型的数组
+        
+        //AnyObject
+        var myNewArray: [AnyObject] = [MyFriend(name: "Hello"),MySelf(name: "Kitty")];
+        for elem in myNewArray as [MyFriend] {//将数组myNewArray看作是MyFriend类型的数组
+            println("name \(elem.name) level:\(elem.level)")
+        }
+        
+        
+        //Any
+        /*
+        var things＝[Any]()
+        things.append(0)
+        things.append(0.0)
+        things.append(42)
+        things.append(3.14159)
+        things.append("hello")
+        things.append((3.0, 5.0))
+        things.append(Movie(name: "Ghostbusters", director: "Ivan Reitman"))
+        for thing in things {
+            switch thing {
+            case 0 as Int:
+                println("zero as an Int")
+            case 0 as Double:
+                println("zero as a Double")
+            case let someInt as Int:
+                println("an integer value of \(someInt)")
+            case let someDouble as Double where someDouble > 0:
+                println("a positive double value of \(someDouble)")
+            case is Double:
+                println("some other double value that I don't want to print")
+            case let someString as String:
+                println("a string value of \"\(someString)\"")
+            case let (x, y) as (Double, Double):
+                println("an (x, y) point at \(x), \(y)")
+            case let movie as Movie:
+                println("a movie called '\(movie.name)', dir. \(movie.director)")
+            default:
+                println("something else")
+            }
+        }
+        // zero as an Int
+        // zero as a Double
+        // an integer value of 42
+        // a positive double value of 3.14159
+        // a string value of "hello"
+        // an (x, y) point at 3.0, 5.0
+        // a movie called 'Ghostbusters', dir. Ivan Reitman
+        */
     }
     
     /*
