@@ -9,7 +9,7 @@
 import UIKit
 
 class FirstBetaViewController: UITableViewController {
-    var baseArray = ["wwdcRoom102","基础","运算符","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换、嵌套类型","扩展","协议","泛型","高级运算符",]
+    var baseArray = ["wwdcRoom102","基础","运算符","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符",]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,9 @@ class FirstBetaViewController: UITableViewController {
         return cell
     }
     
+    //点击cell跳转
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        
         var data = baseArray[indexPath!.row]
         if (data == "wwdcRoom102"){
             var wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
