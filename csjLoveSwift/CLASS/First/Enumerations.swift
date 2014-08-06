@@ -46,23 +46,33 @@ class Enumerations: CSJSwiftViewController {
         }
         
         //既然是类型,就用enum定义变量
+        //预先指定West
         var directionToHead = CompassPoint.West
         //初始化了CompassPoint后，就不再需要再写枚举的类型了
         directionToHead = .East
         
+
         //switch中也是类似
-        switch directionToHead{
-        case .North:println("Lots of planets have a north")
-        case .South:println("Watch out for penguins")
-        case .East:println("Where the sun rises")
-        case .West:println("Where the skies are blue")
-        //prints "Where the sun rises"
+        //Switch condition evaluates to a constant
+        //原因可能是因为编译器认为我的变量在函数内部一直是不变吧
+        switch directionToHead {
+            case .North:
+                println("Lots of planets have a north")
+            case .South:
+                println("Watch out for penguins")
+            case .East:
+                println("Where the sun rises")
+            case .West:
+                println("Where the skies are blue")
+            //prints "Where the sun rises"
         }
         
-        let somePlanet = Planet.Earth
+        let somePlanet : Planet = .Earth
         switch somePlanet{
-        case .Earth:println("Mostly harmless")
-        default:println("Not a safe place for humans")
+            case .Earth:
+                println("Mostly harmless")
+            default:
+                println("Not a safe place for humans")
         }
         
         //关联值，Associated Values
@@ -81,11 +91,11 @@ class Enumerations: CSJSwiftViewController {
 //            println("QR code:\(productBarcode)")
 //        }
         //值是var or let 可以提前
-        switch productBarcode{
-        case let .UPCA(numberSystem, manufacturer, product, check):
-            println("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
-        case let .QRCode(productCde):
-            println("QR code:\(productBarcode)")
+        switch productBarcode {
+            case let .UPCA(numberSystem, manufacturer, product, check):
+                println("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
+            case let .QRCode(productCde):
+                println("QR code:\(productBarcode)")
         }
         
         
