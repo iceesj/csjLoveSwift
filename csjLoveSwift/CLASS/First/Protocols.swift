@@ -69,6 +69,63 @@ class Protocols: CSJSwiftViewController {
         let game = SnakesAndLadders()
         game.play()
         
+        
+        let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
+        println(d12.asText())
+        
+        //extension SnakesAndLadders: TextRepresentable
+        println(game.asText())
+        
+        //extension Hamster: TextRepresentable {}
+        let simonTheHamster = Hamster(name: "Simon")
+        let somethingTextRepresentable: TextRepresentable = simonTheHamster
+        println(somethingTextRepresentable.asText())
+        
+        
+        //协议类型的集合，Collections of Protocol Types
+        let things: [TextRepresentable] = [game, d12, simonTheHamster]
+        println("things = \(things)")
+        for thing in things{
+            println("thing.asText() = \(thing.asText())")
+        }
+        
+        //extension SnakesAndLadders: PrettyTextRepresentable
+        println(game.asPrettyText())
+        
+        //协议组合
+        let birthdayPerson = NewPerson(name: "Malcolm", age: 21)
+        wishHappyBirthday(birthdayPerson)
+        
+        //协议的一致性检查
+        let objects: [AnyObject] = [
+            //园 半径
+            Circle(radius: 2.0),
+            Country(area: 243_610),
+            Animal(legs: 4)
+        ]
+        for object in objects{
+            if let objectWithArea = object as? HasArea{
+                println("Area is \(objectWithArea.area)")
+            }else{
+                println("Something that doesn't have an area")
+            }
+        }
+        
+        
+        //可选协议，Optional Protocol Requirements
+        var counter = Counter()
+        counter.dataSource = ThreeSource()
+        for _ in 1...4{
+            counter.increment()//增量
+            println(counter.count)
+        }
+        counter.count = -4
+        counter.dataSource = TowardsZeroSource()
+        for _ in 1...5{
+            counter.increment()//增量
+            println(counter.count)
+        }
+        
     }
 
 }
@@ -241,5 +298,115 @@ extension Dice: TextRepresentable {
     }
 }
 
+extension SnakesAndLadders: TextRepresentable{
+    func asText() -> String{
+        return "A game of Snakes and Ladders with \(finalSquare) squares"
+    }
+}
+
+//如果一个类型已经符合协议的所有的需求,但尚未表示采用协议,您可以采用协议与空扩展
+struct Hamster{
+    var name: String
+    func asText() -> String {
+        return "A hamster named \(name)"
+    }
+}
+extension Hamster: TextRepresentable {}
 
 
+/**
+协议继承，Protocol Inheritance
+*/
+protocol InheritingProtocol: SomeProtocol, AnotherProtocol {
+    //这里定义协议
+}
+protocol PrettyTextRepresentable: TextRepresentable {
+    func asPrettyText() -> String
+}
+//SnakesAndLadders类可以扩展采纳并符合PrettyTextRepresentable:
+extension SnakesAndLadders: PrettyTextRepresentable {
+    func asPrettyText() -> String{
+        var output = asText() + ":\n"
+        
+        for index in 1...finalSquare{
+            switch board[index] {
+            case let ladder where ladder > 0:
+                output += "▲ "
+            case let snake where snake < 0:
+                output += "▼ "
+            default:
+                output += "○ "
+               
+            }
+        }
+        return output
+    }
+}
+
+//协议组合，Protocol Composition
+protocol Named {
+    var name: String {get}
+}
+protocol Aged {
+    var age: Int {get}
+}
+struct NewPerson: Named, Aged{
+    var name: String
+    var age: Int
+}
+func wishHappyBirthday(celebrator : protocol<Named,Aged>){
+    println("Happy birthday \(celebrator.name) - you're \(celebrator.age)!")
+}
+
+//协议的一致性检查，Checking for Protocol Conformance
+@objc protocol HasArea{ //objc 说明这个协议是可选的
+    var area: Double {get}
+}
+class Circle: HasArea {
+    let pi = 3.1415927
+    var radius: Double
+    var area: Double { return pi * radius * radius}
+    init (radius: Double){
+        self.radius = radius
+    }
+}
+class Country: HasArea {
+    var area: Double
+    init (area: Double){ self.area = area }
+}
+class Animal {
+    var legs: Int
+    init (legs: Int) { self.legs = legs}
+}
+
+
+//可选协议，Optional Protocol Requirements
+@objc protocol CounterDataSource {
+    optional func incrementForCount(count: Int) -> Int
+    optional var fixedIncrement: Int {get}
+}
+@objc class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment() {
+        if let amount = dataSource?.incrementForCount?(count){
+            count += amount
+        }else if let amount = dataSource?.fixedIncrement? {
+            count += amount
+        }
+    }
+}
+class ThreeSource: CounterDataSource {
+    let fixedIncrement = 3
+}
+class TowardsZeroSource: CounterDataSource {
+    func incrementForCount(count: Int) -> Int {
+        if count == 0{
+            return 0
+        }else if count < 0 {
+            return 1
+        }else {
+            return -1
+        }
+    }
+}

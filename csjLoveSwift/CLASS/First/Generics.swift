@@ -25,6 +25,8 @@ class Generics: CSJSwiftViewController {
     func genericsMethod(){
         println("----泛型----")
         
+        //泛型是为了解决在针对不同数据类型，而做了同一种功能操作导致的每个类型都要写一份代码的问题。有了泛型，我们可以只写一份逻辑代码，而适应于不同的数据类型。
+        
     }
 
     /*
