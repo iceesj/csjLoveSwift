@@ -9,8 +9,8 @@
 import UIKit
 
 class NavGestureViewController: UINavigationController,UIGestureRecognizerDelegate {
-    //Xcode6 beta5
-    required init(coder aDecoder: NSCoder!) {
+    //Xcode6 beta5 beta6
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }

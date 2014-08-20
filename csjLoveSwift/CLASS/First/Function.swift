@@ -119,10 +119,6 @@ class Function: CSJSwiftViewController {
         println("myArray = \(myArray)")//1,8,3
         
         
-        //Function Types as Parameter Types
-        func myLeixingFunc(a:Int,b:Int)->Int{
-            return a + b
-        }
         //      (String)->String
         //      这个类型的函数，他有一个String类型的参数，返回一个String类型值
         var myFuncType : (Int,Int)->Int = myLeixingFunc
@@ -135,20 +131,15 @@ class Function: CSJSwiftViewController {
         
         //Function Types as Return Types - NO.1
         func myNewLeixingFunc() -> (Int,Int)->Int{
+            //xcode6 beta6 - Cannot reference a local function from another local function
             return myLeixingFunc
         }
         let myFanhuiTempFunc = myNewLeixingFunc()
         myFanhuiTempFunc(3,5)
 //        myNewLeixingFunc()(3,5)//同上
         
-        //Function Types as Return Types - NO.2
-        func setpForward(input:Int) -> Int{
-            return input+1
-        }
-        func setpBackward(input:Int) -> Int{
-             return input-1
-        }
         func chooseStepFunction(backwards: Bool) -> (Int)->Int{
+            //xcode6 beta6 - Cannot reference a local function from another local function
             return backwards ? setpBackward : setpForward
         }
         var currentValue = 3
@@ -192,4 +183,16 @@ class Function: CSJSwiftViewController {
     }
     */
 
+}
+
+//Function Types as Return Types - NO.2
+func setpForward(input:Int) -> Int{
+    return input+1
+}
+func setpBackward(input:Int) -> Int{
+    return input-1
+}
+//Function Types as Parameter Types
+func myLeixingFunc(a:Int,b:Int)->Int{
+    return a + b
 }

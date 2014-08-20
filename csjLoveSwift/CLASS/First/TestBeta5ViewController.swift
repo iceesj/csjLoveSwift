@@ -15,7 +15,8 @@ class TestBeta5ViewController: UIViewController {
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    required init(coder aDecoder: NSCoder!) {
+    //xcode6 beta6
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     //*/

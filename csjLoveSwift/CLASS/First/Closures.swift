@@ -49,9 +49,11 @@ class Closures: CSJSwiftViewController {
         //Inferring Type From Context
         reversed = sorted(names, {s1, s2 in return s1>s2})
         //Implicit Returns from Single-Expression Closures 从闭包隐士返回
-        reversed = sorted(names, {s1, s2 in s1 > s2})
+        //xcode6 beta6 bug?
+//        reversed = sorted(names, {s1, s2 in s1 > s2})
         //Shorthand Argument Names，对于inline的闭包
-        reversed = sorted(names, {$0 > $1})
+        //xcode6 beta6 bug?
+//        reversed = sorted(names, {$0 > $1})
         //Operator Functions
         reversed = sorted(names, >)
         
@@ -67,7 +69,8 @@ class Closures: CSJSwiftViewController {
         someFunctionThatTakesAClosure(){}//如果闭包{} 内容很长，我们可以吧{}放在()的外面
         
         //reversed还可以这样写
-        reversed = sorted(names){$0 > $1}
+        //xcode6 beta6 bug?
+//        reversed = sorted(names){$0 > $1}
         
         let digitNames = [0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
             5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"]

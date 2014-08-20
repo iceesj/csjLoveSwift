@@ -49,8 +49,10 @@ class CSJSwiftRequest: NSObject {
         var httpResponse: NSURLResponse? = nil
 //    class func sendSynchronousRequest(request: NSURLRequest!, returningResponse response: AutoreleasingUnsafePointer<NSURLResponse?>, error: NSErrorPointer) -> NSData!
         var responseData = NSURLConnection.sendSynchronousRequest(req,returningResponse:&httpResponse,error:nil)
-        if responseData{
-            let jsonData = NSJSONSerialization.JSONObjectWithData(responseData, options:NSJSONReadingOptions.MutableLeaves, error: nil) as NSDictionary
+        //before xcode6 beta6
+//        if responseData{
+        if (responseData != nil){
+            let jsonData = NSJSONSerialization.JSONObjectWithData(responseData!, options:NSJSONReadingOptions.MutableLeaves, error: nil) as NSDictionary
             completionHandler(data:jsonData)
         }else{
             println("同步请求错误")
@@ -67,7 +69,9 @@ class CSJSwiftRequest: NSObject {
 //        + (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *response, NSData *data, NSError *connectionError))handler
         NSURLConnection.sendAsynchronousRequest(req, queue: queue, completionHandler: {
             response, data, error in
-            if error{
+            //xcode6 beta6 change
+//            if error {
+            if (error != nil) {
                 dispatch_async(dispatch_get_main_queue(),{
                     println(error)
                     completionHandler(data:NSNull())
@@ -90,7 +94,9 @@ class CSJSwiftRequest: NSObject {
 //        func dataTaskWithRequest(request: NSURLRequest!, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)!) -> NSURLSessionDataTask!
         session.dataTaskWithRequest(req ,completionHandler:{
             data, response, error in
-            if (error){
+            //xcode6 beta6
+//            if (error){
+            if (error != nil){
                 dispatch_async(dispatch_get_main_queue(),{
                     println(error)
                     completionHandler(data:NSNull())
