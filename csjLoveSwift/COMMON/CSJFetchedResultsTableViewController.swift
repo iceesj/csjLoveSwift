@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+let CSJSwift_UITableViewRowAnimation = UITableViewRowAnimation.Fade
+
 class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedResultsControllerDelegate {
     //iOS7，iOS8 Swift NSFetchedResultsController Tableview
     var changeIsUserDriven = false
@@ -91,11 +93,11 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         if (!changeIsUserDriven){
             switch type {
             case .Insert:
-                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
                 break
                 
             case .Delete:
-                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
                 break
                 
             default:
@@ -109,20 +111,20 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         {
             switch type {
             case .Insert:
-                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
                 break;
                 
             case .Delete:
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
                 break;
                 
             case .Update:
-                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
                 break;
                 
             case .Move:
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
                 break;
                 
             default:
