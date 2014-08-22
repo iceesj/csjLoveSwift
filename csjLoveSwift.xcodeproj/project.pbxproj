@@ -32,6 +32,7 @@
 		D33E843D193DB97200A8BAF5 /* csjLoveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E843C193DB97200A8BAF5 /* csjLoveSwiftTests.swift */; };
 		D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */; };
 		D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3784D2E1949AC4500030DC9 /* Model.xcdatamodeld */; };
+		D3870F0319A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3870F0219A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift */; };
 		D38B55BA1963EF7E009A24CA /* EquilateralTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B55B51963EF7E009A24CA /* EquilateralTriangle.swift */; };
 		D38B55BB1963EF7E009A24CA /* NamedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B55B61963EF7E009A24CA /* NamedShape.swift */; };
 		D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B55B71963EF7E009A24CA /* Shape.swift */; };
@@ -93,6 +94,7 @@
 		D33E843C193DB97200A8BAF5 /* csjLoveSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csjLoveSwiftTests.swift; sourceTree = "<group>"; };
 		D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftRequest.swift; sourceTree = "<group>"; };
 		D3784D2F1949AC4500030DC9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D3870F0219A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJFetchedResultsTableViewController.swift; sourceTree = "<group>"; };
 		D38B55B51963EF7E009A24CA /* EquilateralTriangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralTriangle.swift; sourceTree = "<group>"; };
 		D38B55B61963EF7E009A24CA /* NamedShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedShape.swift; sourceTree = "<group>"; };
 		D38B55B71963EF7E009A24CA /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				D38E7DA019494C91005FE76E /* NavGestureViewController.swift */,
 				D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */,
 				D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */,
+				D3870F0219A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift */,
 			);
 			path = COMMON;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				D30DA91E196E760F0060107A /* Initialization.swift in Sources */,
 				D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */,
 				D30DA914196E75050060107A /* ClassesAndStructures.swift in Sources */,
+				D3870F0319A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift in Sources */,
 				D30DA92C196E7A3E0060107A /* Protocols.swift in Sources */,
 				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
 				D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */,
