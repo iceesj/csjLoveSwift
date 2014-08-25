@@ -85,6 +85,7 @@
 {
     if (self == [MagicalRecord class]) 
     {
+#define MR_SHORTHAND
 #ifdef MR_SHORTHAND
         [self swizzleShorthandMethods];
 #endif

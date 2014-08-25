@@ -7,9 +7,12 @@
 //
 
 #import "MagicalRecord.h"
+#import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
 
 @interface MagicalRecord (ShorthandSupport)
 
+#define MR_SHORTHAND
 #ifdef MR_SHORTHAND
 + (void) swizzleShorthandMethods;
 #endif

@@ -16,10 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        // Override point for customization after application launch.
-//        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("csjLoveSwift.sqlite")
         MagicalRecord.setupAutoMigratingCoreDataStack()
-        
+        fenleiDataIntoDocument()
         return true
     }
 
@@ -44,7 +42,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
+    
 }
 
+func fenleiDataResource() -> Array<AnyObject>{
+    var dictArray = Array<Dictionary<String,String>>()
+    var dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
+    var dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
+    dictArray = [dict1,dict2]
+    println("dictArray = \(dictArray)")
+    return dictArray
+}
+
+func fenleiDataIntoDocument() {
+    var dictArray = fenleiDataResource()
+//    let testperson : Testperson = Testperson.MR_createEntity() as Testperson
+//        Testperson.MR_importFromArray(dictArray)
+//    testperson.managedObjectContext.MR_saveToPersistentStoreAndWait()
+
+}

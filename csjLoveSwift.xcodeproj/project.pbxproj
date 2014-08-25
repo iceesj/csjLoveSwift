@@ -56,6 +56,7 @@
 		D3576EF819AAFF9900C8E817 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = D3576EDA19AAFF9900C8E817 /* MagicalRecord+Setup.m */; };
 		D3576EF919AAFF9900C8E817 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D3576EDC19AAFF9900C8E817 /* MagicalRecord+ShorthandSupport.m */; };
 		D3576EFA19AAFF9900C8E817 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D3576EDE19AAFF9900C8E817 /* MagicalRecord.m */; };
+		D3576F5419AB051E00C8E817 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3576F5319AB051E00C8E817 /* SecondTableViewController.swift */; };
 		D3784D2D194987FD00030DC9 /* CSJSwiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */; };
 		D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3784D2E1949AC4500030DC9 /* Model.xcdatamodeld */; };
 		D3870F0319A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3870F0219A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift */; };
@@ -68,6 +69,7 @@
 		D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7D9B194947B5005FE76E /* TestViewController.swift */; };
 		D38E7DA119494C91005FE76E /* NavGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA019494C91005FE76E /* NavGestureViewController.swift */; };
 		D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */; };
+		D38FDCB019AB209200029CD5 /* Testperson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38FDCAF19AB209200029CD5 /* Testperson.swift */; };
 		D39C1362199073CD00D5A7CE /* TestBeta5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C1361199073CD00D5A7CE /* TestBeta5ViewController.swift */; };
 		D3E3003F196D30B200B5BD4A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3003E196D30B200B5BD4A /* Function.swift */; };
 		D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */; };
@@ -173,6 +175,7 @@
 		D3576EDE19AAFF9900C8E817 /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
 		D3576EDF19AAFF9900C8E817 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		D3576EE019AAFF9900C8E817 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		D3576F5319AB051E00C8E817 /* SecondTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		D3784D2C194987FD00030DC9 /* CSJSwiftRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftRequest.swift; sourceTree = "<group>"; };
 		D3784D2F1949AC4500030DC9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D3870F0219A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJFetchedResultsTableViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 		D38E7D9B194947B5005FE76E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D38E7DA019494C91005FE76E /* NavGestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavGestureViewController.swift; sourceTree = "<group>"; };
 		D38E7DA4194981BF005FE76E /* CSJSwiftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSJSwiftLog.swift; sourceTree = "<group>"; };
+		D38FDCAF19AB209200029CD5 /* Testperson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testperson.swift; sourceTree = "<group>"; };
 		D39C1361199073CD00D5A7CE /* TestBeta5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBeta5ViewController.swift; sourceTree = "<group>"; };
 		D3E3003E196D30B200B5BD4A /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		D3E9A8DD194AA166004F2A80 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E9A8E1194AA18E004F2A80 /* SecondViewController.swift */,
+				D3576F5319AB051E00C8E817 /* SecondTableViewController.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				D3784D2E1949AC4500030DC9 /* Model.xcdatamodeld */,
+				D38FDCAF19AB209200029CD5 /* Testperson.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -620,6 +626,7 @@
 				D3576EF319AAFF9900C8E817 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				D30DA918196E75530060107A /* Methods.swift in Sources */,
 				D3576EE219AAFF9900C8E817 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				D3576F5419AB051E00C8E817 /* SecondTableViewController.swift in Sources */,
 				D30DA92A196E79E90060107A /* Extensions.swift in Sources */,
 				D3576EF119AAFF9900C8E817 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */,
@@ -643,6 +650,7 @@
 				D30DA916196E75290060107A /* Properties.swift in Sources */,
 				D3E3003F196D30B200B5BD4A /* Function.swift in Sources */,
 				D30DA92E196E7A6D0060107A /* Generics.swift in Sources */,
+				D38FDCB019AB209200029CD5 /* Testperson.swift in Sources */,
 				D30DA910196E721F0060107A /* Closures.swift in Sources */,
 				D3576EE319AAFF9900C8E817 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				D3576EF819AAFF9900C8E817 /* MagicalRecord+Setup.m in Sources */,

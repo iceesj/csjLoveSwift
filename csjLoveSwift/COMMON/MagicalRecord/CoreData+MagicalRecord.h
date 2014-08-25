@@ -11,7 +11,7 @@
     #import <CoreFoundation/CoreFoundation.h>
     #import <CoreData/CoreData.h>
 
-#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
+//#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
 #define MR_SHORTHAND
 
     #ifdef MR_SHORTHAND
