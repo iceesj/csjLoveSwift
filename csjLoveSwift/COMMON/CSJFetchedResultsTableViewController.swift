@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+//UITableViewRowAnimation.Fade，，UITableViewRowAnimation.None
 let CSJSwift_UITableViewRowAnimation = UITableViewRowAnimation.Fade
 
 class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedResultsControllerDelegate {
