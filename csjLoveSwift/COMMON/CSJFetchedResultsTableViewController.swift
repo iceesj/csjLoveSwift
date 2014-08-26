@@ -76,9 +76,9 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         return rows
     }
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        return fetchedResultsController.sections[section].name?
-    }
+//    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+//        return fetchedResultsController.sections[section].name?
+//    }
     
 //NSFetchedResultsControllerDelegate
     func controllerWillChangeContent(controller: NSFetchedResultsController!) {

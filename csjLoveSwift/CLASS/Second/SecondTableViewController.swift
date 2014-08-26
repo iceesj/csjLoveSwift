@@ -8,45 +8,50 @@
 
 import UIKit
 
-class SecondTableViewController: UITableViewController {
-
+class SecondTableViewController: CSJFetchedResultsTableViewController {
+    
+    var coredataTestperson = []
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        setupFetchedResultsController()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        var methodArray = fenleiDataResource()
-//        println("methodArray = \(methodArray)")
-        
+        setupFetchedResultsController()
+//        coredataTestperson = Testperson.MR_findAll()
+//        println("coredataTestperson = \(coredataTestperson)")
         
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+//    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+//        return 0
+//    }
+    
+//    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+//        return 0
+//    }
+    
+    func setupFetchedResultsController() {
+        var resultPredicate = NSPredicate(format: "firstName != nil")
+        self.fetchedResultsController = Testperson.fetchAllGroupedBy(nil, withPredicate: resultPredicate, sortedBy:"testpersonID", ascending: true)
     }
     
-    
-
-    /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath) as UITableViewCell
+        let testperson = fetchedResultsController.objectAtIndexPath(indexPath) as Testperson
+        cell.textLabel.text = testperson.firstName
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
