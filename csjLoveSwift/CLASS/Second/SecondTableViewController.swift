@@ -32,10 +32,18 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
 //    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
 //        return 0
 //    }
+<<<<<<< HEAD
 //    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
 //        return 0
 //    }
     
+=======
+    
+//    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+//        return 0
+//    }
+    
+>>>>>>> FETCH_HEAD
     func setupFetchedResultsController() {
         var resultPredicate = NSPredicate(format: "firstName != nil")
         self.fetchedResultsController = Testperson.fetchAllGroupedBy(nil, withPredicate: resultPredicate, sortedBy:"testpersonID", ascending: true)
@@ -48,7 +56,11 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
         return cell
     }
     
+<<<<<<< HEAD
     override func tableView(tableView: (UITableView!), didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+=======
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+>>>>>>> FETCH_HEAD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
