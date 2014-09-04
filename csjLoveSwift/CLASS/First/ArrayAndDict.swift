@@ -84,8 +84,8 @@ class ArrayAndDict: CSJSwiftViewController {
 //        println("数组删除所有元素 \(myArray)")
         
         //范围下标
-        myArray[2...3] = ["china"]
-        println("数组范围后 [x...x]<[] \(myArray)")
+//        myArray[2...3] = ["china"]
+//        println("数组范围后 [x...x]<[] \(myArray)")
 
         //如果 [x...x]> [] 那么数组不会出错，连续插入
         //越界依然会崩溃 [2...3]

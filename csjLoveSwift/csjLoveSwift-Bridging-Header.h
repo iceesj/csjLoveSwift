@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
 #import "CoreData+MagicalRecord.h"
+#import "Testperson.h"
+
 
