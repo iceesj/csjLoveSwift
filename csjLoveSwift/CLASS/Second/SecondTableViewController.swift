@@ -29,41 +29,33 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
     }
     
     // MARK: - Table view data source
-//    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-//        return 0
-//    }
-<<<<<<< HEAD
-//    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-//        return 0
-//    }
+    //    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    //        return 0
+    //    }
     
-=======
-    
-//    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-//        return 0
-//    }
-    
->>>>>>> FETCH_HEAD
+    //    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    //        return 0
+    //    }
     func setupFetchedResultsController() {
         var resultPredicate = NSPredicate(format: "firstName != nil")
         self.fetchedResultsController = Testperson.fetchAllGroupedBy(nil, withPredicate: resultPredicate, sortedBy:"testpersonID", ascending: true)
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    //xcode beta7
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath) as UITableViewCell
         let testperson = fetchedResultsController.objectAtIndexPath(indexPath) as Testperson
-        cell.textLabel.text = testperson.firstName
+        //        cell.textLabel.text = testperson.firstName
+        cell.textLabel!.text = testperson.firstName
         return cell
     }
-    
-<<<<<<< HEAD
-    override func tableView(tableView: (UITableView!), didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-=======
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
->>>>>>> FETCH_HEAD
+    //xcode beta6
+    //    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    //xcode beta7
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
