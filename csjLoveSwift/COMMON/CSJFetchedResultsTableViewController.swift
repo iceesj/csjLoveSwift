@@ -55,7 +55,6 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     // MARK: - Table view data source
     
     //xcode6 beta6
@@ -68,8 +67,15 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         //xcode beta7
         if (fetchedResultsController.sections.count > 0){
             rows = fetchedResultsController.sections[section].numberOfObjects
-        }
-        return rows
+    return fetchedResultsController.sections.count
+    }
+    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    var rows = 0
+    //xcode beta7
+    if (fetchedResultsController.sections.count > 0){
+    rows = fetchedResultsController.sections[section].numberOfObjects
+    }
+    return rows
     }
     */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -84,6 +90,20 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         }
         return rows
     }
+    /*
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
+    }
+
+    //xcode6 beta7
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var rows = 0
+        if (fetchedResultsController.sections!.count > 0){
+            rows = fetchedResultsController.sections![section].numberOfObjects
+        }
+        return rows
+    }
+    */
 //    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
 //        return fetchedResultsController.sections[section].name?
 //    }

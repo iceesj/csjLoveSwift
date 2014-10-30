@@ -46,9 +46,6 @@ class FirstBetaViewController: UITableViewController {
         //Xcode 6 beta1&2
 //        let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
-        //xcode beta6
-//        cell.textLabel.text = baseArray[indexPath!.row]
-        //xcode beta7
         //swift 1.1
         cell.textLabel.text = baseArray[indexPath.row]
         return cell
