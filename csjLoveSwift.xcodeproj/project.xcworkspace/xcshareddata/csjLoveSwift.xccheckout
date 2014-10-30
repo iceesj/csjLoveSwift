@@ -14,7 +14,7 @@
 		<string>https://github.com/iceesj/csjLoveSwift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>csjLoveSwift.xcodeproj/project.xcworkspace</string>
+	<string>csjLoveSwift.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4CFF666768A45C1F716B423CCCD5B576ABFF58EC</key>

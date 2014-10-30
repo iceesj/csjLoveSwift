@@ -107,13 +107,19 @@ class Enumerations: CSJSwiftViewController {
             case Mercury = 1, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
         }
         //toRaw 取到枚举的值
-        let earthsOrder = NewPlanet.Earth.toRaw()
+        //swift 1.0 toRaw()
+        //swift 1.1 rawValue
+        let earthsOrder = NewPlanet.Earth.rawValue
         println("earthsOrder 取值 ＝ \(earthsOrder)")
         //fromRaw 通过值取到NewPlanet成员
-        let possiblePlanet = NewPlanet.fromRaw(7)
+        //swift 1.0 toRaw()
+        //swift 1.1 rawValue
+        let possiblePlanet = NewPlanet(rawValue: 7)
         println("possiblePlanet 取枚举 = \(possiblePlanet)")
         
-        var whichPlanet: NewPlanet? = NewPlanet.fromRaw(10000)
+        //swift 1.0 toRaw()
+        //swift 1.1 rawValue
+        var whichPlanet: NewPlanet? = NewPlanet(rawValue: 10000)
         println("whichPlanet = \(whichPlanet)")
     }
 

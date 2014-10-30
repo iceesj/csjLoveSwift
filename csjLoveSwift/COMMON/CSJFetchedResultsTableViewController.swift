@@ -57,28 +57,40 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
     }
 
     // MARK: - Table view data source
-
+    
+    //xcode6 beta6
+    /*
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-//        return 0
         return fetchedResultsController.sections.count
     }
-
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-//        return 0
         var rows = 0
+        //xcode beta7
         if (fetchedResultsController.sections.count > 0){
             rows = fetchedResultsController.sections[section].numberOfObjects
         }
         return rows
     }
-    
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        return fetchedResultsController.sections[section].name?
+    */
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
     }
+    
+    //xcode6 beta7
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var rows = 0
+        if (fetchedResultsController.sections!.count > 0){
+            rows = fetchedResultsController.sections![section].numberOfObjects
+        }
+        return rows
+    }
+//    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+//        return fetchedResultsController.sections[section].name?
+//    }
+    
+//    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+//        return fetchedResultsController.sections[section].name?
+//    }
     
 //NSFetchedResultsControllerDelegate
     func controllerWillChangeContent(controller: NSFetchedResultsController!) {

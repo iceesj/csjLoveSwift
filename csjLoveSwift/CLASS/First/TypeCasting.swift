@@ -68,9 +68,12 @@ class TypeCasting: CSJSwiftViewController {
         
         //AnyObject
         var myNewArray: [AnyObject] = [MyFriend(name: "Hello"),MySelf(name: "Kitty")];
-        for elem in myNewArray as [MyFriend] {//将数组myNewArray看作是MyFriend类型的数组
-            println("name \(elem.name) level:\(elem.level)")
-        }
+        
+        //将数组myNewArray看作是MyFriend类型的数组
+        //xcode6 beta7 error
+//        for elem in myNewArray as [MyFriend] {
+//            println("name \(elem.name) level:\(elem.level)")
+//        }
         
         
         //Any

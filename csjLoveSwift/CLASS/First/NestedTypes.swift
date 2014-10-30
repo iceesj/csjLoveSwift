@@ -48,7 +48,9 @@ class NestedTypes: CSJSwiftViewController {
                         //使用toRaw 和fromRaw 两个函数，实现原始值和枚举值之间进行切换
                         //定义原始枚举类型是Int型，只需要给第一个定义枚举赋值，后续会顺序分配；
                         //你也可以使用浮点型和String类型作为枚举的原始类型
-                        return Values(first: self.toRaw(), second: nil)
+                        //swift 1.0 toRaw()
+                        //swift 1.1 rawValue
+                        return Values(first: self.rawValue, second: nil)
                     }
                 }
             }
@@ -57,7 +59,9 @@ class NestedTypes: CSJSwiftViewController {
             let rank: Rank , suit: Suit
             //描述
             var description: String {
-                var output = "suit is \(suit.toRaw()),"//传入Spades
+                //swift 1.0 toRaw()
+                //swift 1.1 rawValue
+                var output = "suit is \(suit.rawValue),"//传入Spades
                     output += "value is \(rank.values.second)"
                     
                     if let second = rank.values.second{
@@ -72,7 +76,9 @@ class NestedTypes: CSJSwiftViewController {
         println("theAceOfSpades: \(theAceOfSpades.description)")
         //theAceOfSpades : suit is ♠,value is lor 11
         
-        let heartsSymbol = BlackjackCard.Suit.Hearts.toRaw()//转化成实际值，
+        //swift 1.0 toRaw()
+        //swift 1.1 rawValue
+        let heartsSymbol = BlackjackCard.Suit.Hearts.rawValue//转化成实际值，
         println("heartsSymbol = \(heartsSymbol)")
         
     }

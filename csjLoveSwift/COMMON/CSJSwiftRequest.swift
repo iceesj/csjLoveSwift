@@ -44,8 +44,10 @@ class CSJSwiftRequest: NSObject {
     
     //同步NSURLConnection
     class func requestSynchronousWithURL(urlString:String,completionHandler:(data:AnyObject)->Void){
-        var URL = NSURL.URLWithString(urlString)
-        var req = NSURLRequest(URL: URL)
+        //swift 1.1
+//        var URL = NSURL.URLWithString(urlString)
+        var URL = NSURL(string: urlString)
+        var req = NSURLRequest(URL: URL!)
         var httpResponse: NSURLResponse? = nil
 //    class func sendSynchronousRequest(request: NSURLRequest!, returningResponse response: AutoreleasingUnsafePointer<NSURLResponse?>, error: NSErrorPointer) -> NSData!
         var responseData = NSURLConnection.sendSynchronousRequest(req,returningResponse:&httpResponse,error:nil)
@@ -63,8 +65,10 @@ class CSJSwiftRequest: NSObject {
     
     //异步NSURLConnection
     class func requestWithURL(urlString:String,completionHandler:(data:AnyObject)->Void){
-        var URL = NSURL.URLWithString(urlString)
-        var req = NSURLRequest(URL: URL)
+        //swift 1.1
+//        var URL = NSURL.URLWithString(urlString)
+        var URL = NSURL(string: urlString)
+        var req = NSURLRequest(URL: URL!)
         var queue = NSOperationQueue();
 //        + (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *response, NSData *data, NSError *connectionError))handler
         NSURLConnection.sendAsynchronousRequest(req, queue: queue, completionHandler: {
@@ -87,8 +91,10 @@ class CSJSwiftRequest: NSObject {
     
     //异步NSURLSession
     class func requestWithURLbyiOS7Later(urlString:String, completionHandler:(data:AnyObject)->Void){
-        var URL = NSURL.URLWithString(urlString)
-        var req = NSURLRequest(URL: URL)
+        //swift 1.1
+//        var URL = NSURL.URLWithString(urlString)
+        var URL = NSURL(string: urlString)
+        var req = NSURLRequest(URL: URL!)
         var dict : NSDictionary?
         var session = NSURLSession.sharedSession()
 //        func dataTaskWithRequest(request: NSURLRequest!, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)!) -> NSURLSessionDataTask!

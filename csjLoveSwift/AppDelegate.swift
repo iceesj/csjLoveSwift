@@ -13,10 +13,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         MagicalRecord.setupAutoMigratingCoreDataStack()
+//        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("csjLoveSwift.sqlite")
+
         fenleiDataIntoDocument()
         return true
     }
@@ -47,8 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+//test return Array
 func fenleiDataResource() -> Array<AnyObject>{
-    var dictArray = Array<Dictionary<String,String>>()
+//    var dictArray = Array<Dictionary<String,String>>()
+    var dictArray = [Dictionary<String, String>]()
     var dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
     var dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
     dictArray = [dict1,dict2]
@@ -56,9 +60,46 @@ func fenleiDataResource() -> Array<AnyObject>{
     return dictArray
 }
 
+//init and save data
 func fenleiDataIntoDocument() {
-    var dictArray = fenleiDataResource()
-//    let testperson : Testperson = Testperson.MR_createEntity() as Testperson
+//    var dictArray = fenleiDataResource()
+    var dictArray = [Dictionary<String, String>]()
+    var dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
+    var dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
+    dictArray = [dict1,dict2]
+//        Testperson.MR_importFromArray(dictArray)
+//    MagicalRecord.saveWithBlock({ (NSManagedObjectContext) -> Void in
+    
+//    }, completion: { (Bool, NSError) -> Void in
+    
+//    })
+    /*
+    //method1
+    let testperson : Testperson = Testperson.MR_createEntity() as Testperson
+    for (index, value) in enumerate(dictArray) {
+        var item = dictArray[index]
+        println("item = \(item)")
+        testperson.testpersonID = item["onlyID"]
+        testperson.lastName  = item["lastName"]
+        testperson.firstName = item["firstName"]
+        NSManagedObjectContext.MR_contextForCurrentThread().MR_saveToPersistentStoreAndWait()
+    }
+    */
+    
+    //bug bug bug
+    var ttP:Testperson?
+    ttP = Testperson.MR_findFirstByAttribute("testpersonID", withValue:ttP?.testpersonID) as? Testperson
+    if (nil == ttP) {
+        ttP = Testperson.MR_createEntity() as? Testperson
+        for (index, value) in enumerate(dictArray){
+            var item = dictArray[index]
+            ttP!.testpersonID = item["onlyID"]
+            ttP!.lastName  = item["lastName"]
+            ttP!.firstName = item["firstName"]
+            NSManagedObjectContext.MR_contextForCurrentThread().MR_saveToPersistentStoreAndWait()
+        }
+    }
+    
 //        Testperson.MR_importFromArray(dictArray)
 //    testperson.managedObjectContext.MR_saveToPersistentStoreAndWait()
 

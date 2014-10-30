@@ -110,9 +110,10 @@ class ViewController: UIViewController {
     //各种方法
     
     @IBAction func buttonOnePressed(sender : AnyObject) {
-        let vc = self.storyboard.instantiateViewControllerWithIdentifier("FirstBetaViewController") as FirstBetaViewController
+        //xcode6 beta7 添加!
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FirstBetaViewController") as FirstBetaViewController
         vc.hidesBottomBarWhenPushed = true
-        self.navigationController.pushViewController(vc,animated:true)
+        self.navigationController!.pushViewController(vc,animated:true)
     }
     
     @IBAction func alertViewPressed(sender : AnyObject) {
