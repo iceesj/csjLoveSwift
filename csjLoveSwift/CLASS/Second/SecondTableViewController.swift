@@ -36,17 +36,24 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
 //    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
 //        return 0
 //    }
+    
+    
+    //MR_CSJ
     func setupFetchedResultsController() {
-        var resultPredicate = NSPredicate(format: "firstName != nil")
-        self.fetchedResultsController = Testperson.fetchAllGroupedBy(nil, withPredicate: resultPredicate, sortedBy:"testpersonID", ascending: true)
+//        var resultPredicate = NSPredicate(format: "firstName != nil")
+//        self.fetchedResultsController = Testperson.fetchAllGroupedBy(nil, withPredicate: resultPredicate, sortedBy:"testpersonID", ascending: true)
     }
+    
     //xcode beta7
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath) as UITableViewCell
+        //MR_CSJ
+        /*
         let testperson = fetchedResultsController.objectAtIndexPath(indexPath) as Testperson
-//        cell.textLabel.text = testperson.firstName
         cell.textLabel.text = testperson.firstName
+        */
+        cell.textLabel.text = "1"
         return cell
     }
     //xcode beta6

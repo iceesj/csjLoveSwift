@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        MagicalRecord.setupAutoMigratingCoreDataStack()
+//        MagicalRecord.setupAutoMigratingCoreDataStack()
 //        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("csjLoveSwift.sqlite")
 
         fenleiDataIntoDocument()
@@ -87,6 +87,9 @@ func fenleiDataIntoDocument() {
     */
     
     //bug bug bug
+    //mr
+    /*
+    //MR_CSJ
     var ttP:Testperson?
     ttP = Testperson.MR_findFirstByAttribute("testpersonID", withValue:ttP?.testpersonID)
     if (nil == ttP) {
@@ -99,6 +102,7 @@ func fenleiDataIntoDocument() {
             NSManagedObjectContext.defaultContext().MR_saveToPersistentStoreAndWait()
         }
     }
+    */
     
 //        Testperson.MR_importFromArray(dictArray)
 //    testperson.managedObjectContext.MR_saveToPersistentStoreAndWait()

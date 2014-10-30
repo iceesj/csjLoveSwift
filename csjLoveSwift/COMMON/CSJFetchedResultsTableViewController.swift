@@ -79,16 +79,20 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
     }
     */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fetchedResultsController.sections!.count
+        //MR_CSJ
+//        return fetchedResultsController.sections!.count
+        return 1
     }
     
     //xcode6 beta7
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rows = 0
-        if (fetchedResultsController.sections!.count > 0){
-            rows = fetchedResultsController.sections![section].numberOfObjects
-        }
-        return rows
+        //MR_CSJ
+//        var rows = 0
+//        if (fetchedResultsController.sections!.count > 0){
+//            rows = fetchedResultsController.sections![section].numberOfObjects
+//        }
+//        return rows
+        return 1
     }
     /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

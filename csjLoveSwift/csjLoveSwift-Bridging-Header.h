@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
-#define MR_SHORTHAND
-#import "CoreData+MagicalRecord.h"
+//#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
+//#define MR_SHORTHAND
+//#import "CoreData+MagicalRecord.h"
 #import "Testperson.h"
 
 
