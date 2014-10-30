@@ -10,8 +10,8 @@
 #import <objc/runtime.h>
 
 
-static NSString * const kMagicalRecordCategoryPrefix = @"MR_";
 #define MR_SHORTHAND
+static NSString * const kMagicalRecordCategoryPrefix = @"MR_";
 #ifdef MR_SHORTHAND
 static BOOL methodsHaveBeenSwizzled = NO;
 #endif
@@ -29,7 +29,6 @@ void replaceSelectorForTargetWithSourceImpAndSwizzle(Class originalClass, SEL or
 
 #pragma mark - Support methods for shorthand methods
 
-#define MR_SHORTHAND
 #ifdef MR_SHORTHAND
 + (BOOL) MR_resolveClassMethod:(SEL)originalSelector
 {

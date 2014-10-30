@@ -20,8 +20,10 @@
 
 + (void) saveWithBlock:(void(^)(NSManagedObjectContext *localContext))block completion:(MRSaveCompletionHandler)completion;
 {
-    NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_rootSavingContext];
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:mainContext];
+    NSManagedObjectContext *savingContext  = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:savingContext];
+
+    [localContext MR_setWorkingName:NSStringFromSelector(_cmd)];
 
     [localContext performBlock:^{
         if (block) {
@@ -31,27 +33,15 @@
         [localContext MR_saveWithOptions:MRSaveParentContexts completion:completion];
     }];
 }
-
-+ (void) saveUsingCurrentThreadContextWithBlock:(void (^)(NSManagedObjectContext *localContext))block completion:(MRSaveCompletionHandler)completion;
-{
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
-
-    [localContext performBlock:^{
-        if (block) {
-            block(localContext);
-        }
-
-        [localContext MR_saveWithOptions:MRSaveParentContexts completion:completion];
-    }];
-}
-
 
 #pragma mark - Synchronous saving
 
 + (void) saveWithBlockAndWait:(void(^)(NSManagedObjectContext *localContext))block;
 {
-    NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_rootSavingContext];
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:mainContext];
+    NSManagedObjectContext *savingContext  = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:savingContext];
+
+    [localContext MR_setWorkingName:NSStringFromSelector(_cmd)];
 
     [localContext performBlockAndWait:^{
         if (block) {
@@ -59,6 +49,26 @@
         }
 
         [localContext MR_saveWithOptions:MRSaveParentContexts|MRSaveSynchronously completion:nil];
+    }];
+}
+
+@end
+
+#pragma mark - Deprecated Methods — DO NOT USE
+@implementation MagicalRecord (ActionsDeprecated)
+
++ (void) saveUsingCurrentThreadContextWithBlock:(void (^)(NSManagedObjectContext *localContext))block completion:(MRSaveCompletionHandler)completion;
+{
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+
+    [localContext MR_setWorkingName:NSStringFromSelector(_cmd)];
+
+    [localContext performBlock:^{
+        if (block) {
+            block(localContext);
+        }
+
+        [localContext MR_saveWithOptions:MRSaveParentContexts completion:completion];
     }];
 }
 
@@ -66,6 +76,8 @@
 {
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
 
+    [localContext MR_setWorkingName:NSStringFromSelector(_cmd)];
+
     [localContext performBlockAndWait:^{
         if (block) {
             block(localContext);
@@ -74,12 +86,6 @@
         [localContext MR_saveWithOptions:MRSaveParentContexts|MRSaveSynchronously completion:nil];
     }];
 }
-
-
-#pragma mark - Deprecated methods
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 
 + (void) saveInBackgroundWithBlock:(void(^)(NSManagedObjectContext *localContext))block
 {
@@ -88,8 +94,10 @@
 
 + (void) saveInBackgroundWithBlock:(void(^)(NSManagedObjectContext *localContext))block completion:(void(^)(void))completion
 {
-    NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:mainContext];
+    NSManagedObjectContext *savingContext  = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:savingContext];
+
+    [localContext MR_setWorkingName:NSStringFromSelector(_cmd)];
 
     [localContext performBlock:^{
         if (block)
@@ -110,6 +118,8 @@
 {
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
 
+    [localContext MR_setWorkingName:NSStringFromSelector(_cmd)];
+
     [localContext performBlock:^{
         if (block) {
             block(localContext);
@@ -129,7 +139,5 @@
         }];
     }];
 }
-
-#pragma clang diagnostic pop // ignored "-Wdeprecated-implementations"
 
 @end

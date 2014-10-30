@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-
 @interface NSString (MagicalRecord_DataImport)
 
 - (NSString *) MR_capitalizedFirstCharacterString;

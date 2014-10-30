@@ -4,7 +4,7 @@
 
 
 
-
+#import "MagicalRecordDeprecated.h"
 
 @interface NSManagedObject (MagicalAggregationShortHand)
 + (NSNumber *) numberOfEntities;
@@ -19,16 +19,10 @@
 + (BOOL) hasAtLeastOneEntityInContext:(NSManagedObjectContext *)context;
 + (NSNumber *)aggregateOperation:(NSString *)function onAttribute:(NSString *)attributeName withPredicate:(NSPredicate *)predicate inContext:(NSManagedObjectContext *)context;
 + (NSNumber *)aggregateOperation:(NSString *)function onAttribute:(NSString *)attributeName withPredicate:(NSPredicate *)predicate;
-- (id) objectWithMinValueFor:(NSString *)property;
-- (id) objectWithMinValueFor:(NSString *)property inContext:(NSManagedObjectContext *)context;
+- (instancetype) objectWithMinValueFor:(NSString *)property;
+- (instancetype) objectWithMinValueFor:(NSString *)property inContext:(NSManagedObjectContext *)context;
 @end
-@interface NSManagedObject (MagicalRecord_DataImportShortHand)
-- (BOOL) importValuesForKeysWithObject:(id)objectData;
-+ (id) importFromObject:(id)data;
-+ (id) importFromObject:(id)data inContext:(NSManagedObjectContext *)context;
-+ (NSArray *) importFromArray:(NSArray *)listOfObjectData;
-+ (NSArray *) importFromArray:(NSArray *)listOfObjectData inContext:(NSManagedObjectContext *)context;
-@end
+
 @interface NSManagedObject (MagicalFindersShortHand)
 + (NSArray *) findAll;
 + (NSArray *) findAllInContext:(NSManagedObjectContext *)context;
@@ -38,20 +32,20 @@
 + (NSArray *) findAllSortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
 + (NSArray *) findAllWithPredicate:(NSPredicate *)searchTerm;
 + (NSArray *) findAllWithPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
-+ (id) findFirst;
-+ (id) findFirstInContext:(NSManagedObjectContext *)context;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchTerm;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes inContext:(NSManagedObjectContext *)context;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending andRetrieveAttributes:(id)attributes, ...;
-+ (id) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context andRetrieveAttributes:(id)attributes, ...;
-+ (id) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue;
-+ (id) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
-+ (id) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending;
-+ (id) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
++ (instancetype) findFirst;
++ (instancetype) findFirstInContext:(NSManagedObjectContext *)context;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes inContext:(NSManagedObjectContext *)context;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending andRetrieveAttributes:(id)attributes, ...;
++ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context andRetrieveAttributes:(id)attributes, ...;
++ (instancetype) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue;
++ (instancetype) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
++ (instancetype) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending;
++ (instancetype) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
 + (NSArray *) findByAttribute:(NSString *)attribute withValue:(id)searchValue;
 + (NSArray *) findByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
 + (NSArray *) findByAttribute:(NSString *)attribute withValue:(id)searchValue andOrderBy:(NSString *)sortTerm ascending:(BOOL)ascending;
@@ -72,26 +66,28 @@
 + (void) setDefaultBatchSize:(NSUInteger)newBatchSize;
 + (NSArray *) executeFetchRequest:(NSFetchRequest *)request;
 + (NSArray *) executeFetchRequest:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context;
-+ (id) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request;
-+ (id) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context;
++ (instancetype) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request;
++ (instancetype) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context;
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 + (void) performFetch:(NSFetchedResultsController *)controller;
 #endif
 + (NSEntityDescription *) entityDescription;
 + (NSEntityDescription *) entityDescriptionInContext:(NSManagedObjectContext *)context;
 + (NSArray *) propertiesNamed:(NSArray *)properties;
-+ (id) createEntity;
-+ (id) createInContext:(NSManagedObjectContext *)context;
++ (instancetype) createEntity;
++ (instancetype) createEntityInContext:(NSManagedObjectContext *)context;
++ (instancetype) createInContext:(NSManagedObjectContext *)context MR_DEPRECATED_WILL_BE_REMOVED_IN_PLEASE_USE("4.0", "createEntityInContext:");
 - (BOOL) deleteEntity;
-- (BOOL) deleteInContext:(NSManagedObjectContext *)context;
+- (BOOL) deleteInContext:(NSManagedObjectContext *)context MR_DEPRECATED_WILL_BE_REMOVED_IN_PLEASE_USE("4.0", "deleteEntityInContext:");
+- (BOOL) deleteEntityInContext:(NSManagedObjectContext *)context;
 + (BOOL) deleteAllMatchingPredicate:(NSPredicate *)predicate;
 + (BOOL) deleteAllMatchingPredicate:(NSPredicate *)predicate inContext:(NSManagedObjectContext *)context;
 + (BOOL) truncateAll;
 + (BOOL) truncateAllInContext:(NSManagedObjectContext *)context;
 + (NSArray *) ascendingSortDescriptors:(NSArray *)attributesToSortBy;
 + (NSArray *) descendingSortDescriptors:(NSArray *)attributesToSortBy;
-- (id) inContext:(NSManagedObjectContext *)otherContext;
-- (id) inThreadContext;
+- (instancetype) inContext:(NSManagedObjectContext *)otherContext;
+- (instancetype) inThreadContext;
 @end
 @interface NSManagedObject (MagicalRequestsShortHand)
 + (NSFetchRequest *) createFetchRequest;
@@ -123,13 +119,15 @@
 + (NSManagedObjectContext *) context NS_RETURNS_RETAINED;
 + (NSManagedObjectContext *) contextWithParent:(NSManagedObjectContext *)parentContext NS_RETURNS_RETAINED;
 + (NSManagedObjectContext *) newMainQueueContext NS_RETURNS_RETAINED;
-+ (NSManagedObjectContext *) contextThatPushesChangesToDefaultContext NS_RETURNS_RETAINED;
 + (NSManagedObjectContext *) contextWithStoreCoordinator:(NSPersistentStoreCoordinator *)coordinator NS_RETURNS_RETAINED;
 + (void) resetDefaultContext;
 + (NSManagedObjectContext *) rootSavingContext;
 + (NSManagedObjectContext *) defaultContext;
-+ (void) cleanUp;
 - (NSString *) description;
+- (NSString *) parentChain;
+- (void) setWorkingName:(NSString *)workingName;
+- (NSString *) workingName;
+- (void) MR_deleteObjects:(id <NSFastEnumeration>)managedObjects;
 @end
 #import "NSManagedObjectContext+MagicalSaves.h"
 @interface NSManagedObjectContext (MagicalSavesShortHand)
@@ -137,21 +135,21 @@
 - (void) saveToPersistentStoreWithCompletion:(MRSaveCompletionHandler)completion;
 - (void) saveOnlySelfAndWait;
 - (void) saveToPersistentStoreAndWait;
-- (void) saveWithOptions:(MRSaveContextOptions)mask completion:(MRSaveCompletionHandler)completion;
-- (void) save __attribute__((deprecated));
-- (void) saveWithErrorCallback:(void(^)(NSError *error))errorCallback __attribute__((deprecated));
-- (void) saveInBackgroundCompletion:(void (^)(void))completion __attribute__((deprecated));
-- (void) saveInBackgroundErrorHandler:(void (^)(NSError *error))errorCallback __attribute__((deprecated));
-- (void) saveInBackgroundErrorHandler:(void (^)(NSError *error))errorCallback completion:(void (^)(void))completion __attribute__((deprecated));
-- (void) saveNestedContexts __attribute__((deprecated));
-- (void) saveNestedContextsErrorHandler:(void (^)(NSError *error))errorCallback __attribute__((deprecated));
-- (void) saveNestedContextsErrorHandler:(void (^)(NSError *error))errorCallback completion:(void (^)(void))completion __attribute__((deprecated));
+- (void) saveWithOptions:(MRSaveOptions)mask completion:(MRSaveCompletionHandler)completion;
+- (void) save MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveWithErrorCallback:(void(^)(NSError *error))errorCallback MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveInBackgroundCompletion:(void (^)(void))completion MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveInBackgroundErrorHandler:(void (^)(NSError *error))errorCallback MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveInBackgroundErrorHandler:(void (^)(NSError *error))errorCallback completion:(void (^)(void))completion MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveNestedContexts MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveNestedContextsErrorHandler:(void (^)(NSError *error))errorCallback MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
+- (void) saveNestedContextsErrorHandler:(void (^)(NSError *error))errorCallback completion:(void (^)(void))completion MR_DEPRECATED_WILL_BE_REMOVED_IN("3.0");
 @end
 @interface NSManagedObjectContext (MagicalThreadingShortHand)
 + (NSManagedObjectContext *) contextForCurrentThread;
-+ (NSManagedObjectContext *) contextThatNotifiesDefaultContextOnMainThread;
-+ (NSManagedObjectContext *) contextThatNotifiesDefaultContextOnMainThreadWithCoordinator:(NSPersistentStoreCoordinator *)coordinator;
++ (void) clearNonMainThreadContextsCache;
 + (void) resetContextForCurrentThread;
++ (void) clearContextForCurrentThread;
 @end
 @interface NSManagedObjectModel (MagicalRecordShortHand)
 + (NSManagedObjectModel *) defaultManagedObjectModel;

@@ -88,15 +88,15 @@ func fenleiDataIntoDocument() {
     
     //bug bug bug
     var ttP:Testperson?
-    ttP = Testperson.MR_findFirstByAttribute("testpersonID", withValue:ttP?.testpersonID) as? Testperson
+    ttP = Testperson.MR_findFirstByAttribute("testpersonID", withValue:ttP?.testpersonID)
     if (nil == ttP) {
-        ttP = Testperson.MR_createEntity() as? Testperson
+        ttP = Testperson.MR_createEntity()
         for (index, value) in enumerate(dictArray){
             var item = dictArray[index]
             ttP!.testpersonID = item["onlyID"]
             ttP!.lastName  = item["lastName"]
             ttP!.firstName = item["firstName"]
-            NSManagedObjectContext.MR_contextForCurrentThread().MR_saveToPersistentStoreAndWait()
+            NSManagedObjectContext.defaultContext().MR_saveToPersistentStoreAndWait()
         }
     }
     

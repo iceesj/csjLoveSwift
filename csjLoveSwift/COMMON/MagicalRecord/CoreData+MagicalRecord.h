@@ -1,24 +1,28 @@
-
-#ifndef NS_BLOCKS_AVAILABLE
-    #warning MagicalRecord requires blocks
-#endif
+//
+//  CoreData+MagicalRecord.h
+//
+//  Created by Saul Mora on 28/07/10.
+//  Copyright 2010 Magical Panda Software, LLC All rights reserved.
+//
 
 #ifdef __OBJC__
-//    #if !( __has_feature(objc_arc) && __has_feature(objc_arc_weak) )
-//        #error MagicalRecord now requires ARC to be enabled
-//    #endif
 
-    #import <CoreFoundation/CoreFoundation.h>
+    #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 
-//#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
-#define MR_SHORTHAND
+    #ifndef NS_BLOCKS_AVAILABLE
+    #warning MagicalRecord requires blocks
+    #endif
+
+    #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0   //MagicalRecord log开关
+    #define MR_SHORTHAND
 
     #ifdef MR_SHORTHAND
     #import "MagicalRecordShorthand.h"
     #endif
 
     #import "MagicalRecord.h"
+    #import "MagicalRecordDeprecated.h"
     #import "MagicalRecord+Actions.h"
     #import "MagicalRecord+ErrorHandling.h"
     #import "MagicalRecord+Options.h"

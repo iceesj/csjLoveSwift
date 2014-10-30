@@ -7,7 +7,6 @@
 //
 
 #import "MagicalRecord.h"
-#import <Foundation/Foundation.h>
 
 @interface MagicalRecord (ErrorHandling)
 
