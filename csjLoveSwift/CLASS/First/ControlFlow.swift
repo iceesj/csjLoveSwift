@@ -3,7 +3,7 @@
 //  csjLoveSwift
 //
 //  Created by 曹 盛杰 on 14-7-7.
-//  Copyright (c) 2014年 iceesj. All rights reserved.
+//  Copyright (c) 2014  iceesj. All rights reserved.
 //
 
 import UIKit
