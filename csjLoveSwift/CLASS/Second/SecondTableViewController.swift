@@ -53,7 +53,7 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
         let testperson = fetchedResultsController.objectAtIndexPath(indexPath) as Testperson
         cell.textLabel.text = testperson.firstName
         */
-        cell.textLabel.text = "1"
+        cell.textLabel?.text = "1"
         return cell
     }
     //xcode beta6
