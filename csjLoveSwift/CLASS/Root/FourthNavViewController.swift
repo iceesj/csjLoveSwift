@@ -8,17 +8,25 @@
 
 import UIKit
 
-let zcTabBarNewsItemString : String = "bookbtn_gray"
-let zcTabBarNewsItemSelectedString : String = "bookbtn_green"
+let zcTabBarFourString : String = "iCloud"
+let zcTabBarFourSelectedString : String = "iCloudSelected"
 
 class FourthNavViewController: UINavigationController {
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //swift 1.1
+        self.tabBarItem.image = UIImage(named: zcTabBarFourString)?.imageWithRenderingMode(.AlwaysOriginal)
+        self.tabBarItem.selectedImage = UIImage(named: zcTabBarFourSelectedString)?.imageWithRenderingMode(.AlwaysOriginal)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //swift 1.1
-        self.tabBarItem.image = UIImage(named: zcTabBarNewsItemString)?.imageWithRenderingMode(.AlwaysOriginal)
-        self.tabBarItem.selectedImage = UIImage(named: zcTabBarNewsItemSelectedString)?.imageWithRenderingMode(.AlwaysOriginal)
         // Do any additional setup after loading the view.
+        var version: NSString = UIDevice.currentDevice().systemVersion;
+        if version.intValue > 7 {
+            //            println("设备高于iOS7 \(version)")
+            UITabBar.appearance().translucent = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

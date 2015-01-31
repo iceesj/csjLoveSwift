@@ -239,13 +239,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jp-Hu-Lny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="618"/>
+            <point key="canvasLocation" x="-66" y="705"/>
         </scene>
-        <!--设置-->
+        <!--Four-->
         <scene sceneID="cB7-zG-SDD">
             <objects>
                 <navigationController storyboardIdentifier="FourthNavViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nM9-El-YHV" customClass="FourthNavViewController" customModule="csjLoveSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" id="Ksj-t6-uKo"/>
+                    <tabBarItem key="tabBarItem" title="Four" id="Ksj-t6-uKo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U8N-Os-5De">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -258,7 +258,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOD-Ty-3Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="610"/>
+            <point key="canvasLocation" x="-708" y="705"/>
         </scene>
     </scenes>
 </document>

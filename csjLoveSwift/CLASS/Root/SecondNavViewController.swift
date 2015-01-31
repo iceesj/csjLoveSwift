@@ -8,12 +8,26 @@
 
 import UIKit
 
-class SecondNavViewController: UINavigationController {
+let zcTabBarSecondString : String = "Location"
+let zcTabBarSecondSelectedString : String = "LocationSelected"
 
+class SecondNavViewController: UINavigationController {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //swift 1.1
+        self.tabBarItem.image = UIImage(named: zcTabBarSecondString)?.imageWithRenderingMode(.AlwaysOriginal)
+        self.tabBarItem.selectedImage = UIImage(named: zcTabBarSecondSelectedString)?.imageWithRenderingMode(.AlwaysOriginal)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        var version: NSString = UIDevice.currentDevice().systemVersion;
+        if version.intValue > 7 {
+            //            println("设备高于iOS7 \(version)")
+            UITabBar.appearance().translucent = false
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
