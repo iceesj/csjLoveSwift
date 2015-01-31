@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B005207919694BD1005C07E0 /* SwiftString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005207819694BD1005C07E0 /* SwiftString.swift */; };
+		B07EE7A91A7CA146002CA98E /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7A81A7CA146002CA98E /* RootTabBarController.swift */; };
+		B07EE7AB1A7CA20D002CA98E /* FirstNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7AA1A7CA20D002CA98E /* FirstNavViewController.swift */; };
+		B07EE7AD1A7CA91B002CA98E /* SecondNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7AC1A7CA91B002CA98E /* SecondNavViewController.swift */; };
+		B07EE7AF1A7CA92A002CA98E /* ThirdNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7AE1A7CA92A002CA98E /* ThirdNavViewController.swift */; };
+		B07EE7B11A7CA93B002CA98E /* FourthNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7B01A7CA93B002CA98E /* FourthNavViewController.swift */; };
 		B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B31061196AF05D00485D2E /* ControlFlow.swift */; };
 		D30DA910196E721F0060107A /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA90F196E721F0060107A /* Closures.swift */; };
 		D30DA912196E74C10060107A /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DA911196E74C10060107A /* Enumerations.swift */; };
@@ -68,6 +73,11 @@
 
 /* Begin PBXFileReference section */
 		B005207819694BD1005C07E0 /* SwiftString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftString.swift; sourceTree = "<group>"; };
+		B07EE7A81A7CA146002CA98E /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		B07EE7AA1A7CA20D002CA98E /* FirstNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstNavViewController.swift; sourceTree = "<group>"; };
+		B07EE7AC1A7CA91B002CA98E /* SecondNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondNavViewController.swift; sourceTree = "<group>"; };
+		B07EE7AE1A7CA92A002CA98E /* ThirdNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdNavViewController.swift; sourceTree = "<group>"; };
+		B07EE7B01A7CA93B002CA98E /* FourthNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthNavViewController.swift; sourceTree = "<group>"; };
 		B0B31061196AF05D00485D2E /* ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
 		D30DA90F196E721F0060107A /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		D30DA911196E74C10060107A /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
@@ -147,6 +157,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B07EE7A71A7C9E5D002CA98E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				B07EE7A81A7CA146002CA98E /* RootTabBarController.swift */,
+				B07EE7AA1A7CA20D002CA98E /* FirstNavViewController.swift */,
+				B07EE7AC1A7CA91B002CA98E /* SecondNavViewController.swift */,
+				B07EE7AE1A7CA92A002CA98E /* ThirdNavViewController.swift */,
+				B07EE7B01A7CA93B002CA98E /* FourthNavViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		D33E841B193DB97100A8BAF5 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +244,7 @@
 		D38E7D92194947B5005FE76E /* CLASS */ = {
 			isa = PBXGroup;
 			children = (
+				B07EE7A71A7C9E5D002CA98E /* Root */,
 				D38E7D93194947B5005FE76E /* First */,
 				D38E7D97194947B5005FE76E /* Second */,
 				D38E7D98194947B5005FE76E /* Third */,
@@ -419,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30DA924196E78250060107A /* OptionalChaining.swift in Sources */,
+				B07EE7A91A7CA146002CA98E /* RootTabBarController.swift in Sources */,
 				D38B55BD1963EF7E009A24CA /* Square.swift in Sources */,
 				D3F8436C19653B5A008E140E /* wwdcRoom102.swift in Sources */,
 				D30DA920196E77800060107A /* Deinitialization.swift in Sources */,
@@ -433,8 +457,10 @@
 				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
 				D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */,
 				D3F8437219654D60008E140E /* SwiftBasis.swift in Sources */,
+				B07EE7AD1A7CA91B002CA98E /* SecondNavViewController.swift in Sources */,
 				D30DA928196E79B90060107A /* NestedTypes.swift in Sources */,
 				D30DA918196E75530060107A /* Methods.swift in Sources */,
+				B07EE7B11A7CA93B002CA98E /* FourthNavViewController.swift in Sources */,
 				D3576F5419AB051E00C8E817 /* SecondTableViewController.swift in Sources */,
 				D30DA92A196E79E90060107A /* Extensions.swift in Sources */,
 				D3E9A8DE194AA166004F2A80 /* ThirdViewController.swift in Sources */,
@@ -446,6 +472,7 @@
 				D33E842A193DB97200A8BAF5 /* AppDelegate.swift in Sources */,
 				B005207919694BD1005C07E0 /* SwiftString.swift in Sources */,
 				D30DA930196E7ABB0060107A /* AdvancedOperators.swift in Sources */,
+				B07EE7AB1A7CA20D002CA98E /* FirstNavViewController.swift in Sources */,
 				D38E7D9F194947B5005FE76E /* TestViewController.swift in Sources */,
 				D30DA912196E74C10060107A /* Enumerations.swift in Sources */,
 				D38B55BA1963EF7E009A24CA /* EquilateralTriangle.swift in Sources */,
@@ -453,6 +480,7 @@
 				D38B55BE1963EF7E009A24CA /* TriangleAndSquare.swift in Sources */,
 				D30DA916196E75290060107A /* Properties.swift in Sources */,
 				D3E3003F196D30B200B5BD4A /* Function.swift in Sources */,
+				B07EE7AF1A7CA92A002CA98E /* ThirdNavViewController.swift in Sources */,
 				D30DA92E196E7A6D0060107A /* Generics.swift in Sources */,
 				D30DA910196E721F0060107A /* Closures.swift in Sources */,
 				B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */,
