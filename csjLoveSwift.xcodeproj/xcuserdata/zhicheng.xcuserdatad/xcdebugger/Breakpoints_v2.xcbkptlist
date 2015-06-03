@@ -14,7 +14,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
-            endingLineNumber = "40">
+            endingLineNumber = "40"
+            landmarkName = "loadDataAsy()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,6 +64,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "csjLoveSwift.FirstViewController.tableView (csjLoveSwift.FirstViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, didSelectRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; ()"
                   moduleName = "csjLoveSwift"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhicheng/Desktop/GitHub%20Clone/csjLoveSwift/csjLoveSwift/CLASS/First/FirstViewController.swift"
                   timestampString = "426067267.987638"
                   startingColumnNumber = "9223372036854775807"
@@ -76,6 +79,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "csjLoveSwift.FirstViewController.tableView (csjLoveSwift.FirstViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, didSelectRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; ()"
                   moduleName = "csjLoveSwift"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhicheng/Desktop/GitHub%20Clone/csjLoveSwift/csjLoveSwift/CLASS/First/FirstViewController.swift"
                   timestampString = "426067267.988222"
                   startingColumnNumber = "9223372036854775807"

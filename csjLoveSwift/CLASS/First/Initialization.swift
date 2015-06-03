@@ -71,7 +71,7 @@ class Initialization: CSJSwiftViewController {
         //下面的例子定义了一个结构称为颜色,和三个常量属性称为红、绿、蓝。这些属性存储一个值在0.0和1.0之间显示红、绿、蓝的颜色。
         //颜色提供了一个初始化器和三个适当命名的参数类型
         struct Color{
-            let red = 0.0 ,green = 0.0 ,blue = 0.0
+            var red = 0.0 ,green = 0.0 ,blue = 0.0
             init (red:Double, green:Double, blue:Double){
                 self.red  = red
                 self.green = green

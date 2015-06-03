@@ -117,64 +117,56 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
 //    }
     
 //NSFetchedResultsControllerDelegate
-    func controllerWillChangeContent(controller: NSFetchedResultsController!) {
-        if (!changeIsUserDriven){
-            self.tableView.beginUpdates()
-        }
+    
+    //20150603 修改fetchedResultsController
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
     }
     
     
     //http://stackoverflow.com/questions/24983228/xcode-6-beta-4-use-of-unresolved-identifier-nsfetchedresultschangeinsert
     
-    func controller(controller: NSFetchedResultsController!, didChangeSection sectionInfo: NSFetchedResultsSectionInfo!, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        if (!changeIsUserDriven){
-            switch type {
-            case .Insert:
-                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                break
-                
-            case .Delete:
-                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                break
-                
-            default:
-                break
-            }
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        switch type {
+        case .Insert:
+            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            break
+            
+        case .Delete:
+            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            break
+            
+        default:
+            break
         }
     }
     
-    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType, newIndexPath : NSIndexPath!) {
-        if (!changeIsUserDriven)
-        {
-            switch type {
-            case .Insert:
-                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                break;
-                
-            case .Delete:
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                break;
-                
-            case .Update:
-                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                break;
-                
-            case .Move:
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: CSJSwift_UITableViewRowAnimation)
-                break;
-                
-            default:
-                break
-            }
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+//    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType, newIndexPath : NSIndexPath!) {
+        switch type {
+        case .Insert:
+            self.tableView.insertRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            break
+        case .Delete:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            break
+        case .Update:
+            self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            break
+        case .Move:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            self.tableView.insertRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+            break
+        default:
+            break
         }
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController!)
-    {
-        if (!changeIsUserDriven) {
-            self.tableView.endUpdates()
-        }
+    func controllerDidChangeContent(controller: NSFetchedResultsController){
+//        self.tableView.endUpdates()
+        UIView.setAnimationsEnabled(false)
+        self.tableView.endUpdates()
+        UIView.setAnimationsEnabled(true)
     }
     
     /*

@@ -45,13 +45,13 @@ class TypeCasting: CSJSwiftViewController {
         
         for elem in myArray{
             if elem is MyFriend{//判断elem是否是MyFriend类型
-                let obj = elem as MyFriend //将obj视为elem向下转型为MyFriend
+                let obj = elem as! MyFriend //将obj视为elem向下转型为MyFriend
                 println("name: \(obj.name) level: \(obj.level)")
                 continue
             }
             
             if elem is MySelf{
-                let obj = elem as MySelf
+                let obj = elem as! MySelf
                 println("name \(obj.name) level:\(obj.height)")
                 continue
             }

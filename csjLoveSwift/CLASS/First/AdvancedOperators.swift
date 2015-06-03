@@ -39,7 +39,8 @@ class AdvancedOperators: CSJSwiftViewController {
         potentialOverflow &+ 1
         
 //        var a = Int.max /0 //报错
-        var b = Int.max &/ 0
+        //删除 &/
+//        var b = Int.max &/ 0
         
         var willOverflow = UInt8.max
         willOverflow = willOverflow &+ 1
@@ -58,7 +59,8 @@ class AdvancedOperators: CSJSwiftViewController {
         
         //除零，Division by Zero
         let x = 1
-        let y = x &/ 0//y is equal to 0
+        //20150603 删除 &/
+//        let y = x &/ 0//y is equal to 0
         
         //优先级和结合性，Precedence and Associativity
         var PandA = 2 + 3 * 4 % 5

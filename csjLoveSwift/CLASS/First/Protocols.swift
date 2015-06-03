@@ -137,7 +137,8 @@ protocol SomeProtocol{
 
 protocol AnotherProtocol {
     //即使type property要求与static关键字前缀时实现struct或者enum
-    class var somTypeProperty: Int {get set} //类属性
+//    class var 
+    static var somTypeProperty: Int {get set} //类属性
 }
 
 //这个FullyNamed协议定义了完全限定的名字。它没有指定什么样的事情必须做。
@@ -166,7 +167,10 @@ class Starship: FullyNamed {
 
 //方法要求
 protocol SomeNewProtocol{
-    class func someTypeMethod() //类方法
+    //swift 1.2 Xcode 6.3
+//    class func someTypeMethod() //类方法
+    static func someTypeMethod() //类方法
+
 }
 
 protocol RandomNumberGenerator{
@@ -365,13 +369,16 @@ func wishHappyBirthday(celebrator : protocol<Named,Aged>){
 class Circle: HasArea {
     let pi = 3.1415927
     var radius: Double
-    var area: Double { return pi * radius * radius}
+    //20150603 @objc
+    @objc var area: Double { return pi * radius * radius}
     init (radius: Double){
         self.radius = radius
     }
 }
 class Country: HasArea {
-    var area: Double
+    //20150603
+    //    var area: Double
+    @objc var area: Double
     init (area: Double){ self.area = area }
 }
 class Animal {
@@ -391,7 +398,7 @@ class Animal {
     func increment() {
         if let amount = dataSource?.incrementForCount?(count){
             count += amount
-        }else if let amount = dataSource?.fixedIncrement? {
+        }else if let amount = dataSource?.fixedIncrement {
             count += amount
         }
     }

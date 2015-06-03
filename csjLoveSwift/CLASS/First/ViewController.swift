@@ -39,11 +39,11 @@ class ViewController: UIViewController {
     func loadDataAsy(){
         var url = "http://itunes.apple.com/lookup?id=853116593"
         CSJSwiftRequest.requestWithURLbyiOS7Later(url,completionHandler:{data in
-            if data as NSObject == NSNull(){
+            if data as! NSObject == NSNull(){
                 CSJSwiftLog.showAlertView("提示",message:"请求连接错误")
                 return
             }
-            var arr = data["results"] as NSArray
+            var arr = data["results"] as! NSArray
             NSLog("arr = \(arr)")
 //            var dict = data as NSDictionary
 //            NSLog("dict = \(dict)")
@@ -53,11 +53,11 @@ class ViewController: UIViewController {
     func loadDataSy(){
         var url = "http://itunes.apple.com/lookup?id=853116593"
         CSJSwiftRequest.requestSynchronousWithURL(url,completionHandler:{data in
-            if data as NSObject == NSNull(){
+            if data as! NSObject == NSNull(){
                 CSJSwiftLog.showAlertView("提示",message:"请求连接错误")
                 return
             }
-            var arr = data["results"] as NSArray
+            var arr = data["results"] as! NSArray
             NSLog("arr = \(arr)")
         })
     }
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonOnePressed(sender : AnyObject) {
         //xcode6 beta7 添加!
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FirstBetaViewController") as FirstBetaViewController
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FirstBetaViewController") as! FirstBetaViewController
         vc.hidesBottomBarWhenPushed = true
         self.navigationController!.pushViewController(vc,animated:true)
     }

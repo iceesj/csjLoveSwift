@@ -54,8 +54,9 @@ class CSJSwiftRequest: NSObject {
         //before xcode6 beta6
 //        if responseData{
         if (responseData != nil){
-            let jsonData = NSJSONSerialization.JSONObjectWithData(responseData!, options:NSJSONReadingOptions.MutableLeaves, error: nil) as NSDictionary
-            completionHandler(data:jsonData)
+            //20150603
+            let jsonData: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData!, options:NSJSONReadingOptions.MutableLeaves, error: nil)
+            completionHandler(data:jsonData!)
         }else{
             println("同步请求错误")
         }
@@ -81,7 +82,7 @@ class CSJSwiftRequest: NSObject {
                     completionHandler(data:NSNull())
                 })
             }else{
-                let jsonData = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableLeaves, error: nil) as NSDictionary
+                let jsonData = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableLeaves, error: nil) as! NSDictionary
                 dispatch_async(dispatch_get_main_queue(),{
                     completionHandler(data:jsonData)
                 })
@@ -108,7 +109,7 @@ class CSJSwiftRequest: NSObject {
                     completionHandler(data:NSNull())
                 })
             }else{
-                let jsonData = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableLeaves, error: nil) as NSDictionary
+                let jsonData = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableLeaves, error: nil) as! NSDictionary
                 dispatch_async(dispatch_get_main_queue(),{
                     completionHandler(data:jsonData)
                 })
@@ -120,7 +121,7 @@ class CSJSwiftRequest: NSObject {
     class func parseJSON(inputData:NSData) -> NSDictionary{
         var error:NSError?
 //NSJSONReadingOptions.MutableLeaves,,NSJSONReadingOptions.MutableContainers
-        var dictJSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options:NSJSONReadingOptions.MutableLeaves, error:&error) as NSDictionary
+        var dictJSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options:NSJSONReadingOptions.MutableLeaves, error:&error) as! NSDictionary
         //Xcode6 beta5
         if error != nil {
             NSLog("Error parsing JSON")

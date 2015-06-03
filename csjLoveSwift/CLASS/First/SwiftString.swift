@@ -51,7 +51,8 @@ class SwiftString: CSJSwiftViewController {
         
         //字符个数 swift用countElements
         let myLongString = "Hello World~"
-        println("myLongString has \(countElements(myLongString)) characters")
+        //20150603 弃用countElements，使用count
+        println("myLongString has \(count(myLongString)) characters")
         
         //包含
         let myStringOne = "你猜"
