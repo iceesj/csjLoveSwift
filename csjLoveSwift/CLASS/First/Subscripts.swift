@@ -23,7 +23,7 @@ class Subscripts: CSJSwiftViewController {
     }
     
     func subscriptsMethod(){
-        println("----下标----")
+        print("----下标----")
         
         //下标允许我们为class，struct，enum定义下标，以更便捷的方式访问属性。
         //比如，Array和Dictionary都是结构和改写struct中保存的数据。
@@ -56,14 +56,14 @@ class Subscripts: CSJSwiftViewController {
         struct TimesTable{
             let multiplier: Int
             subscript (index : Int) -> Int{
-                println(multiplier)//3
-                println(index)//6
-                println(multiplier * index)//18
+                print(multiplier)//3
+                print(index)//6
+                print(multiplier * index)//18
                 return multiplier * index
             }
         }
         let threeTimesTable = TimesTable(multiplier: 3)
-        println("six times three is \(threeTimesTable[6])")
+        print("six times three is \(threeTimesTable[6])")
         
         //多维数组，二维数组，下标选项（Subscript Options）
         struct Matrix{

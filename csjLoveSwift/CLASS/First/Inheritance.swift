@@ -23,7 +23,7 @@ class Inheritance: CSJSwiftViewController {
     }
     
     func inheritanceMethod(){
-        println("----继承----")
+        print("----继承----")
         
         //一个类可以从其他类继承方法，属性以及一些特征。被集成的类叫父类，那另一个就是子类
         //Vehicle是一个基类
@@ -57,7 +57,7 @@ class Inheritance: CSJSwiftViewController {
             }
         }
         let carTwo = CarTwo() //执行CSJInherTwo的init方法
-        println("inher = \(carTwo.description())")//description从父类继承来的，在CSJInherTwo并没有定义
+        print("inher = \(carTwo.description())")//description从父类继承来的，在CSJInherTwo并没有定义
         
         //方法重写 Overriding
         class CarThree : Vehicle{
@@ -73,7 +73,7 @@ class Inheritance: CSJSwiftViewController {
             }
         }
         let carThree = CarThree()
-        println("carThree : \(carThree.description())")
+        print("carThree : \(carThree.description())")
         
         //也可以对父类的set和get方法进行重写，但是必须写明属性名和属性类型
         //这样重写是完全忽略这个属性在父类中定义成用于计算或者用于存储的，在子类中提供的set和get方法，可以把父类的“只读”型属性重写成“读写“属性
@@ -84,14 +84,14 @@ class Inheritance: CSJSwiftViewController {
                 return super.speed
             }
             set{
-                println("car must speed limited lower than 100 mph")
+                print("car must speed limited lower than 100 mph")
                 super.speed = min(newValue, 40.0)
             }
             }
         }
         let limitedCar = CarSpeedLimited()
 //        limitedCar.speed = 60.0 //貌似Xcode6 beta3 bug了 报错Ambiguous use of 'speed'
-        println("SpeedLimitedCar: \(limitedCar.description())")
+        print("SpeedLimitedCar: \(limitedCar.description())")
         
         //overriding property observers
         //不能为一个不能改变值的属性重写属性的监听者，比如继承来的只读类型属性

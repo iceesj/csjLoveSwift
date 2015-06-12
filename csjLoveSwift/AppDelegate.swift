@@ -53,10 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 func fenleiDataResource() -> Array<AnyObject>{
 //    var dictArray = Array<Dictionary<String,String>>()
     var dictArray = [Dictionary<String, String>]()
-    var dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
-    var dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
+    let dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
+    let dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
     dictArray = [dict1,dict2]
-    println("dictArray = \(dictArray)")
+    print("dictArray = \(dictArray)")
     return dictArray
 }
 
@@ -64,8 +64,8 @@ func fenleiDataResource() -> Array<AnyObject>{
 func fenleiDataIntoDocument() {
 //    var dictArray = fenleiDataResource()
     var dictArray = [Dictionary<String, String>]()
-    var dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
-    var dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
+    let dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
+    let dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
     dictArray = [dict1,dict2]
 //        Testperson.MR_importFromArray(dictArray)
 //    MagicalRecord.saveWithBlock({ (NSManagedObjectContext) -> Void in
@@ -78,7 +78,7 @@ func fenleiDataIntoDocument() {
     let testperson : Testperson = Testperson.MR_createEntity() as Testperson
     for (index, value) in enumerate(dictArray) {
         var item = dictArray[index]
-        println("item = \(item)")
+        print("item = \(item)")
         testperson.testpersonID = item["onlyID"]
         testperson.lastName  = item["lastName"]
         testperson.firstName = item["firstName"]

@@ -37,18 +37,21 @@ class SwiftBasis: CSJSwiftViewController {
     func optionalBiji(){
         //可选项optional
         let myNumber = "123"
-        myNumber.toInt()
+        //Swift 1.2
+//        myNumber.toInt()
+        //Swift 2
+        Int(myNumber)
         let myNumber1 = "Hello kitty"
-        myNumber1.toInt()
+        Int(myNumber1)
         //不能编译，crash!!! fatal error: Can't unwrap Optional.None
-        //        println("myNumber1's value is \(myNumber1.toInt()!)")
+        //        print("myNumber1's value is \(myNumber1.toInt()!)")
         //可以编译，no crash
-        println("myNumber's value is \(myNumber.toInt()!)")
+        print("myNumber's value is \(Int(myNumber)!)")
         //可这样使用
-        if let myActualNumber = myNumber1.toInt(){
-            println("myNumber1's value is \(myActualNumber)")
+        if let myActualNumber = Int(myNumber1){
+            print("myNumber1's value is \(myActualNumber)")
         }else{
-            println("myNumber1 could not be converted to an integer")
+            print("myNumber1 could not be converted to an integer")
         }
         
         
@@ -62,20 +65,21 @@ class SwiftBasis: CSJSwiftViewController {
         }else{
             NSLog("strValue 无值")// strValue = nil
         }
-        println("strValue = \(strValue)")
+        print("strValue = \(strValue)")
         //Optional wrap后的值
         if let str = strValue{
             let hashValue = str.hashValue
-            println("hashValue = \(hashValue)")
+            print("hashValue = \(hashValue)")
         }
         */
         //同上
         //        let hashValue = strValue?.hashValue
-        //        println("hashValue \(hashValue)")
+        //        print("hashValue \(hashValue)")
         
         
         //！
-        var myLabelText : String! = "nihao"
+        let myLabelText : String! = "nihao"
+        print(myLabelText)
         //等同于
         //        var myLabelTextOne : ImplicitlyUnwrappedOptional<String> = "nihao"
     }
@@ -84,15 +88,17 @@ class SwiftBasis: CSJSwiftViewController {
     func firstBiji () {
         //let声明常量 var声明变量
         let myLet = 1
-        println("常量myLet = \(myLet)")
+        print("常量myLet = \(myLet)")
         var myVar = 10
         myVar = 1
-        println("变量myVar = \(myVar)")
+        print("变量myVar = \(myVar)")
         
         //支持连续的变量声明
-        var myTestOne = 1,myTestTwo = 2,myTestThree = 3
-        var myIntVar:Int = 1
-        var myStringValue :String = "你好"
+        let myTestOne = 1,myTestTwo = 2,myTestThree = 3
+        print(myTestOne,myTestTwo,myTestThree)
+        let myIntVar:Int = 1
+        let myStringValue :String = "你好"
+        print(String(myIntVar) + myStringValue)
         
         /*
         /*
@@ -101,22 +107,22 @@ class SwiftBasis: CSJSwiftViewController {
         */
         
         //分号
-        println("分号测试1");println("分号测试2")
+        print("分号测试1");print("分号测试2")
         
         
         //数据类型转换
         let myPi = 3.1415
         let myInt = 1
         let myjia = myPi + Double(myInt)
-        println("数据类型转换 = \(myjia)")
+        print("数据类型转换 = \(myjia)")
         let myUInt16Value:UInt16 = 2_000
         let myUInt8Value:UInt8 = 1
         let myjia2 = myUInt16Value + UInt16(myUInt8Value)
-        println("数据类型转换2 = \(myjia2)")
+        print("数据类型转换2 = \(myjia2)")
         let myText = "The width is"
         let myTextNum = 94
         let myTextAddNum = myText + String(myTextNum)
-        println("数据类型转换2 = \(myTextAddNum)")
+        print("数据类型转换2 = \(myTextAddNum)")
         
         
         //类型别名
@@ -128,15 +134,15 @@ class SwiftBasis: CSJSwiftViewController {
         //元组
         let http404Error = (404,"Not Found")
         //组员1
-        println("\(http404Error.0)")
+        print("\(http404Error.0)")
         //组员2
-        println("\(http404Error.1)")
+        print("\(http404Error.1)")
         
         let newHttp404Error = (statusCode:404, description:"Not Found")
         //新组员1
-        println("\(newHttp404Error.statusCode)")
+        print("\(newHttp404Error.statusCode)")
         //新组员2
-        println("\(newHttp404Error.description)")
+        print("\(newHttp404Error.description)")
         
         
         //控制流例子
@@ -149,11 +155,11 @@ class SwiftBasis: CSJSwiftViewController {
                 teamSorce += 1
             }
         }
-        println("teamSorce = \(teamSorce)")//3+1+3+3+1=11
+        print("teamSorce = \(teamSorce)")//3+1+3+3+1=11
         
         var optionalString :String? = "Hello"
         optionalString == nil
-        println("optionalString = \(optionalString)")
+        print("optionalString = \(optionalString)")
         var optionalName :String? = "John Appleseed"
         //        optionalName = nil
         var greeting = "Hello!"
@@ -162,7 +168,7 @@ class SwiftBasis: CSJSwiftViewController {
         }else{
             greeting = "bye!"
         }
-        println("greeting =  \(greeting)")
+        print("greeting =  \(greeting)")
         
         //断言
         let testAge = -3

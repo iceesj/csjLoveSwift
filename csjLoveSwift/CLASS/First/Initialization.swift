@@ -24,7 +24,7 @@ class Initialization: CSJSwiftViewController {
     }
     
     func initializationMethod(){
-        println("----构造过程----")
+        print("----构造过程----")
         
         //生成class，struct，enum等实例的准备过程叫做构造过程。
         //通常定义一个方法来完成，这个方法叫做，构造器。
@@ -42,7 +42,7 @@ class Initialization: CSJSwiftViewController {
             }
         }
         var f = Fahrenheit()
-        println("The default temperature is \(f.temperature)° Fahrenheit")
+        print("The default temperature is \(f.temperature)° Fahrenheit")
         // prints "The default temperature is 32.0° Fahrenheit"
         //直接定义
         struct FahreheitTwo{
@@ -90,13 +90,13 @@ class Initialization: CSJSwiftViewController {
                 self.text = text
             }
             func ask(){
-                println(text)
+                print(text)
             }
         }
         let cheeseQuestion = SurveyQuestion(text:"Do you like cheese?")
         cheeseQuestion.ask()
         cheeseQuestion.response = "Yes,I do like cheese."
-        println(cheeseQuestion.response)//输出结果
+        print(cheeseQuestion.response)//输出结果
         
         //在初始化期间修改常量属性，Modifying Constant Properties During Initialization
         class SurveyQuestionTwo {
@@ -107,7 +107,7 @@ class Initialization: CSJSwiftViewController {
             }
             
             func ask() {
-                println(text)
+                print(text)
             }
         }
         let beetsQuestion = SurveyQuestion(text: "How about beets")
@@ -162,7 +162,7 @@ class Initialization: CSJSwiftViewController {
         }
         //Rect中有3个构造器，第一个是空{}，当这个构造器被调用的时候：
 //        let rect = Rect()
-//        println(rect)//origin (0.0 ,0.0) ,size (0.0, 0.0)
+//        print(rect)//origin (0.0 ,0.0) ,size (0.0, 0.0)
         let originRect = Rect(origin: Point(x:2.0,y:2.0), size: Size(width: 5.0, height: 5.0))
         let centerRect = Rect(center: Point(x: 4.0, y: 4.0), size: Size(width: 3.0, height: 3.0))
         
@@ -240,7 +240,7 @@ class Initialization: CSJSwiftViewController {
             }
         }
         let myClass = MyClass()
-        println("myClass.getNumbers =  \(myClass.getNumbers())")//获取到了MyClass的myNumbers数组
+        print("myClass.getNumbers =  \(myClass.getNumbers())")//获取到了MyClass的myNumbers数组
         
         
         

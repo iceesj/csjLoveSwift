@@ -23,7 +23,7 @@ class SwiftARC: CSJSwiftViewController {
     }
     
     func swiftARCMethod(){
-        println("----ARC----")
+        print("----ARC----")
         
         //ARC机制会跟踪每一个实例正在被多少属性，常量和变量所引用，只要这个实例的引用数不为0，那么这个实例就不会被销毁。那么它的deinit也不会被调用
         //实例之间的循环引用是怎么发生的。如果消除循环引用导致内存泄露
@@ -32,10 +32,10 @@ class SwiftARC: CSJSwiftViewController {
             let name : String
             init (name : String) {
                 self.name = name
-                println("\(name) is being initialized")
+                print("\(name) is being initialized")
             }
             deinit {
-                println("\(name) is being deinitialized")
+                print("\(name) is being deinitialized")
             }
         }
         
@@ -66,7 +66,7 @@ class SwiftARC: CSJSwiftViewController {
             var apartment: Apartment?
             deinit {
 //                apartment = nil;
-                println("\(name) is being deinitialized")
+                print("\(name) is being deinitialized")
             }
         }
         
@@ -78,7 +78,7 @@ class SwiftARC: CSJSwiftViewController {
             weak var tenant : Person?
             deinit {
 //                tenant = nil;
-                println("Apartment #\(number) is being deinitialized")
+                print("Apartment #\(number) is being deinitialized")
             }
         }
         //上2个类分别都有另一个类的optional类型的变量。结果就是互相持有对方
@@ -110,7 +110,7 @@ class SwiftARC: CSJSwiftViewController {
             }
             
             deinit {
-                println("\(name) is being deinitialized")
+                print("\(name) is being deinitialized")
             }
         }
         class CreditCard{
@@ -122,7 +122,7 @@ class SwiftARC: CSJSwiftViewController {
                 self.customer = customer
             }
             deinit {
-                 println("Card #\(number) is being deinitialized")
+                 print("Card #\(number) is being deinitialized")
             }
         }
         var johnOne : Customer?
@@ -151,7 +151,7 @@ class SwiftARC: CSJSwiftViewController {
             }
             
             deinit {
-                println("\(name) is being deinitialized")
+                print("\(name) is being deinitialized")
             }
         }
         */

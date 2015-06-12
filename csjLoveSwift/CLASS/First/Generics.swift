@@ -23,7 +23,7 @@ class Generics: CSJSwiftViewController {
     }
     
     func genericsMethod(){
-        println("----泛型----")
+        print("----泛型----")
         
         //泛型是为了解决在针对不同数据类型，而做了同一种功能操作导致的每个类型都要写一份代码的问题。有了泛型，我们可以只写一份逻辑代码，而适应于不同的数据类型。
         
@@ -31,11 +31,11 @@ class Generics: CSJSwiftViewController {
         var someInt = 3
         var anotherInt = 107
         swapTwoInts(&someInt, b: &anotherInt)
-        println("someInt is now \(someInt),and anotherInt is now \(anotherInt)")
+        print("someInt is now \(someInt),and anotherInt is now \(anotherInt)")
         
         //泛型二阶段
-        var someIntTwo = 3
-        var anotherIntTwo = 107
+//        var someIntTwo = 3
+//        var anotherIntTwo = 107
         swapTwoValues(&someInt, b: &anotherInt)
         var someString = "hello"
         var anotherString = "world"
@@ -49,22 +49,23 @@ class Generics: CSJSwiftViewController {
         stackOfStrings.push("tres")
         stackOfStrings.push("cuatro")
         
-        let fromTheTop = stackOfStrings.pop()
+//        let fromTheTop = stackOfStrings.pop()
         
         //扩展一个泛型类型，Extending a Generic Type
         if let topItem = stackOfStrings.topItem{
-            println("The top item on the stack is \(topItem).")
+            print("The top item on the stack is \(topItem).")
         }
         
         
         //类型约束
         let strings = ["cat","dog","llama","parakeet","terrapin"]
         if let foundIndex = findStringIndex(strings, valueToFind: "llama"){
-            println("The index of llama is \(foundIndex)")
+            print("The index of llama is \(foundIndex)")
         }
         let doubleIndex = findIndex([3.14159, 0.1, 0.25], valueToFind:9.3)
         let stringIndex = findIndex(["Mike","Malcolm","Andrea"], valueToFind:"Andrea")
-        
+        print(doubleIndex)
+        print(stringIndex)
         
         //where语句
 //        whereMethod()
@@ -79,9 +80,9 @@ class Generics: CSJSwiftViewController {
         
         var arrayOfStrings = ["uno","dos","tres"]
         if allItemsMatch(stackOfStrings, arrayOfStrings){
-            println("All items match.")
+            print("All items match.")
         }else{
-            println("Not all item match")
+            print("Not all item match")
         }
     }
     */
@@ -117,7 +118,10 @@ class Generics: CSJSwiftViewController {
     
     //类型约束，Type Constraints
     func findStringIndex(array: [String], valueToFind: String) -> Int? {
-        for (index, value) in enumerate(array){
+        //Swift 1.2
+//        for (index, value) in enumerate(array){
+        //Swift 2
+        for (index, value) in array.enumerate(){
             if value == valueToFind{
                 return index
             }
@@ -130,7 +134,7 @@ class Generics: CSJSwiftViewController {
     //func findIndex <T> (array: [T], valueToFind: T) -> Int? {
     //Error:'T' is not convertible to 'MirrorDisposition'
     func findIndex <T: Equatable> (array: [T], valueToFind: T) -> Int? {
-        for (index, value) in enumerate(array) {
+        for (index, value) in array.enumerate() {
             if value == valueToFind {
                 return index
             }

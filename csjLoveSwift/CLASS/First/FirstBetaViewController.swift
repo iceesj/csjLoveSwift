@@ -45,7 +45,7 @@ class FirstBetaViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Xcode 6 beta1&2
 //        let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
         //swift 1.1
         cell.textLabel?.text = baseArray[indexPath.row]
         return cell
@@ -60,97 +60,97 @@ class FirstBetaViewController: UITableViewController {
         //xcode6 beta7 所有navigationController 变成 navigationController?
         var data = baseArray[indexPath.row]
         if data == "wwdcRoom102"{
-            var wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
+            let wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
 //            self.navigationController.pushViewController(wwdcVC, animated:true)
             self.navigationController!.pushViewController(wwdcVC, animated: true)
         }
         else if data == "基础" {
-            var basisVC = SwiftBasis(nibName: nil, bundle: nil)
+            let basisVC = SwiftBasis(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(basisVC, animated: true)
         }
         else if (data == "字符和字符串"){
-            var StringVC = SwiftString(nibName: nil,bundle: nil)
+            let StringVC = SwiftString(nibName: nil,bundle: nil)
             self.navigationController!.pushViewController(StringVC, animated:true)
         }
         else if (data == "集合类型"){
-            var commentsVC = ArrayAndDict(nibName :nil, bundle: nil)
+            let commentsVC = ArrayAndDict(nibName :nil, bundle: nil)
             self.navigationController!.pushViewController(commentsVC, animated:true)
         }
         else if (data == "控制流[控制语句]"){
-            var controlflow = ControlFlow(nibName: nil, bundle: nil)
+            let controlflow = ControlFlow(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(controlflow, animated:true)
         }
         else if (data == "函数"){
-            var functionVC = Function(nibName: nil, bundle: nil)
+            let functionVC = Function(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(functionVC, animated:true)
         }
         else if (data == "闭包"){
-            var bibaoVC = Closures(nibName: nil, bundle: nil)
+            let bibaoVC = Closures(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(bibaoVC, animated:true)
         }
         else if (data == "枚举"){
-            var enumVC = Enumerations(nibName: nil, bundle: nil)
+            let enumVC = Enumerations(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(enumVC, animated: true)
         }
         else if (data == "类和结构体"){
-            var classAndStructuresVC = ClassesAndStructures(nibName: nil, bundle: nil)
+            let classAndStructuresVC = ClassesAndStructures(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(classAndStructuresVC, animated:true
             )
         }
         else if (data == "属性"){
-            var propertyVC = Properties(nibName: nil, bundle: nil)
+            let propertyVC = Properties(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(propertyVC, animated:true)
         }
         else if (data == "方法"){
-            var methodVC = Methods(nibName: nil, bundle: nil)
+            let methodVC = Methods(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(methodVC, animated:true)
         }
         else if (data == "下标"){
-            var subscriptsVC = Subscripts(nibName: nil, bundle: nil)
+            let subscriptsVC = Subscripts(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(subscriptsVC, animated:true)
         }
         else if (data == "继承"){
-            var inherVC = Inheritance(nibName: nil, bundle: nil)
+            let inherVC = Inheritance(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(inherVC, animated:true)
         }
         else if (data == "构造过程"){
-            var initVC = Initialization(nibName: nil, bundle: nil)
+            let initVC = Initialization(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(initVC, animated:true)
         }
         else if (data == "析构过程"){
-            var deinitVC = Deinitialization(nibName: nil, bundle: nil)
+            let deinitVC = Deinitialization(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(deinitVC, animated:true)
         }
         else if (data == "ARC"){
-            var arcVC = SwiftARC(nibName: nil, bundle: nil)
+            let arcVC = SwiftARC(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(arcVC, animated:true)
         }
         else if (data == "可选链"){
-            var optionalChainingVC = OptionalChaining(nibName: nil, bundle: nil)
+            let optionalChainingVC = OptionalChaining(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(optionalChainingVC, animated:true)
         }
         else if (data == "类型转换"){
-            var typeCastingVC = TypeCasting(nibName: nil, bundle: nil)
+            let typeCastingVC = TypeCasting(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(typeCastingVC, animated:true)
         }
         else if (data == "嵌套类型"){
-            var nestedTypesVC = NestedTypes(nibName: nil, bundle: nil)
+            let nestedTypesVC = NestedTypes(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(nestedTypesVC, animated:true)
         }
         else if (data == "扩展"){
-            var extensionsVC = Extensions(nibName: nil, bundle: nil)
+            let extensionsVC = Extensions(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(extensionsVC, animated:true)
         }
         else if (data == "协议"){
-            var protocolsVC = Protocols(nibName: nil, bundle: nil)
+            let protocolsVC = Protocols(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(protocolsVC, animated:true)
         }
         else if (data == "泛型"){
-            var genericsVC = Generics(nibName: nil, bundle: nil)
+            let genericsVC = Generics(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(genericsVC, animated:true)
         }
         else if (data == "高级运算符"){
-            var advancedVC = AdvancedOperators(nibName: nil, bundle: nil)
+            let advancedVC = AdvancedOperators(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(advancedVC, animated:true)
         }
         

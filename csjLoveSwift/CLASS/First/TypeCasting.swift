@@ -23,7 +23,7 @@ class TypeCasting: CSJSwiftViewController {
     }
     
     func typeCastingMethod(){
-        println("----类型转换----")
+        print("----类型转换----")
         
         //swift 提供了 is 和 as 两个操作符，用以检测值的类型或者转换它的类型
         class MyBasic{
@@ -46,19 +46,19 @@ class TypeCasting: CSJSwiftViewController {
         for elem in myArray{
             if elem is MyFriend{//判断elem是否是MyFriend类型
                 let obj = elem as! MyFriend //将obj视为elem向下转型为MyFriend
-                println("name: \(obj.name) level: \(obj.level)")
+                print("name: \(obj.name) level: \(obj.level)")
                 continue
             }
             
             if elem is MySelf{
                 let obj = elem as! MySelf
-                println("name \(obj.name) level:\(obj.height)")
+                print("name \(obj.name) level:\(obj.height)")
                 continue
             }
         }
         //判断了类型之后转型，放在一条语句执行
         let obj = myArray[0] as? MySelf
-        println("obj = \(obj)")
+        print("obj = \(obj)")
         
         
         //Any和AnyObject
@@ -72,7 +72,7 @@ class TypeCasting: CSJSwiftViewController {
         //将数组myNewArray看作是MyFriend类型的数组
         //xcode6 beta7 error
 //        for elem in myNewArray as [MyFriend] {
-//            println("name \(elem.name) level:\(elem.level)")
+//            print("name \(elem.name) level:\(elem.level)")
 //        }
         
         
@@ -89,23 +89,23 @@ class TypeCasting: CSJSwiftViewController {
         for thing in things {
             switch thing {
             case 0 as Int:
-                println("zero as an Int")
+                print("zero as an Int")
             case 0 as Double:
-                println("zero as a Double")
+                print("zero as a Double")
             case let someInt as Int:
-                println("an integer value of \(someInt)")
+                print("an integer value of \(someInt)")
             case let someDouble as Double where someDouble > 0:
-                println("a positive double value of \(someDouble)")
+                print("a positive double value of \(someDouble)")
             case is Double:
-                println("some other double value that I don't want to print")
+                print("some other double value that I don't want to print")
             case let someString as String:
-                println("a string value of \"\(someString)\"")
+                print("a string value of \"\(someString)\"")
             case let (x, y) as (Double, Double):
-                println("an (x, y) point at \(x), \(y)")
+                print("an (x, y) point at \(x), \(y)")
             case let movie as Movie:
-                println("a movie called '\(movie.name)', dir. \(movie.director)")
+                print("a movie called '\(movie.name)', dir. \(movie.director)")
             default:
-                println("something else")
+                print("something else")
             }
         }
         // zero as an Int

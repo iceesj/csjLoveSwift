@@ -21,7 +21,7 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
         super.viewDidLoad()
         setupFetchedResultsController()
 //        coredataTestperson = Testperson.MR_findAll()
-//        println("coredataTestperson = \(coredataTestperson)")
+//        print("coredataTestperson = \(coredataTestperson)")
         
     }
     override func didReceiveMemoryWarning() {

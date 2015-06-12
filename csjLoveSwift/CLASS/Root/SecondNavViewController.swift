@@ -24,7 +24,7 @@ class SecondNavViewController: UINavigationController {
         // Do any additional setup after loading the view.
         var version: NSString = UIDevice.currentDevice().systemVersion;
         if version.intValue > 7 {
-            //            println("设备高于iOS7 \(version)")
+            //            print("设备高于iOS7 \(version)")
             UITabBar.appearance().translucent = false
         }
 

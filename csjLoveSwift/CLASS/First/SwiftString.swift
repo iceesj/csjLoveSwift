@@ -20,39 +20,43 @@ class SwiftString: CSJSwiftViewController {
         self.navigationItem.title = "字符和字符串"
         
         let wiseWords = "\"Imagination is more important than knowledge\" - Einstein"
-        println("\(wiseWords)")
+        print("\(wiseWords)")
         // "Imagination is more important than knowledge" - Einstein
         
 //        let dollarSign = "\x24"        //$ ,Unicode scalar U+0024
         let dollarSign = "\u{24}"
-        println("dollarSign : \(dollarSign)")
+        print("dollarSign : \(dollarSign)")
         
         let blackHeart = "\u{2665}"      //♥ ,Unicode scalar U+2665
-        println("blackHeart : \(blackHeart)")
+        print("blackHeart : \(blackHeart)")
         
         //xcode6 beta 1,2,3
 //        let sparklingHeart = "\U0001F496"
         //xcode6 beta4
         let sparklingHeart = "\u{0001F496}"
         //💖
-        println("sparklingHeart : \(sparklingHeart)")
+        print("sparklingHeart : \(sparklingHeart)")
         
         //空字符串
-        var emptyString = ""
-        var anotherEmptyString = String()
+        let emptyString = ""
+        let anotherEmptyString = String()
+        print(emptyString)
+        print(anotherEmptyString)
         
         if emptyString.isEmpty{
-            println("空")
+            print("空")
         }
         
         var myString = "hello"
         myString += "world"
-        println("myString : \(myString)")
+        print("myString : \(myString)")
         
         //字符个数 swift用countElements
-        let myLongString = "Hello World~"
+//        let myLongString = "Hello World~"
         //20150603 弃用countElements，使用count
-        println("myLongString has \(count(myLongString)) characters")
+        //Swift 2 删除
+//        print("myLongString has \(count(myLongString)) characters")
+        
         
         //包含
         let myStringOne = "你猜"
@@ -60,8 +64,8 @@ class SwiftString: CSJSwiftViewController {
         
         //大小写转换
         let myWord = "Hellow World"
-        println(myWord.uppercaseString)   //HELLOW WORLD
-        println(myWord.lowercaseString)    //hellow world
+        print(myWord.uppercaseString)   //HELLOW WORLD
+        print(myWord.lowercaseString)    //hellow world
         
         //编码
         let myBianma = "apple"

@@ -23,7 +23,7 @@ class Enumerations: CSJSwiftViewController {
     }
     
     func enumMethod(){
-        println("----枚举----")
+        print("----枚举----")
         
         //首字母大写
         enum SomeEnumeration{
@@ -57,22 +57,22 @@ class Enumerations: CSJSwiftViewController {
         //原因可能是因为编译器认为我的变量在函数内部一直是不变吧
         switch directionToHead {
             case .North:
-                println("Lots of planets have a north")
+                print("Lots of planets have a north")
             case .South:
-                println("Watch out for penguins")
+                print("Watch out for penguins")
             case .East:
-                println("Where the sun rises")
+                print("Where the sun rises")
             case .West:
-                println("Where the skies are blue")
+                print("Where the skies are blue")
             //prints "Where the sun rises"
         }
         
         let somePlanet : Planet = .Earth
         switch somePlanet{
             case .Earth:
-                println("Mostly harmless")
+                print("Mostly harmless")
             default:
-                println("Not a safe place for humans")
+                print("Not a safe place for humans")
         }
         
         //关联值，Associated Values
@@ -86,16 +86,16 @@ class Enumerations: CSJSwiftViewController {
         
 //        switch productBarcode{
 //            case .UPCA(let numberSystem, let manufacturer, let product, let check):
-//            println("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
+//            print("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
 //            case .QRCode(let productCde):
-//            println("QR code:\(productBarcode)")
+//            print("QR code:\(productBarcode)")
 //        }
         //值是var or let 可以提前
         switch productBarcode {
             case let .UPCA(numberSystem, manufacturer, product, check):
-                println("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
+                print("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
             case let .QRCode(productCde):
-                println("QR code:\(productBarcode)")
+                print("QR code:\(productBarcode)")
         }
         
         
@@ -110,17 +110,17 @@ class Enumerations: CSJSwiftViewController {
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
         let earthsOrder = NewPlanet.Earth.rawValue
-        println("earthsOrder 取值 ＝ \(earthsOrder)")
+        print("earthsOrder 取值 ＝ \(earthsOrder)")
         //fromRaw 通过值取到NewPlanet成员
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
         let possiblePlanet = NewPlanet(rawValue: 7)
-        println("possiblePlanet 取枚举 = \(possiblePlanet)")
+        print("possiblePlanet 取枚举 = \(possiblePlanet)")
         
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
         var whichPlanet: NewPlanet? = NewPlanet(rawValue: 10000)
-        println("whichPlanet = \(whichPlanet)")
+        print("whichPlanet = \(whichPlanet)")
     }
 
     /*

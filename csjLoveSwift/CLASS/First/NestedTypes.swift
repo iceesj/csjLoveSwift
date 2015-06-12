@@ -23,7 +23,7 @@ class NestedTypes: CSJSwiftViewController {
     }
     
     func nestedTypesMethod(){
-        println("----嵌套类型----")
+        print("----嵌套类型----")
         
         struct BlackjackCard{
             //nested Suit enumeration 嵌套适合的枚举
@@ -73,13 +73,13 @@ class NestedTypes: CSJSwiftViewController {
         }
         
         let theAceOfSpades = BlackjackCard(rank: .Ace, suit: .Spades)
-        println("theAceOfSpades: \(theAceOfSpades.description)")
+        print("theAceOfSpades: \(theAceOfSpades.description)")
         //theAceOfSpades : suit is ♠,value is lor 11
         
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
         let heartsSymbol = BlackjackCard.Suit.Hearts.rawValue//转化成实际值，
-        println("heartsSymbol = \(heartsSymbol)")
+        print("heartsSymbol = \(heartsSymbol)")
         
     }
     

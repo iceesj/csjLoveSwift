@@ -23,7 +23,7 @@ class Protocols: CSJSwiftViewController {
     }
     
     func protocolsMethod(){
-        println("----协议----")
+        print("----协议----")
         
         //协议仅是用来定义某些任务或者功能必须的方法和属性。但协议并不会实现具体的功能。
         //语法
@@ -40,57 +40,57 @@ class Protocols: CSJSwiftViewController {
         */
         
         let john = Person(fullName: "John Appleseed")
-        println("john = \(john)")
+        print("john = \(john)")
         
         //Starship
-        var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
-        println("ncc1701 = \(ncc1701)")
+        let ncc1701 = Starship(name: "Enterprise", prefix: "USS")
+        print("ncc1701 = \(ncc1701)")
         
         //方法要求
         let generator = LinearCongruentialGenerator()
-        println("Here's a random number = \(generator.random())")
-        println("And another one = \(generator.random())")
+        print("Here's a random number = \(generator.random())")
+        print("And another one = \(generator.random())")
         
         //突变方法，OnOffSwitch
         var lightSwitch = OnOffSwitch.Off
         lightSwitch.toggle()
-        println("lightSwitch = \(lightSwitch)")//is now equal to .On
+        print("lightSwitch = \(lightSwitch)")//is now equal to .On
         
         
         //协议类型
-        var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+        let d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
         for _ in 1...5{
-            println("Random dics roll is \(d6.roll())")
+            print("Random dics roll is \(d6.roll())")
         }
         
         
         //代理
-        let tracker = DiceGameTracker()
+//        let tracker = DiceGameTracker()
         let game = SnakesAndLadders()
         game.play()
         
         
         let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
-        println(d12.asText())
+        print(d12.asText())
         
         //extension SnakesAndLadders: TextRepresentable
-        println(game.asText())
+        print(game.asText())
         
         //extension Hamster: TextRepresentable {}
         let simonTheHamster = Hamster(name: "Simon")
         let somethingTextRepresentable: TextRepresentable = simonTheHamster
-        println(somethingTextRepresentable.asText())
+        print(somethingTextRepresentable.asText())
         
         
         //协议类型的集合，Collections of Protocol Types
         let things: [TextRepresentable] = [game, d12, simonTheHamster]
-        println("things = \(things)")
+        print("things = \(things)")
         for thing in things{
-            println("thing.asText() = \(thing.asText())")
+            print("thing.asText() = \(thing.asText())")
         }
         
         //extension SnakesAndLadders: PrettyTextRepresentable
-        println(game.asPrettyText())
+        print(game.asPrettyText())
         
         //协议组合
         let birthdayPerson = NewPerson(name: "Malcolm", age: 21)
@@ -105,25 +105,25 @@ class Protocols: CSJSwiftViewController {
         ]
         for object in objects{
             if let objectWithArea = object as? HasArea{
-                println("Area is \(objectWithArea.area)")
+                print("Area is \(objectWithArea.area)")
             }else{
-                println("Something that doesn't have an area")
+                print("Something that doesn't have an area")
             }
         }
         
         
         //可选协议，Optional Protocol Requirements
-        var counter = Counter()
+        let counter = Counter()
         counter.dataSource = ThreeSource()
         for _ in 1...4{
             counter.increment()//增量
-            println(counter.count)
+            print(counter.count)
         }
         counter.count = -4
         counter.dataSource = TowardsZeroSource()
         for _ in 1...5{
             counter.increment()//增量
-            println(counter.count)
+            print(counter.count)
         }
         
     }
@@ -275,18 +275,18 @@ class DiceGameTracker: DiceGameDelegate {
     func gameDidStart(game: DiceGame) {
         numberOfTurns = 0
         if game is SnakesAndLadders {
-             println("Started a new game of Snakes and Ladders")
+             print("Started a new game of Snakes and Ladders")
         }
-        println("The game is using a \(game.dice.sides)")
+        print("The game is using a \(game.dice.sides)")
     }
     
     func game(game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int) {
         ++numberOfTurns
-        println("Rolled a \(diceRoll)")
+        print("Rolled a \(diceRoll)")
     }
     
     func gameDidEnd(game: DiceGame) {
-        println("The game lasted for \(numberOfTurns) turns")
+        print("The game lasted for \(numberOfTurns) turns")
     }
 }
 
@@ -359,7 +359,7 @@ struct NewPerson: Named, Aged{
     var age: Int
 }
 func wishHappyBirthday(celebrator : protocol<Named,Aged>){
-    println("Happy birthday \(celebrator.name) - you're \(celebrator.age)!")
+    print("Happy birthday \(celebrator.name) - you're \(celebrator.age)!")
 }
 
 //协议的一致性检查，Checking for Protocol Conformance

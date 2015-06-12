@@ -23,7 +23,7 @@ class Extensions: CSJSwiftViewController {
     }
     
     func extensionsMethod(){
-        println("----扩展----")
+        print("----扩展----")
         
         //扩展可以让我们给一个已有的类，结构体，枚举等类型添加新功能
         //包括属性和方法，甚至是构造器，下标，支持协议等等
@@ -50,13 +50,13 @@ class Extensions: CSJSwiftViewController {
 
         
         let oneInch = 25.4.mm
-        println("One inch is \(oneInch) meters")
+        print("One inch is \(oneInch) meters")
         // prints "One inch is 0.0254 meters"
         let threeFeet = 3.ft
-        println("Three feet is \(threeFeet) meters")
+        print("Three feet is \(threeFeet) meters")
         // prints "Three feet is 0.914399970739201 meters"
         let aMarathon = 42.km + 195.m
-        println("A marathon is \(aMarathon) meters long")
+        print("A marathon is \(aMarathon) meters long")
         // prints "A marathon is 42195.0 meters long"
         
     }

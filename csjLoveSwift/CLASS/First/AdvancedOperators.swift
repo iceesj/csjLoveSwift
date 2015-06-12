@@ -23,7 +23,7 @@ class AdvancedOperators: CSJSwiftViewController {
     }
     
     func advancedOperatorsMethod(){
-        println("----高级运算符----")
+        print("----高级运算符----")
         
         //按位运算符，Bitwise Operators
         //按位取反： ~  ,按位与运算：& ,按位或运算：|
@@ -58,12 +58,13 @@ class AdvancedOperators: CSJSwiftViewController {
         
         
         //除零，Division by Zero
-        let x = 1
+        //20150609 Swift 2
+//        var x = 1
         //20150603 删除 &/
 //        let y = x &/ 0//y is equal to 0
         
         //优先级和结合性，Precedence and Associativity
-        var PandA = 2 + 3 * 4 % 5
+        let PandA = 2 + 3 * 4 % 5
         //2 plus 3 = 5, 5 * 4 = 20, 20 % 5 = 0  <-- idiot
         //3 * 4 = 12, 12 % 5 = 2 , 2 + 2 = 4 <-- Good job
         print("PandA = \(PandA)")
@@ -73,41 +74,41 @@ class AdvancedOperators: CSJSwiftViewController {
         let vector = Vector2D(x: 3.0, y: 1.0)
         let anotherVector = Vector2D(x: 2.0, y: 4.0)
         let combinedVector = vector + anotherVector
-        println("combinedVector = \(combinedVector)")
+        print("combinedVector = \(combinedVector)")
         
         //前缀和后缀运算符，prefix and postfix operators
         let positive = Vector2D(x: 3.0, y: 4.0)
         //负
         let negative = -positive
-        println("negative = \(negative)")
+        print("negative = \(negative)")
         //nagative is a Vector2D instance with values of (-3.0, -4.0)
         let alsoPositive = -negative
-        println("alsoPositive = \(alsoPositive)")
+        print("alsoPositive = \(alsoPositive)")
         
         
         //复合赋值操作符，Compound Assignment Operators
         var original = Vector2D(x: 1.0, y: 2.0)
         let vectorToAdd = Vector2D(x: 3.0, y: 4.0)
         original += vectorToAdd
-        println("originalAddvectorToAdd = \(original += vectorToAdd)")
+        print("originalAddvectorToAdd = \(original += vectorToAdd)")
         
         var toIncrement = Vector2D(x: 3.0, y: 4.0)
         let afterIncrement = ++toIncrement//各+1
-        println("afterIncrement = \(afterIncrement)")
+        print("afterIncrement = \(afterIncrement)")
         
         
         //等价运算，Equivalence Operators
         let twoThree = Vector2D(x: 2.0, y: 3.0)
         let anotherTwoThree = Vector2D(x: 2.0, y:3.0)
         if twoThree == anotherTwoThree {
-            println("These two vectors are equivalent")
+            print("These two vectors are equivalent")
         }
         
         //自定义运算符，Custom Operators
         var toBeDoubled = Vector2D(x: 1.0, y: 4.0)
         //翻倍后
 //        let afterDoubling ＝ +++toBeDoubled
-        println("翻倍后的toBeDoubled (Vector2D) = \(+++toBeDoubled)")
+        print("翻倍后的toBeDoubled (Vector2D) = \(+++toBeDoubled)")
         
         
         //自定义中置运算符的结合性和优先级，Precedence and Associativity for Custom Infix Operators
@@ -115,7 +116,7 @@ class AdvancedOperators: CSJSwiftViewController {
         let secondVector = Vector2D(x: 3.0, y: 4.0)
         //增加减去vector
         let plusMinusVector = firstVector +- secondVector
-        println("plusMinusVector = \(plusMinusVector)")
+        print("plusMinusVector = \(plusMinusVector)")
         
     }
     

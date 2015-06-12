@@ -23,7 +23,7 @@ class Methods: CSJSwiftViewController {
     }
     
     func methodsMethod() {
-        println("----方法----")
+        print("----方法----")
         
         //实例方法，Instance Methods
         //swift会为方法的第一个参数只提供函数内部使用的名字，从第二个参数开始，既可以外部用，也可以内部用
@@ -73,7 +73,7 @@ class Methods: CSJSwiftViewController {
         }
         var csjPoint = CSJPoint()
         csjPoint.moveByXY(3, y: 4)
-        println("x:\(csjPoint.x),y:\(csjPoint.y)")
+        print("x:\(csjPoint.x),y:\(csjPoint.y)")
         //在struct，enum里使用mutating关键字，达到class里一样的效果
         //如果x,y是let就不能使用，不能改变常量
         
@@ -86,7 +86,7 @@ class Methods: CSJSwiftViewController {
         }
         var csjTwoPoint = CSJTwoPoint()
         csjTwoPoint.changeSelf(3,y:4)
-        println("x:\(csjTwoPoint.x),y:\(csjTwoPoint.y)")
+        print("x:\(csjTwoPoint.x),y:\(csjTwoPoint.y)")
         //达到了改变csjTwoPoint中x和y的目的，给self赋值的方法，却是生成了一个新的CSJTwoPoint实例（内部做了内存释放工作）
         enum CSJStateMachine{
             case None,Init,Run,Deinit
@@ -102,9 +102,9 @@ class Methods: CSJSwiftViewController {
         }
         var csjStateMachine = CSJStateMachine.None
         csjStateMachine.nextState() //self变成Init
-        println(csjStateMachine == CSJStateMachine.Init)//ture
+        print(csjStateMachine == CSJStateMachine.Init)//ture
         csjStateMachine.nextState()
-        println(csjStateMachine == CSJStateMachine.Run)//ture
+        print(csjStateMachine == CSJStateMachine.Run)//ture
         //状态机的状态切换代码可以直接写在enum的定义中
         
         //类型方法，Type Methods
@@ -156,13 +156,13 @@ class Methods: CSJSwiftViewController {
         }
         var player = Player(name:"World")
         player.completedLevel(1)//调用后 tarcker的highestUnlockedLevel变成2
-        println("highest unlocked level is now \(LevelTracker.highestUnlockedLevel)")
+        print("highest unlocked level is now \(LevelTracker.highestUnlockedLevel)")
         
         var player2 = Player(name:"Kitty")
         if player2.tracker.advanceToLevel(6){
-            println("player is not on level 6")
+            print("player is not on level 6")
         }else{
-            println("level 6 has not yet been unlocked")
+            print("level 6 has not yet been unlocked")
         }
         
         

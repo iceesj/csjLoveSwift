@@ -41,18 +41,20 @@ class wwdcRoom102: CSJSwiftViewController {
         func sum(array:[Int])->Int{
             var result = 0
             for value in array {result += value}
-            println("result = \(result)")
+            print("result = \(result)")
             return result
         }
         var resultsum = sum(specialNumbers)
-        println("resultsum = \(resultsum)")
+        print("resultsum = \(resultsum)")
         func sumAndAverage(array:[Int ]) -> (sum:Int, average:Double){
             var result = 0
             for value in array {result += value}
             var avg = Double(result) / Double(array.count)
             return (result, avg)
         }
-        var result = sumAndAverage(specialNumbers)
+        
+        //Swift 2 去除没有使用的
+//        var result = sumAndAverage(specialNumbers)
         var rect = CGRectMake(10.0, 5.0, 10.0, 10.0)
         var sameRect = CGRect(x:10.0, y:5.0, width:10.0, height: 10.0)
         if rect == sameRect{

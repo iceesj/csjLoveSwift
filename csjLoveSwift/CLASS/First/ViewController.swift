@@ -37,13 +37,14 @@ class ViewController: UIViewController {
     
     
     func loadDataAsy(){
-        var url = "http://itunes.apple.com/lookup?id=853116593"
+        //Swift 2 改成let
+        let url = "http://itunes.apple.com/lookup?id=853116593"
         CSJSwiftRequest.requestWithURLbyiOS7Later(url,completionHandler:{data in
             if data as! NSObject == NSNull(){
                 CSJSwiftLog.showAlertView("提示",message:"请求连接错误")
                 return
             }
-            var arr = data["results"] as! NSArray
+            let arr = data["results"] as! NSArray
             NSLog("arr = \(arr)")
 //            var dict = data as NSDictionary
 //            NSLog("dict = \(dict)")
@@ -51,13 +52,13 @@ class ViewController: UIViewController {
     }
     
     func loadDataSy(){
-        var url = "http://itunes.apple.com/lookup?id=853116593"
+        let url = "http://itunes.apple.com/lookup?id=853116593"
         CSJSwiftRequest.requestSynchronousWithURL(url,completionHandler:{data in
             if data as! NSObject == NSNull(){
                 CSJSwiftLog.showAlertView("提示",message:"请求连接错误")
                 return
             }
-            var arr = data["results"] as! NSArray
+            let arr = data["results"] as! NSArray
             NSLog("arr = \(arr)")
         })
     }
@@ -83,16 +84,16 @@ class ViewController: UIViewController {
         
         //对象和类
 //        thridBiji()
-        var shape = Shape()
+        let shape = Shape()
         shape.numberOfSides = 7
-        var shapeDescription = shape.simpleDescriptionLet()
-        println("A shape With \(shapeDescription) sides")
+        let shapeDescription = shape.simpleDescriptionLet()
+        print("A shape With \(shapeDescription) sides")
         
         let test = Square(sideLength:5.2, name:"my test square")
         test.area()
         test.simpleDescription()
         
-        var triangle = EquilateralTriangle(sideLength:3.1, name:"a triangle")
+        let triangle = EquilateralTriangle(sideLength:3.1, name:"a triangle")
         triangle.perimeter = 9.9
         triangle.sideLength = 8.8
         
@@ -125,50 +126,54 @@ class ViewController: UIViewController {
     */
 
     func myTestMethod () {
-        println("Hello Swift" + "im csj")
+        print("Hello Swift" + "im csj")
         
-        var languageName1:String = "Swift" //inferred as String
-        var version1:Double = 1.0 //inferred as double
-        var introduced1:Int = 2014 //inferred as int
-        var isAwesome1:Bool = true// inferred as bool
+        let languageName1:String = "Swift" //inferred as String
+        let version1:Double = 1.0 //inferred as double
+        let introduced1:Int = 2014 //inferred as int
+//        let isAwesome1:Bool = true// inferred as bool
         
         let languageName = "Swift"
-        var version = 1.0
+        let version = 1.0
         let introduced = 2014
-        let isAwesome = true
+//        let isAwesome = true
+        
+        //Swift 2
+        print(languageName1,version1,introduced1,languageName,version,introduced)
         
         let 你猜 = "你猜"
         let 😄 = "smile"
-        println(你猜+😄)
+        print(你猜+😄)
         
         let components = "~/Documents/Swift".pathComponents
-        println("components = \(components)")
+        print("components = \(components)")
         
         //arr
         var shoppingList = ["catfish", "water", "tulips", "blue paint"]
         shoppingList[1] = "bottle of water"
-        println("数组替换组员1位置 \(shoppingList)")
+        print("数组替换组员1位置 \(shoppingList)")
         shoppingList.removeLast()
-        println("数组删除最后一个元素 \(shoppingList)")
+        print("数组删除最后一个元素 \(shoppingList)")
         //遍历数组
         for number in shoppingList{
-            println("i like \(number).")
+            print("i like \(number).")
         }
         //创建空数组 20140708
 //        let newShoppingList = String[]()
         let newShoppingL = [String]()
+        print(newShoppingL)
         
         //dict
         var dict = ["Earth":"1.0","Mars":"1.524"]
-        println("输出dict = \(dict)")
+        print("输出dict = \(dict)")
         //添加字典组员
         dict["Moon"] = "2.000"
         for (planet, distance) in dict{
-            println("The planet \(planet) is \(distance) AUs from the sun.")
+            print("The planet \(planet) is \(distance) AUs from the sun.")
         }
         //创建空字典
         let newDict = Dictionary<String,Float>()
-        
+        print("创建空字典 = \(newDict)")
         
     }
     
@@ -177,7 +182,7 @@ class ViewController: UIViewController {
         //循环使用
         var a = 1
         a += 2
-        println("运算笔记a = \(a)");
+        print("运算笔记a = \(a)");
         
         //传入方法输出
         great("dev", day: " wwdc day")
@@ -218,7 +223,11 @@ class ViewController: UIViewController {
             return number < 10
         }
         var numbers = [20, 19, 7, 12]
-        hasAnyMatches(numbers, lessThanTen)
+        //Swift 1.2
+//        hasAnyMatches(numbers, lessThanTen)
+        //Swift 2
+        hasAnyMatches(numbers, condition: lessThanTen)
+        
         
         //用{}来创建一个匿名闭包，使用in将参数和返回值类型与闭包函数函数体进行分离
         numbers.map({
@@ -231,24 +240,25 @@ class ViewController: UIViewController {
         //貌似不行
 //        sorted(sortTestArr,<)
         //貌似行
-        sort(&sortTestArr,<)
+        //Swift 2 去除
+//        sort(&sortTestArr,<)
 //        sort(sortTestArr) { $0 > $1 }
-        println("sortTestArr1 = \(sortTestArr)")
+        print("sortTestArr1 = \(sortTestArr)")
 
         //like
         func backwards (s1:Int, s2:Int)->Bool{
-            println("\(s1):\(s2)")
+            print("\(s1):\(s2)")
             return s1>s2
         }
 //        var backwardsVar = sort(sortTestArr,backwards)
-        println("sortTestArr2 = \(sortTestArr)")
-//        println("backwardsVar =  \(backwardsVar)")
+        print("sortTestArr2 = \(sortTestArr)")
+//        print("backwardsVar =  \(backwardsVar)")
     }
 
     //secondBiji
     //传入方法输出
     func great(name: String,day :String){
-        println( "Hello \(name),today is\(day)")
+        print( "Hello \(name),today is\(day)")
     }
     //返回元组
     func getGasPrices() -> (Double,Double,Double){
@@ -262,7 +272,7 @@ class ViewController: UIViewController {
             //累加
             sum += number
         }
-        println("传入参数数量可变 输出 = \(sum)")
+        print("传入参数数量可变 输出 = \(sum)")
         return sum
     }
     //函数嵌套
@@ -272,7 +282,7 @@ class ViewController: UIViewController {
             y+=5
         }
         add()
-        println("函数嵌套 输出 = \(y)")
+        print("函数嵌套 输出 = \(y)")
         return y
     }
     //函数可以作为另一个函数的返回值

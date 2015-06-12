@@ -23,7 +23,7 @@ class Properties: CSJSwiftViewController {
     }
     
     func propertiesMethod(){
-        println("----属性----")
+        print("----属性----")
         
         //存储属性，Stored Properties
         //下面的例子定义了一个称为FixedLengthRange结构,描述了一个范围的整数范围长度,一旦创建不能改变:
@@ -55,8 +55,8 @@ class Properties: CSJSwiftViewController {
         let manager = DataManager()
         manager.data += "Some data"
         manager.data += "Some more data"
-        println("manager.data = \(manager.data)")
-        println(manager.importer.fileName)
+        print("manager.data = \(manager.data)")
+        print(manager.importer.fileName)
         */
         
         
@@ -101,7 +101,7 @@ class Properties: CSJSwiftViewController {
         var square = Rect(origin: Point(x: 0.0, y: 0.0), size: Size(width: 10, height: 10.0))
         let initialSquareCenter = square.center
         square.center = Point(x:15.0,y:15.0)
-        println("square.origin is now at (\(square.origin.x),\(square.origin.y))")
+        print("square.origin is now at (\(square.origin.x),\(square.origin.y))")
         // prints "square.origin is now at (10.0, 10.0)"
         
         //Shorthand Setter Declaration
@@ -131,7 +131,7 @@ class Properties: CSJSwiftViewController {
             }
         }
         let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
-        println("the volume of fourByFiveByTwo is \(fourByFiveByTwo)")
+        print("the volume of fourByFiveByTwo is \(fourByFiveByTwo)")
         // prints "the volume of fourByFiveByTwo is 40.0"
         
         //属性观察员Property Observers
@@ -143,12 +143,12 @@ class Properties: CSJSwiftViewController {
             //闭包
             var totalSteps : Int = 0{
                 willSet(newTotalSteps){
-                    println("About to set totalSteps to \(newTotalSteps)")
+                    print("About to set totalSteps to \(newTotalSteps)")
                 }
                 didSet{
                     //swift提供oldValue
                     if totalSteps > oldValue{
-                        println("Added \(totalSteps-oldValue) steps")
+                        print("Added \(totalSteps-oldValue) steps")
                     }
                 }
             
@@ -167,17 +167,17 @@ class Properties: CSJSwiftViewController {
         class TestClass{
             var num:Int=0{
             willSet{
-                println("testClass willSet = \(num)")
+                print("testClass willSet = \(num)")
             }
             didSet {
                 num = oldValue//赋值为0，所有输出为0
-                println("testClass didSet = \(num)")
+                print("testClass didSet = \(num)")
             }
             }
         }
         var testClass = TestClass()
         testClass.num = 8
-        println("testClass = \(testClass.num)")
+        print("testClass = \(testClass.num)")
         
         
         //全局常量、变量，也都可以设置用于计算的属性，Global and Local Variables
@@ -185,7 +185,7 @@ class Properties: CSJSwiftViewController {
         var Q_myValue:Int{
             return Q_myNum
         }
-        println("Q_myNum = \(Q_myValue)")
+        print("Q_myNum = \(Q_myValue)")
         
         //类型属性，Type Property Syntax
         //类似c/c++中的静态变量，所有实例共享一份拷贝，而不是每一个实例都有一份
@@ -211,10 +211,10 @@ class Properties: CSJSwiftViewController {
         }
         
         //查询和设置类型属性Querying and Setting Type Properties
-        println("SomeClass.computedTypeProperty = \(SomeClass.computedTypeProperty)")
-        println(SomeStructure.storedTypeProperty)
+        print("SomeClass.computedTypeProperty = \(SomeClass.computedTypeProperty)")
+        print(SomeStructure.storedTypeProperty)
         SomeStructure.storedTypeProperty = "Another value."
-        println(SomeStructure.storedTypeProperty)
+        print(SomeStructure.storedTypeProperty)
         
     }
 

@@ -23,7 +23,7 @@ class Closures: CSJSwiftViewController {
     }
     
     func closuresMethod() {
-        println("----闭包----")
+        print("----闭包----")
         //Function中的全局函数和嵌套函数，全是闭包的特殊形式
         //所谓闭包表达式，就是一个不带函数名的嵌套函数，书写方式比较特别
         //Global functions are closures that have a name and do not capture any values.
@@ -38,16 +38,16 @@ class Closures: CSJSwiftViewController {
         func backwards(s1:String, s2:String) -> Bool {
             return s1 > s2
         }
-        var reversed = sorted(names, backwards)
-        println("reversed is equal to \(reversed)")
+//        var reversed = sorted(names, backwards)
+//        print("reversed is equal to \(reversed)")
         
 //        Closure Expression Syntax
 //        {
 //            (参数)->返回值类型 in 函数体
 //        }
-        reversed = sorted(names, { (s1:String, s2:String) -> Bool in return s1 > s2})
+//        reversed = sorted(names, { (s1:String, s2:String) -> Bool in return s1 > s2})
         //Inferring Type From Context
-        reversed = sorted(names, {s1, s2 in return s1>s2})
+//        reversed = sorted(names, {s1, s2 in return s1>s2})
         //Implicit Returns from Single-Expression Closures 从闭包隐士返回
         //xcode6 beta6 bug?
 //        reversed = sorted(names, {s1, s2 in s1 > s2})
@@ -55,7 +55,7 @@ class Closures: CSJSwiftViewController {
         //xcode6 beta6 bug?
 //        reversed = sorted(names, {$0 > $1})
         //Operator Functions
-        reversed = sorted(names, >)
+//        reversed = sorted(names, >)
         
         
         //Trailing Closures
@@ -82,7 +82,7 @@ class Closures: CSJSwiftViewController {
             while number > 0{
                 //16大于0 58, 510
                 output = digitNames[number % 10]! + output
-                println("output = \(output)")
+                print("output = \(output)")
                 number /= 10 // = 1, = 5, = 51, = 5
             }
             return output
@@ -96,7 +96,7 @@ class Closures: CSJSwiftViewController {
             var runningTotal = 0
             func incrementor ()-> Int {
                 runningTotal += amount
-                println("return a value of \(runningTotal)")
+                print("return a value of \(runningTotal)")
                 return runningTotal
             }
             return incrementor

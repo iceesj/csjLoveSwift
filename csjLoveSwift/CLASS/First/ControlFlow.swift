@@ -30,12 +30,12 @@ class ControlFlow: CSJSwiftViewController {
     func control(){
         //for
         for var index=0;index<3;++index{
-            println("index is \(index)")
+            print("index is \(index)")
         }
         //or
         var index :Int
         for index = 0; index<3;++index{
-            println("index is \(index)")
+            print("index is \(index)")
         }
         
         //条件语句if else
@@ -48,7 +48,7 @@ class ControlFlow: CSJSwiftViewController {
                 teamScore += 1
             }
         }
-        println("score \(teamScore)")
+        print("score \(teamScore)")
         
         //while
         var count = 0
@@ -56,60 +56,64 @@ class ControlFlow: CSJSwiftViewController {
         
         while whileIndex > 0 {
             count += whileIndex
-//            println("count \(count)")//10+9+8+7+6+5+4+3+2+1=55
-//            println("whileIndex \(whileIndex)")
+//            print("count \(count)")//10+9+8+7+6+5+4+3+2+1=55
+//            print("whileIndex \(whileIndex)")
             --whileIndex
         }
-        println("count = \(count)")
+        print("count = \(count)")
         //or
-        do {
+        
+        //Swift 1.2
+//        do {
+        //Swift 2
+        repeat {
             count+=whileIndex
             --whileIndex
         }while whileIndex > 0
-        println("do count = \(count)")
+        print("do count = \(count)")
         
         //switch
         let someCharacter:Character = "e"
         switch someCharacter{
             case "a","e","i","o","u":
-                println("\(someCharacter) is a vowel")
+                print("\(someCharacter) is a vowel")
         case "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z":
-            println("\(someCharacter) is a consonant")
+            print("\(someCharacter) is a consonant")
         default:
-            println("\(someCharacter) is not a vowel or a consonant")
+            print("\(someCharacter) is not a vowel or a consonant")
         }
         
         let countSwitch = 15
         switch countSwitch{
-            case 0:println("countSwitch count is 0")
-            case 1...10:println("countSwitch count is 1...10")
-            case 11...20:println("countSwitch count is 11...20")//get
-            default:println("什么都不是")
+            case 0:print("countSwitch count is 0")
+            case 1...10:print("countSwitch count is 1...10")
+            case 11...20:print("countSwitch count is 11...20")//get
+            default:print("什么都不是")
         }
         
         //元组switch
         let myPoint = (1,3)
         switch myPoint {
-        case (0,0):println("myPoint is (0,0)")
-        case (_,0):println("myPoint 第二个元素为0 (_,0)")
-        case (1,_):println("myPoint 第一个元素为1 (1,_)")//get
-        default:println("myPoint 什么都不是")
+        case (0,0):print("myPoint is (0,0)")
+        case (_,0):print("myPoint 第二个元素为0 (_,0)")
+        case (1,_):print("myPoint 第一个元素为1 (1,_)")//get
+        default:print("myPoint 什么都不是")
         }
         
         //switch let
         let myNewPoint = (2,0)
         switch myNewPoint {
-        case (let x , 0): println("myNewPoint is x,0")//get
-        case (0, let y): println("myNewPoint is 0,y")
-        case let(x,y): println("myNewPoint is x,y");
+        case (let x , 0): print("myNewPoint is x,0")//get
+        case (0, let y): print("myNewPoint is 0,y")
+        case let(x,y): print("myNewPoint is x,y");
         }
         
         //switch where
         let myWherePoint = (1,-1)
         switch myWherePoint {
-        case let (x,y) where x == y: println(" x==y")
-        case let (x,y) where x == -y: println(" x== -y")
-        case let (x,y):println("x,y")
+        case let (x,y) where x == y: print(" x==y")
+        case let (x,y) where x == -y: print(" x== -y")
+        case let (x,y):print("x,y")
         }
         
         //fallthrough
@@ -120,7 +124,7 @@ class ControlFlow: CSJSwiftViewController {
             fallthrough
         default :description += " an integer."
         }
-        println(description)
+        print(description)
         
         
     }

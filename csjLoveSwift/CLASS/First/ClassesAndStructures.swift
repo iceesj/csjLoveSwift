@@ -23,7 +23,7 @@ class ClassesAndStructures: CSJSwiftViewController {
     }
     
     func cAndsMethod() {
-        println("----类和结构体----")
+        print("----类和结构体----")
         //不会像c++那样用struct取代class关键字
         //swift可以把class和结构体定义在一个.swift里，然后在其他文件里直接用就可以了
         //不需要include，也不需要import
@@ -43,7 +43,7 @@ class ClassesAndStructures: CSJSwiftViewController {
         }
 //        var myFirstClass = SomeClass(typeName:"")//类不行
         var myFirstClass = SomeClass()//定义一个变量，它是SomeClass类型的实例
-        println(myFirstClass.typeName)//访问这个实例的成员属性
+        print(myFirstClass.typeName)//访问这个实例的成员属性
         //结构体有特别之处，在初始化的时候，可以把成员的值直接写在参数里面
         var myFirstStr = SomeStructure(typeName:"my first struct")
         
@@ -64,11 +64,11 @@ class ClassesAndStructures: CSJSwiftViewController {
         let someResolution = Resolution()
         let someVideoMode = VideoMode()
         //访问属性，Accessing Properties
-        println("The width of someResolution is \(someResolution.width)")
-        println("The width of someVideoMode is \(someVideoMode.resolution.width)")
+        print("The width of someResolution is \(someResolution.width)")
+        print("The width of someVideoMode is \(someVideoMode.resolution.width)")
         //点语法
         someVideoMode.resolution.width = 1280
-        println("The width of someVideoMode is now \(someVideoMode.resolution.width)")
+        print("The width of someVideoMode is now \(someVideoMode.resolution.width)")
         
         //为结构类型初始值设定项，Memberwise Initializers for Structure Types
         let vga = Resolution(width: 650, height: 480)
@@ -77,9 +77,9 @@ class ClassesAndStructures: CSJSwiftViewController {
         let hd = Resolution(width: 1920, height: 1080)
         var cinema = hd
         cinema.width = 2048
-        println("cinema.width now = \(cinema.width)")
+        print("cinema.width now = \(cinema.width)")
         //However, the width property of the original hd instance still has the old value of 1920:
-        println("hd.width now = \(hd.width)")
+        print("hd.width now = \(hd.width)")
         
         //同样的行为也适用于枚举，The same behavior applies to enumerations:
         enum CompassPoint{
@@ -89,7 +89,7 @@ class ClassesAndStructures: CSJSwiftViewController {
         let rememberedDirection = currentDirection
         currentDirection = .East
         if rememberedDirection == .West {
-            println("The remembered direction is still .West")
+            print("The remembered direction is still .West")
         }
         
         //类是引用类型，Classes Are Reference Types
@@ -103,12 +103,12 @@ class ClassesAndStructures: CSJSwiftViewController {
         
         let alsoTenEighty = tenEighty
         alsoTenEighty.frameRate = 30.0
-        println("now frameRate = \(alsoTenEighty.frameRate)")
+        print("now frameRate = \(alsoTenEighty.frameRate)")
         
         //标识操作符，Identity Operators
         //用来判断两个变量或常量，是否同时引用同一个类的实例，相同的 === 不相同的 !==
         if tenEighty === alsoTenEighty{
-            println("tenEighty and alsoTenEighty refer to the same VideoMode instance")
+            print("tenEighty and alsoTenEighty refer to the same VideoMode instance")
         }
         
         //Array和Dictionar都是Struct
@@ -116,15 +116,15 @@ class ClassesAndStructures: CSJSwiftViewController {
         var myDictionaryCopy = myDictionary;
         
         myDictionary[1] = "8"
-        println(myDictionaryCopy[1])// ＝ 1
+        print(myDictionaryCopy[1])// ＝ 1
         
         var myArray = [1,2,3]
         var myArrayCopy = myArray
         myArray[1] = 8
-        println(myArray[1]) //得到结果是8
+        print(myArray[1]) //得到结果是8
         
         //xcode6 beta4 删除
-//        println(myArray === myArrayCopy)//false
+//        print(myArray === myArrayCopy)//false
         
         //swift对Array做了优化，只有在必要时，才会分配一份拷贝
         //Array只有在数组长度变化的时候才拷贝
@@ -151,8 +151,8 @@ class ClassesAndStructures: CSJSwiftViewController {
 //        arr[0]=1//arr = [1,0,0], newArr =[1,0,0]
         var newArr = arr//Xcode6 beta3 newArr = [0,0,0], beta1,2 newArr = [1,0,0]
         arr[0]=1//arr = [1,0,0], newArr =[0,0,0]
-        println(arr)
-        println(newArr)
+        print(arr)
+        print(newArr)
         
         
         

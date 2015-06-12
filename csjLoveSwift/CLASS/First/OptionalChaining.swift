@@ -23,7 +23,7 @@ class OptionalChaining: CSJSwiftViewController {
     }
     
     func optionalChainingMethod(){
-        println("----可选链----")
+        print("----可选链----")
         
         
         //可选型是！？
@@ -38,14 +38,14 @@ class OptionalChaining: CSJSwiftViewController {
             var structInstance:MyInfo? = MyInfo()
         }
         var myInstance = MyClass()
-        println("myInstance = \(myInstance)")
+        print("myInstance = \(myInstance)")
         
         //使用一连串的可选值，叫做可选链
         //在可选链中，任何一个环节解析失败（nil），那么整个可选链的结果为nil
         if let name = myInstance.structInstance?.myName?.name{
-            println(name)
+            print(name)
         }else{
-            println("nil")
+            print("nil")
         }
         
     }
