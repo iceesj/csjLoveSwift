@@ -16,7 +16,9 @@ class TestViewController: UIViewController {
 //    }
     
     //Xcode6 beta5 beta6
-    required init(coder aDecoder: NSCoder)  {
+//    required init(coder aDecoder: NSCoder)  {
+    //Xcode7 beta4,Swift 2
+    required init?(coder aDecoder: NSCoder)  {
         super.init(coder: aDecoder)
         
     }

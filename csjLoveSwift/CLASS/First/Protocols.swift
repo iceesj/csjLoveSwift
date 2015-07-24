@@ -392,7 +392,9 @@ class Animal {
     optional func incrementForCount(count: Int) -> Int
     optional var fixedIncrement: Int {get}
 }
-@objc class Counter {
+
+class Counter {
+//@objc class Counter {
     var count = 0
     var dataSource: CounterDataSource?
     func increment() {
