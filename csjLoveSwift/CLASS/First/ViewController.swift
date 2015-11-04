@@ -145,8 +145,8 @@ class ViewController: UIViewController {
         let 😄 = "smile"
         print(你猜+😄)
         
-        let components = "~/Documents/Swift".pathComponents
-        print("components = \(components)")
+//        let components = "~/Documents/Swift".pathComponents
+//        print("components = \(components)")
         
         //arr
         var shoppingList = ["catfish", "water", "tulips", "blue paint"]
