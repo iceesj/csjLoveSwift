@@ -129,7 +129,7 @@ class SwiftBasis: CSJSwiftViewController {
         typealias MyUInt = UInt
         let myTestUInt :MyUInt = 2_000
         let myTestUInt2 :UInt = 2_000
-        
+        print("myTestUInt = \(myTestUInt), myTestUInt2 = \(myTestUInt2)")
         
         //元组
         let http404Error = (404,"Not Found")
@@ -158,9 +158,9 @@ class SwiftBasis: CSJSwiftViewController {
         print("teamSorce = \(teamSorce)")//3+1+3+3+1=11
         
         var optionalString :String? = "Hello"
-        optionalString == nil
+        optionalString = nil
         print("optionalString = \(optionalString)")
-        var optionalName :String? = "John Appleseed"
+        let optionalName :String? = "John Appleseed"
         //        optionalName = nil
         var greeting = "Hello!"
         if let name = optionalName {

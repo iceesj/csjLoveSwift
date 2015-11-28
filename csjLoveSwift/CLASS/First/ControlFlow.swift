@@ -83,37 +83,47 @@ class ControlFlow: CSJSwiftViewController {
             print("\(someCharacter) is not a vowel or a consonant")
         }
         
+        
         let countSwitch = 15
         switch countSwitch{
-            case 0:print("countSwitch count is 0")
-            case 1...10:print("countSwitch count is 1...10")
-            case 11...20:print("countSwitch count is 11...20")//get
-            default:print("什么都不是")
+            case 0...1:
+                print("countSwitch count is 0.5")
+            break
+            case 1...10:
+                print("countSwitch count is 1...10")
+            break
+            case 11...20:
+                print("countSwitch count is 11...20")//get
+            break
+            default:
+                print("什么都不是")
+            break
         }
         
         //元组switch
-        let myPoint = (1,3)
-        switch myPoint {
-        case (0,0):print("myPoint is (0,0)")
-        case (_,0):print("myPoint 第二个元素为0 (_,0)")
-        case (1,_):print("myPoint 第一个元素为1 (1,_)")//get
-        default:print("myPoint 什么都不是")
-        }
+//        let myPoint = (1,3)
+//        switch myPoint {
+//        case (0,0):print("myPoint is (0,0)")
+//        case (_,0):print("myPoint 第二个元素为0 (_,0)")
+//        case (1,_):print("myPoint 第一个元素为1 (1,_)")//get
+//        case (1,3):print("是的")
+//        default:print("myPoint 什么都不是")
+//        }
         
         //switch let
         let myNewPoint = (2,0)
         switch myNewPoint {
-        case (let x , 0): print("myNewPoint is x,0")//get
-        case (0, let y): print("myNewPoint is 0,y")
-        case let(x,y): print("myNewPoint is x,y");
+        case (let x , 0): print("myNewPoint is \(x),0")//get
+//        case (0, let y): print("myNewPoint is 0,\(y)")
+//        case let(x,y): print("myNewPoint is \(x),\(y)");
         }
         
         //switch where
         let myWherePoint = (1,-1)
-        switch myWherePoint {
-        case let (x,y) where x == y: print(" x==y")
-        case let (x,y) where x == -y: print(" x== -y")
-        case let (x,y):print("x,y")
+            switch myWherePoint {
+//                case let (x,y) where x == y: print(" x==y")
+                case let (x,y) where x == -y: print(" x== -y")
+//                case let (x,y):print("x,y")
         }
         
         //fallthrough

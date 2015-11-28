@@ -49,14 +49,14 @@ class wwdcRoom102: CSJSwiftViewController {
         func sumAndAverage(array:[Int ]) -> (sum:Int, average:Double){
             var result = 0
             for value in array {result += value}
-            var avg = Double(result) / Double(array.count)
+            let avg = Double(result) / Double(array.count)
             return (result, avg)
         }
         
         //Swift 2 去除没有使用的
 //        var result = sumAndAverage(specialNumbers)
-        var rect = CGRectMake(10.0, 5.0, 10.0, 10.0)
-        var sameRect = CGRect(x:10.0, y:5.0, width:10.0, height: 10.0)
+        let rect = CGRectMake(10.0, 5.0, 10.0, 10.0)
+        let sameRect = CGRect(x:10.0, y:5.0, width:10.0, height: 10.0)
         if rect == sameRect{
             NSLog("rect = sameRect")
         }

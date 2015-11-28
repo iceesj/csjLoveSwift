@@ -58,7 +58,7 @@ class FirstBetaViewController: UITableViewController {
         //xcode beta6
 //        var data = baseArray[indexPath!.row]
         //xcode6 beta7 所有navigationController 变成 navigationController?
-        var data = baseArray[indexPath.row]
+        let data = baseArray[indexPath.row]
         if data == "wwdcRoom102"{
             let wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
 //            self.navigationController.pushViewController(wwdcVC, animated:true)

@@ -42,11 +42,11 @@ class ClassesAndStructures: CSJSwiftViewController {
             var typeName = "struct"
         }
 //        var myFirstClass = SomeClass(typeName:"")//类不行
-        var myFirstClass = SomeClass()//定义一个变量，它是SomeClass类型的实例
+        let myFirstClass = SomeClass()//定义一个变量，它是SomeClass类型的实例
         print(myFirstClass.typeName)//访问这个实例的成员属性
         //结构体有特别之处，在初始化的时候，可以把成员的值直接写在参数里面
-        var myFirstStr = SomeStructure(typeName:"my first struct")
-        
+        let myFirstStr = SomeStructure(typeName:"my first struct")
+        print("myFirstStr = \(myFirstStr)")
         
         struct Resolution{
             var width = 0

@@ -119,7 +119,7 @@ class Enumerations: CSJSwiftViewController {
         
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
-        var whichPlanet: NewPlanet? = NewPlanet(rawValue: 10000)
+        let whichPlanet: NewPlanet? = NewPlanet(rawValue: 10000)
         print("whichPlanet = \(whichPlanet)")
     }
 

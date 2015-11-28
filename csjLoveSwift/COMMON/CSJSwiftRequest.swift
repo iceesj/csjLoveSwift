@@ -90,7 +90,7 @@ class CSJSwiftRequest: NSObject {
 //        var URL = NSURL.URLWithString(urlString)
         let URL = NSURL(string: urlString)
         let req = NSURLRequest(URL: URL!)
-        var queue = NSOperationQueue();
+        let queue = NSOperationQueue();
 //        + (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *response, NSData *data, NSError *connectionError))handler
         NSURLConnection.sendAsynchronousRequest(req, queue: queue, completionHandler: {
             response, data, error in
@@ -127,9 +127,9 @@ class CSJSwiftRequest: NSObject {
     class func requestWithURLbyiOS7Later(urlString:String, completionHandler:(data:AnyObject)->Void){
         //swift 1.1
 //        var URL = NSURL.URLWithString(urlString)
-        var URL = NSURL(string: urlString)
+        let URL = NSURL(string: urlString)
         let req = NSURLRequest(URL: URL!)
-        let dict : NSDictionary?
+//        let dict : NSDictionary?
 //        var session = NSURLSession.sharedSession()
 //        func dataTaskWithRequest(request: NSURLRequest!, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)!) -> NSURLSessionDataTask!
         NSURLSession.sharedSession().dataTaskWithRequest(req) { (dataA, response, error) -> Void in
@@ -200,9 +200,9 @@ class CSJSwiftRequest: NSObject {
         ///*
         do {
             dictJson = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableLeaves) as! NSDictionary
+            print("Success")
             return dictJson
 //            try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)
-            print("Success")
         } catch {
             print("An error occurred. = parseJSON")
             return ["cc":"出错"]

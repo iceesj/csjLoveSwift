@@ -406,10 +406,10 @@ class Counter {
     }
 }
 class ThreeSource: CounterDataSource {
-    let fixedIncrement = 3
+    @objc let fixedIncrement = 3
 }
 class TowardsZeroSource: CounterDataSource {
-    func incrementForCount(count: Int) -> Int {
+    @objc func incrementForCount(count: Int) -> Int {
         if count == 0{
             return 0
         }else if count < 0 {

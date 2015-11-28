@@ -28,7 +28,6 @@ class Deinitialization: CSJSwiftViewController {
         //析构过程是构造过程的逆向过程，当一个类的实例被释放的时候，在内存中消失前，析构器会被调用
         //swift通过ARC管理内存。
         
-        
         //由于swift是ARC管理内存，所以析构过程已经不是那么重要了
         class MyClass{
             var myNum = 0
@@ -42,7 +41,7 @@ class Deinitialization: CSJSwiftViewController {
             }
         }
         
-        var myClass = MyClass()
+        let myClass = MyClass()
         print("myClass.myNum = \(myClass.myNum)")
 //        myClass = nil
         

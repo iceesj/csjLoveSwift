@@ -33,7 +33,7 @@ class Methods: CSJSwiftViewController {
                 myNum += base * numberOfTimes
             }
         }
-        var csjClass = CsjClass()
+        let csjClass = CsjClass()
         //第二个参数开始，会自动提供一个外部使用变量名
         csjClass.increaseNum(10, numberOfTimes: 8)//******
         
@@ -48,7 +48,7 @@ class Methods: CSJSwiftViewController {
                 myNum += base * numberOfTimes
             }
         }
-        var newCsjClass = NewCsjClass()
+        let newCsjClass = NewCsjClass()
         newCsjClass.increaseNum(10, 8)//******
         
         
@@ -154,11 +154,11 @@ class Methods: CSJSwiftViewController {
                 playName = name
             }
         }
-        var player = Player(name:"World")
+        let player = Player(name:"World")
         player.completedLevel(1)//调用后 tarcker的highestUnlockedLevel变成2
         print("highest unlocked level is now \(LevelTracker.highestUnlockedLevel)")
         
-        var player2 = Player(name:"Kitty")
+        let player2 = Player(name:"Kitty")
         if player2.tracker.advanceToLevel(6){
             print("player is not on level 6")
         }else{

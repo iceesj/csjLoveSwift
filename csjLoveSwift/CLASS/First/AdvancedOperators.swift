@@ -34,7 +34,7 @@ class AdvancedOperators: CSJSwiftViewController {
         //swift又提供了一个让我们知道会溢出，继续+1的运算符
         //溢出加法 &+ ,减 &- ,乘 &* ,除 &/,余 &%
         //如果一个数被0除，会产生错误，在swift中，溢出除法 &% 被0除的话，就不会产生错误，得到0值。
-        var potentialOverflow = Int16.max
+        let potentialOverflow = Int16.max
         //potentialOverflow = 32767, which is the largest value an Int16 can hold
         potentialOverflow &+ 1
         

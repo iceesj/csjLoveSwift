@@ -67,7 +67,8 @@ class TypeCasting: CSJSwiftViewController {
         //OC中会返回一个AnyObject类型的数组，因为OC中没有明确类型的数组
         
         //AnyObject
-        var myNewArray: [AnyObject] = [MyFriend(name: "Hello"),MySelf(name: "Kitty")];
+        let myNewArray: [AnyObject] = [MyFriend(name: "Hello"),MySelf(name: "Kitty")];
+        print("myNewArray = \(myNewArray)")
         
         //将数组myNewArray看作是MyFriend类型的数组
         //xcode6 beta7 error
