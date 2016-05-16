@@ -110,7 +110,10 @@ class Function: CSJSwiftViewController {
         func myVarFunc(var myParam:Int){
             while myParam > 0{
                 print("myParam \(myParam)")
-                --myParam
+                //Swift 2.2
+                myParam -= 1
+                //Swift 2.1
+//                --myParam
             }
         }
         print(myVarFunc(2))//myParam 2, myParam 1
