@@ -24,9 +24,35 @@ class Closures_New: UIViewController {
         self.jinjie1()
         self.jinjie2()
         
-        
+        //捕获值
+        self.jinjie3()
     }
     
+    func jinjie3() {
+        
+        //返回 () -> Int
+        func makeIncrementor(forIncrement amount: Int) -> () -> Int {
+            var runningTotal = 0
+            //定义函数incrementor(),实现runningTotal的增加
+            func incrementor () -> Int {
+                runningTotal += amount
+                return runningTotal
+            }
+            return incrementor
+        }
+        
+        let value1 = makeIncrementor(forIncrement: 10)
+        print("输出value1的增量")
+        print(value1())
+        print(value1())
+        print(value1())
+
+        let value2 = makeIncrementor(forIncrement: 5)
+        print("输出value2的增量")
+        print(value2())
+        print(value2())
+        print(value2())
+    }
     
     func jinjie2() {
         func fomeFunctionThatTakesAClosure(closure: () -> () ){
@@ -34,7 +60,26 @@ class Closures_New: UIViewController {
         }
         
         //创建字典
-//        let digitNames = [0:"Zero",1:"One",2:"Two",3:"Three",4:"Four"]
+        let digitNames = [0:"Zero",1:"One",2:"Two",3:"Three",4:"Four",5:"Five",6:"Six",7:"Seven",8:"Eight",9:"Nine"]
+        print("digitNames = \(digitNames)")
+        
+        let numbers = [1,12,521,8023,12345]
+        print("numbers = \(numbers)")
+        
+        
+        let strings = numbers.map { (number) -> String in
+            var output = ""
+            var number_New = number
+            while number > 0 {
+                output = digitNames[number_New % 10]! + output
+                number_New /= 10
+            }
+            return output
+        }
+        for index in strings{
+            print("index = \(index)")
+        }
+        
         
     }
     
