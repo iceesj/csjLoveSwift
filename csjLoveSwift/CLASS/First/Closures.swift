@@ -77,13 +77,14 @@ class Closures: CSJSwiftViewController {
         let numbers = [16,58,510]
         let strings = numbers.map(){
             //参数number 返回值String in后函数体
-            (var number) -> String in
+            (number) -> String in
             var output = ""
+            var number_New = number
             while number > 0{
                 //16大于0 58, 510
                 output = digitNames[number % 10]! + output
                 print("output = \(output)")
-                number /= 10 // = 1, = 5, = 51, = 5
+                number_New /= 10 // = 1, = 5, = 51, = 5
             }
             return output
         }

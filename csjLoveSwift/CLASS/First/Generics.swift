@@ -177,7 +177,9 @@ extension Stack{
 //关联类型，Associated Types
 protocol Container{
     //typealias 定义了一个关联类型 ItemType和三个要去，1，一个append方法。2，一个count属性。3，一个下标
-    typealias ItemType
+    associatedtype ItemType//Swift 2.2
+//    typealias ItemType//Swift 2.1
+    
     mutating func append(item: ItemType)
     var count: Int {get}
     subscript(i: Int) -> ItemType {get}

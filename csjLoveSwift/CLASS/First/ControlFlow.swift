@@ -29,12 +29,14 @@ class ControlFlow: CSJSwiftViewController {
     
     func control(){
         //for
-        for var index=0;index<3;++index{
+//        for var index=0;index<3;++index{
+        for index in 0..<3 {
             print("index is \(index)")
         }
         //or
-        var index :Int
-        for index = 0; index<3;++index{
+//        var index :Int
+//        for index = 0; index<3;++index{
+        for index in 0..<3 {
             print("index is \(index)")
         }
         
@@ -58,7 +60,10 @@ class ControlFlow: CSJSwiftViewController {
             count += whileIndex
 //            print("count \(count)")//10+9+8+7+6+5+4+3+2+1=55
 //            print("whileIndex \(whileIndex)")
-            --whileIndex
+            //Swift 2.2
+            whileIndex -= 1
+            //Swift 2.1
+//            --whileIndex
         }
         print("count = \(count)")
         //or
@@ -68,7 +73,8 @@ class ControlFlow: CSJSwiftViewController {
         //Swift 2
         repeat {
             count+=whileIndex
-            --whileIndex
+            whileIndex -= 1
+//            --whileIndex//Swift 2.1
         }while whileIndex > 0
         print("do count = \(count)")
         

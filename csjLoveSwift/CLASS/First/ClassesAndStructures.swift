@@ -72,6 +72,7 @@ class ClassesAndStructures: CSJSwiftViewController {
         
         //为结构类型初始值设定项，Memberwise Initializers for Structure Types
         let vga = Resolution(width: 650, height: 480)
+        print("vga = \(vga)")
         
         //结构和枚举值类型，Structures and Enumerations Are Value Types
         let hd = Resolution(width: 1920, height: 1080)
@@ -119,7 +120,8 @@ class ClassesAndStructures: CSJSwiftViewController {
         print(myDictionaryCopy[1])// ＝ 1
         
         var myArray = [1,2,3]
-        var myArrayCopy = myArray
+        let myArrayCopy = myArray
+        print("myArrayCopy = \(myArrayCopy)")
         myArray[1] = 8
         print(myArray[1]) //得到结果是8
         
@@ -149,7 +151,7 @@ class ClassesAndStructures: CSJSwiftViewController {
         //值类型特点
         var arr = [0,0,0]
 //        arr[0]=1//arr = [1,0,0], newArr =[1,0,0]
-        var newArr = arr//Xcode6 beta3 newArr = [0,0,0], beta1,2 newArr = [1,0,0]
+        let newArr = arr//Xcode6 beta3 newArr = [0,0,0], beta1,2 newArr = [1,0,0]
         arr[0]=1//arr = [1,0,0], newArr =[0,0,0]
         print(arr)
         print(newArr)

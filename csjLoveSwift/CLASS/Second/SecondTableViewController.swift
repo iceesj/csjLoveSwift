@@ -47,7 +47,8 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
     //xcode beta7
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath) as! UITableViewCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath)
         //MR_CSJ
         /*
         let testperson = fetchedResultsController.objectAtIndexPath(indexPath) as Testperson

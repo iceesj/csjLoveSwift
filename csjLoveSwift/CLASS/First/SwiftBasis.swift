@@ -37,18 +37,23 @@ class SwiftBasis: CSJSwiftViewController {
     func optionalBiji(){
         //可选项optional
         let myNumber = "123"
+        print(myNumber)
         //Swift 1.2
 //        myNumber.toInt()
+        
         //Swift 2
-        Int(myNumber)
-        let myNumber1 = "Hello kitty"
-        Int(myNumber1)
+//        Int(myNumber)
+//        print("myNumber ")
+//        let myNumber1 = "Hello kitty"
+//        Int(myNumber1)
+        
+        print("myNumber = \(myNumber)")
         //不能编译，crash!!! fatal error: Can't unwrap Optional.None
         //        print("myNumber1's value is \(myNumber1.toInt()!)")
         //可以编译，no crash
         print("myNumber's value is \(Int(myNumber)!)")
         //可这样使用
-        if let myActualNumber = Int(myNumber1){
+        if let myActualNumber = Int("Hello kitty"){
             print("myNumber1's value is \(myActualNumber)")
         }else{
             print("myNumber1 could not be converted to an integer")

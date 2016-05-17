@@ -34,20 +34,24 @@ class ArrayAndDict: CSJSwiftViewController {
     func arrayBasic(){
 //        var myArrayOld : String[] = ["var1","var2","var3"]
         //Xcode6 beta3
-        var myArrayOld :[String] = ["var1","var2","var3"]
+        let myArrayOld :[String] = ["var1","var2","var3"]
+        print("myArrayOld = \(myArrayOld)")
         //简写为
         var myArray = ["var1","var2","var3"];
         //混杂类型
-        var myArrayMix = ["string1",1,2]
+        let myArrayMix = ["string1",1,2]
+        print("myArrayMix = \(myArrayMix)")
+        
         //空array
 //        var myInts = Int[] ()
         //Xcode6 beta3
-        var myInts = [Int] ()
+        let myInts = [Int] ()
+        print("myInts = \(myInts)")
         // repeatedValue重复值
 //        var myDouble = Double[](count:3,repeatedValue:0.0)
         //20140707 Xcode6 beta3
-        var myDouble = [Double](count:3,repeatedValue:0.0)
-
+        let myDouble = [Double](count:3,repeatedValue:0.0)
+        print("myDouble = \(myDouble)")
         
         //数量
         print("数组数量 \(myArray.count)")
@@ -121,6 +125,7 @@ class ArrayAndDict: CSJSwiftViewController {
         var myKong = Dictionary <String,String>()
         //清空Dict
         myKong = [:]
+        print("let = \(myKong)")
         
         //Dict中key-value的数量
         print("字典数量 \(myDict.count)")

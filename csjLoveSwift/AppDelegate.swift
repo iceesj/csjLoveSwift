@@ -79,9 +79,13 @@ func fenleiDataResource() -> Array<AnyObject>{
 func fenleiDataIntoDocument() {
 //    var dictArray = fenleiDataResource()
     var dictArray = [Dictionary<String, String>]()
+    print("dictArray1 = \(dictArray)")
+    
     let dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
     let dict2 = ["firstName":"张","lastName":"飞","onlyID":"002"]
     dictArray = [dict1,dict2]
+    
+    print("dictArray2 = \(dictArray)")
 //        Testperson.MR_importFromArray(dictArray)
 //    MagicalRecord.saveWithBlock({ (NSManagedObjectContext) -> Void in
     

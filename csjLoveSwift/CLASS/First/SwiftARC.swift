@@ -51,6 +51,7 @@ class SwiftARC: CSJSwiftViewController {
         reference2 = nil
         reference3 = nil
         
+        print("结果 = \(reference1),\(reference2),\(reference3)")
     }
     
     func swiftARCMethodTwo() {

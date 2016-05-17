@@ -50,10 +50,13 @@ class Deinitialization: CSJSwiftViewController {
             //在银行的金币数
             static var coinsInBank = 10_000
             //出售金币
-            static func vendCoins(var numberOfCoinsToVend:Int)->Int{
+            //Swift 2.2
+            static func vendCoins(numberOfCoinsToVend:Int)->Int{
                 print("numberOfCoinsToVend = \(numberOfCoinsToVend)")
                 print("coinsInBank = \(coinsInBank)")
-                numberOfCoinsToVend = min(numberOfCoinsToVend, coinsInBank)
+                var numberOfCoinsToVend_new = numberOfCoinsToVend
+//                print("numberOfCoinsToVend_new = \(numberOfCoinsToVend_new)")
+                numberOfCoinsToVend_new = min(numberOfCoinsToVend_new, coinsInBank)
                 print("numberOfCoinsToVend = \(numberOfCoinsToVend)")
                 coinsInBank -= numberOfCoinsToVend
                 return numberOfCoinsToVend

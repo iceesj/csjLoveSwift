@@ -36,7 +36,9 @@ class AdvancedOperators: CSJSwiftViewController {
         //如果一个数被0除，会产生错误，在swift中，溢出除法 &% 被0除的话，就不会产生错误，得到0值。
         let potentialOverflow = Int16.max
         //potentialOverflow = 32767, which is the largest value an Int16 can hold
-        potentialOverflow &+ 1
+        print("potentialOverflow = \(potentialOverflow)")
+        //Swift 2.2 去除
+//        potentialOverflow &+ 1
         
 //        var a = Int.max /0 //报错
         //删除 &/

@@ -107,11 +107,12 @@ class Function: CSJSwiftViewController {
         
         
         //传入参数 当作 函数体内部变量
-        func myVarFunc(var myParam:Int){
+        func myVarFunc(myParam:Int){
+            var myParam_New = myParam
             while myParam > 0{
                 print("myParam \(myParam)")
                 //Swift 2.2
-                myParam -= 1
+                myParam_New -= 1
                 //Swift 2.1
 //                --myParam
             }

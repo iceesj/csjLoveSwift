@@ -230,11 +230,14 @@ class ViewController: UIViewController {
         
         
         //用{}来创建一个匿名闭包，使用in将参数和返回值类型与闭包函数函数体进行分离
-        numbers.map({
+        //Swift 2.2
+        let nihao = numbers.map({
             (number:Int) -> Int in
             let result = 3*number
             return result
         })
+        print("nihao = \(nihao)")
+        
         
         var sortTestArr = [1,5,3,12,2]
         //貌似不行

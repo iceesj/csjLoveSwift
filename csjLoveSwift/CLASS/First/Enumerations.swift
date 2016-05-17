@@ -38,20 +38,21 @@ class Enumerations: CSJSwiftViewController {
         }
         */
         //or
-        enum CompassPoint{
+        enum CompassPoint : String{
             case North,South,East,West
         }
         enum Planet {
             case Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
         }
         
+        //Swift 2.2
+        /*
         //既然是类型,就用enum定义变量
         //预先指定West
         var directionToHead = CompassPoint.West
         //初始化了CompassPoint后，就不再需要再写枚举的类型了
         directionToHead = .East
-        
-
+//        let directionToHead = CompassPoint.West
         //switch中也是类似
         //Switch condition evaluates to a constant
         //原因可能是因为编译器认为我的变量在函数内部一直是不变吧
@@ -66,7 +67,10 @@ class Enumerations: CSJSwiftViewController {
                 print("Where the skies are blue")
             //prints "Where the sun rises"
         }
+        */
         
+        //Swift 2.2
+        /*
         let somePlanet : Planet = .Earth
         switch somePlanet{
             case .Earth:
@@ -74,6 +78,7 @@ class Enumerations: CSJSwiftViewController {
             default:
                 print("Not a safe place for humans")
         }
+        */
         
         //关联值，Associated Values
         //Barcod不存储任何东西，仅仅定义了类型，需要再定义变量
@@ -81,6 +86,9 @@ class Enumerations: CSJSwiftViewController {
             case UPCA(Int,Int,Int,Int)
             case QRCode(String)
         }
+        
+        //Swift 2.2
+        /*
         var productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
         productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
         
@@ -94,10 +102,13 @@ class Enumerations: CSJSwiftViewController {
         switch productBarcode {
             case let .UPCA(numberSystem, manufacturer, product, check):
                 print("UPC-A: \(numberSystem),\(manufacturer),\(product),\(check)")
-            case let .QRCode(productCde):
+            //Swift 2.2
+            case .QRCode(_):
+            //Swift 2.1
+//            case let .QRCode(productCde):
                 print("QR code:\(productBarcode)")
         }
-        
+        */
         
         //可以为enum定义值，Raw Values
         enum ASCIIControlCharacter :Character{
