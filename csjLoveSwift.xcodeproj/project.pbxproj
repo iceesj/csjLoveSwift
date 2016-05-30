@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1624C91CF7DABD005C720F /* Classes_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1624C81CF7DABD005C720F /* Classes_New.swift */; };
 		7B6AD2701CE978FC00EA5EBA /* FunctionVCOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */; };
 		7B6AD2721CEAE40600EA5EBA /* Closures_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */; };
+		7BFC36C41CF6C9B00033704D /* Enumerations_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC36C31CF6C9B00033704D /* Enumerations_New.swift */; };
 		B005207919694BD1005C07E0 /* SwiftString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005207819694BD1005C07E0 /* SwiftString.swift */; };
 		B07EE7A91A7CA146002CA98E /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7A81A7CA146002CA98E /* RootTabBarController.swift */; };
 		B07EE7AB1A7CA20D002CA98E /* FirstNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EE7AA1A7CA20D002CA98E /* FirstNavViewController.swift */; };
@@ -74,8 +76,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B1624C81CF7DABD005C720F /* Classes_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes_New.swift; sourceTree = "<group>"; };
 		7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionVCOne.swift; sourceTree = "<group>"; };
 		7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures_New.swift; sourceTree = "<group>"; };
+		7BFC36C31CF6C9B00033704D /* Enumerations_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations_New.swift; sourceTree = "<group>"; };
 		B005207819694BD1005C07E0 /* SwiftString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftString.swift; sourceTree = "<group>"; };
 		B07EE7A81A7CA146002CA98E /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		B07EE7AA1A7CA20D002CA98E /* FirstNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstNavViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				D30DA92F196E7ABB0060107A /* AdvancedOperators.swift */,
 				7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */,
 				7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */,
+				7BFC36C31CF6C9B00033704D /* Enumerations_New.swift */,
+				7B1624C81CF7DABD005C720F /* Classes_New.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				B07EE7A91A7CA146002CA98E /* RootTabBarController.swift in Sources */,
 				D38B55BD1963EF7E009A24CA /* Square.swift in Sources */,
 				D3F8436C19653B5A008E140E /* wwdcRoom102.swift in Sources */,
+				7BFC36C41CF6C9B00033704D /* Enumerations_New.swift in Sources */,
 				D30DA920196E77800060107A /* Deinitialization.swift in Sources */,
 				D30DA91C196E75DD0060107A /* Inheritance.swift in Sources */,
 				D3E9A8E2194AA18E004F2A80 /* SecondViewController.swift in Sources */,
@@ -460,6 +467,7 @@
 				D38E7D9E194947B5005FE76E /* ViewController.swift in Sources */,
 				D30DA914196E75050060107A /* ClassesAndStructures.swift in Sources */,
 				D3870F0319A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift in Sources */,
+				7B1624C91CF7DABD005C720F /* Classes_New.swift in Sources */,
 				D30DA92C196E7A3E0060107A /* Protocols.swift in Sources */,
 				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
 				D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */,

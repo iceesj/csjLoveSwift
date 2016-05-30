@@ -9,7 +9,7 @@
 import UIKit
 
 class FirstBetaViewController: UITableViewController {
-    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","函数的返回值","新闭包"]
+    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,12 +153,15 @@ class FirstBetaViewController: UITableViewController {
             let advancedVC = AdvancedOperators(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(advancedVC, animated:true)
         }
-        else if (data == "函数的返回值"){
+        else if (data == "2.2函数的返回值"){
             let hanshufanhuiVC = FunctionVCOne(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(hanshufanhuiVC , animated:true)
-        }else if (data == "新闭包") {
+        }else if (data == "2.2闭包") {
             let closuresNew = Closures_New(nibName: nil, bundle: nil)
             self.navigationController?.pushViewController(closuresNew, animated: true)
+        }else if data == "2.2枚举" {
+            let EnumerationsNew = Enumerations_New(nibName: nil, bundle: nil)
+            self.navigationController?.pushViewController(EnumerationsNew, animated: true)
         }
         
     }
