@@ -9,7 +9,7 @@
 import UIKit
 
 class FirstBetaViewController: UITableViewController {
-    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举"]
+    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举","柯里化"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +162,9 @@ class FirstBetaViewController: UITableViewController {
         }else if data == "2.2枚举" {
             let EnumerationsNew = Enumerations_New(nibName: nil, bundle: nil)
             self.navigationController?.pushViewController(EnumerationsNew, animated: true)
+        }else if (data == "柯里化"){
+            let Currying = CurryingVC(nibName: nil,bundle:  nil)
+            self.navigationController?.pushViewController(Currying, animated: true)
         }
         
     }
