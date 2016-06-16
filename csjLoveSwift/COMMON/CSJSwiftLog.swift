@@ -14,11 +14,11 @@ class CSJSwiftLog: NSObject {
         super.init();
     }
     
-    class func showAlertView(title:String,message:String){
+    class func showAlertView(_ title:String,message:String){
         let alert = UIAlertView()
         alert.title = title
         alert.message = message
-        alert.addButtonWithTitle("确定")
+        alert.addButton(withTitle: "确定")
         alert.show()
     }
     

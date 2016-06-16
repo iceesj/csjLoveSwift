@@ -28,13 +28,13 @@ class FirstBetaViewController: UITableViewController {
     //xcode beta6
 //    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
     //xcode beta7
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     //xcode beta6
 //    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
     //xcode beta7
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return baseArray.count
     }
     
@@ -42,23 +42,23 @@ class FirstBetaViewController: UITableViewController {
 //    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
     //Xcode6 beta3
 //    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Xcode 6 beta1&2
 //        let cell = tableView?.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as UITableViewCell
         //swift 1.1
-        cell.textLabel?.text = baseArray[indexPath.row]
+        cell.textLabel?.text = baseArray[(indexPath as NSIndexPath).row]
         return cell
     }
     
     //点击cell跳转
     //    override func tableView(tableView: (UITableView!), didSelectRowAtIndexPath indexPath: NSIndexPath!){
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
         //xcode beta6
 //        var data = baseArray[indexPath!.row]
         //xcode6 beta7 所有navigationController 变成 navigationController?
-        let data = baseArray[indexPath.row]
+        let data = baseArray[(indexPath as NSIndexPath).row]
         if data == "wwdcRoom102"{
             let wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
 //            self.navigationController.pushViewController(wwdcVC, animated:true)

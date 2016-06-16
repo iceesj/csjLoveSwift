@@ -64,8 +64,8 @@ class SwiftString: CSJSwiftViewController {
         
         //大小写转换
         let myWord = "Hellow World"
-        print(myWord.uppercaseString)   //HELLOW WORLD
-        print(myWord.lowercaseString)    //hellow world
+        print(myWord.uppercased())   //HELLOW WORLD
+        print(myWord.lowercased())    //hellow world
         
         //编码
         let myBianma = "apple"

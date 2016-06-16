@@ -55,7 +55,7 @@ class Closures_New: UIViewController {
     }
     
     func jinjie2() {
-        func fomeFunctionThatTakesAClosure(closure: () -> () ){
+        func fomeFunctionThatTakesAClosure(_ closure: () -> () ){
             //函数主题部分
         }
         
@@ -152,7 +152,7 @@ class Closures_New: UIViewController {
     }
     
     //闭包表达式最长的用于其他的函数中，并不是单独去使用
-    func copare(arr:[Int] , _ value: Int, _ cb:(Num:Int, Value:Int)->Bool) -> Bool{
+    func copare(_ arr:[Int] , _ value: Int, _ cb:(Num:Int, Value:Int)->Bool) -> Bool{
         for item in arr{
             //判断闭包是否为真
             if (cb(Num: item, Value: value)){

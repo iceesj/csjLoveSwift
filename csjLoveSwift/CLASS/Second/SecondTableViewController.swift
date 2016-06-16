@@ -12,7 +12,7 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
     
     var coredataTestperson = []
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        setupFetchedResultsController()
     }
@@ -45,10 +45,10 @@ class SecondTableViewController: CSJFetchedResultsTableViewController {
     }
     
     //xcode beta7
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath) as! UITableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("SecondCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell", for: indexPath)
         //MR_CSJ
         /*
         let testperson = fetchedResultsController.objectAtIndexPath(indexPath) as Testperson

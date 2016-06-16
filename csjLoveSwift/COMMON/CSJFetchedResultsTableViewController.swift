@@ -10,35 +10,37 @@ import UIKit
 import CoreData
 
 //UITableViewRowAnimation.Fade，，UITableViewRowAnimation.None
-let CSJSwift_UITableViewRowAnimation = UITableViewRowAnimation.Fade
+let CSJSwift_UITableViewRowAnimation = UITableViewRowAnimation.fade
 
 class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedResultsControllerDelegate {
     //iOS7，iOS8 Swift NSFetchedResultsController Tableview
     var changeIsUserDriven = false
     
-    var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController() {
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> = NSFetchedResultsController() {
         didSet {
             if (fetchedResultsController != oldValue) {
                 fetchedResultsController.delegate = self;
-                if (fetchedResultsController.isKindOfClass(NSFetchedResultsController)) {
-                    self.performFetch()
-                } else {
+//                if (fetchedResultsController.isKindof: NSFetchedResultsController) {
+//                    self.performFetch()
+//                } else {
                     self.tableView.reloadData()
-                }
+//                }
             }
         }
     }
     
     func performFetch(){
-        if (self.fetchedResultsController.isKindOfClass(NSFetchedResultsController)){
-//            var error : NSError!
-//            var success = self.fetchedResultsController.performFetch(&error)
-//            if (success) {
-//                print("Success")
-//            } else {
-//                print("Failed")
-//            }
-        }
+//        if (self.fetchedResultsController.isKindof: NSFetchedResultsController){
+        /*
+            var error : NSError!
+            var success = self.fetchedResultsController.performFetch(&error)
+            if (success) {
+                print("Success")
+            } else {
+                print("Failed")
+            }
+        */
+//        }
     }
     
     override func viewDidLoad() {
@@ -78,14 +80,15 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
     return rows
     }
     */
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         //MR_CSJ
 //        return fetchedResultsController.sections!.count
         return 1
     }
     
     //xcode6 beta7
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //MR_CSJ
 //        var rows = 0
 //        if (fetchedResultsController.sections!.count > 0){
@@ -119,21 +122,25 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
 //NSFetchedResultsControllerDelegate
     
     //20150603 修改fetchedResultsController
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//    func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
     }
     
     
     //http://stackoverflow.com/questions/24983228/xcode-6-beta-4-use-of-unresolved-identifier-nsfetchedresultschangeinsert
     
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    //Swift3
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    //Swift2.2
+//    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         switch type {
-        case .Insert:
-            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
+        case .insert:
+            self.tableView.insertSections(IndexSet(integer: sectionIndex), with: CSJSwift_UITableViewRowAnimation)
             break
             
-        case .Delete:
-            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: CSJSwift_UITableViewRowAnimation)
+        case .delete:
+            self.tableView.deleteSections(IndexSet(integer: sectionIndex), with: CSJSwift_UITableViewRowAnimation)
             break
             
         default:
@@ -141,8 +148,10 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
         }
     }
     
+    //Swift 3
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: AnyObject, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
     //Swift 2.1
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+//    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
     //Swift 2
 //    func controller(controller: NSFetchedResultsController, didChangeObject anObject: NSManagedObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
     //Swift 1.2
@@ -150,25 +159,26 @@ class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedRes
     //Swift 1
 //    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType, newIndexPath : NSIndexPath!) {
         switch type {
-        case .Insert:
-            self.tableView.insertRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+        case .insert:
+            self.tableView.insertRows(at: [indexPath!], with: CSJSwift_UITableViewRowAnimation)
             break
-        case .Delete:
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: CSJSwift_UITableViewRowAnimation)
             break
-        case .Update:
-            self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+        case .update:
+            self.tableView.reloadRows(at: [indexPath!], with: CSJSwift_UITableViewRowAnimation)
             break
-        case .Move:
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
-            self.tableView.insertRowsAtIndexPaths([indexPath!], withRowAnimation: CSJSwift_UITableViewRowAnimation)
+        case .move:
+            self.tableView.deleteRows(at: [indexPath!], with: CSJSwift_UITableViewRowAnimation)
+            self.tableView.insertRows(at: [indexPath!], with: CSJSwift_UITableViewRowAnimation)
             break
 //        default:
 //            break
         }
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController){
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
+//    func controllerDidChangeContent(controller: NSFetchedResultsController){
 //        self.tableView.endUpdates()
         UIView.setAnimationsEnabled(false)
         self.tableView.endUpdates()

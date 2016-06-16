@@ -25,7 +25,7 @@ class Function: CSJSwiftViewController {
     func function(){
 //        func 函数名(参数名字:参数类型)->返回值类型{//多个参数用","分离
 //        }
-        func myFunc(someBody:String, saySomethring:String)->String{
+        func myFunc(_ someBody:String, saySomethring:String)->String{
              return someBody + "say" + saySomethring
         }
         
@@ -40,7 +40,7 @@ class Function: CSJSwiftViewController {
         }
         
         //多返回值函数 带返回函数名
-        func myCompare(firstNum:Int, secondNum: Int) -> (bigger: Int ,smaller: Int){
+        func myCompare(_ firstNum:Int, secondNum: Int) -> (bigger: Int ,smaller: Int){
             if firstNum >= secondNum{
                 return (firstNum , secondNum)
             }else{
@@ -57,7 +57,7 @@ class Function: CSJSwiftViewController {
         
         
         //多返回值函数 不带函数名
-        func myNewCompare(firstNum:Int, secondNum:Int) -> (Int,Int){
+        func myNewCompare(_ firstNum:Int, secondNum:Int) -> (Int,Int){
             if firstNum >= secondNum {
                 return (firstNum, secondNum)
             }else{
@@ -80,21 +80,21 @@ class Function: CSJSwiftViewController {
         //Swift 1.2
 //        func mySameFunc (#strParam : String) -> String{
         //Swift 2
-        func mySameFunc (strParam strParam : String) -> String{
+        func mySameFunc (strParam : String) -> String{
             return "hello" + strParam
         }
         print(mySameFunc(strParam:"world"))
         
         
         //参数的默认值 规定放在最后一个参数
-        func myJoin(string1:String, string2:String, withJoiner joiner:String = "+")->String{
+        func myJoin(_ string1:String, string2:String, withJoiner joiner:String = "+")->String{
             return  string1+joiner+string2
         }
         print(myJoin("hello",string2: "world"))
         print(myJoin("hello",string2: "world",withJoiner:"=.="))
         
         //变长参数 一个函数最多只能有一个变长的参数，且在参数列表最后
-        func arithmeticMean (numbers: Double...) -> Double{
+        func arithmeticMean (_ numbers: Double...) -> Double{
             var total: Double = 0
             //累加所有传入Double参数
             for number in numbers{
@@ -107,7 +107,7 @@ class Function: CSJSwiftViewController {
         
         
         //传入参数 当作 函数体内部变量
-        func myVarFunc(myParam:Int){
+        func myVarFunc(_ myParam:Int){
             var myParam_New = myParam
             while myParam > 0{
                 print("myParam \(myParam)")
@@ -123,7 +123,7 @@ class Function: CSJSwiftViewController {
         //in-out参数
         var myArray = [1,2,3]
         //在参数前面使用inout关键表面，ary参数是in-out参数
-        func myArrayFunc (inout ary:Array<Int>){
+        func myArrayFunc (_ ary:inout Array<Int>){
             ary[1]=8
         }
         myArrayFunc(&myArray)//添加& 表明参数是in-out参数 会在函数内部被改变
@@ -134,7 +134,7 @@ class Function: CSJSwiftViewController {
         //      这个类型的函数，他有一个String类型的参数，返回一个String类型值
         var myFuncType : (Int,Int)->Int = myLeixingFunc
         print("结果 ＝ \(myFuncType(2,3))")
-        func myFuncFunc(myFuncType:(Int,Int)->Int, a:Int, b:Int){
+        func myFuncFunc(_ myFuncType:(Int,Int)->Int, a:Int, b:Int){
             print("myFuncFunc结果 = \(myFuncType(a,b))")
         }
         //Swift 1.2
@@ -152,7 +152,7 @@ class Function: CSJSwiftViewController {
         myFanhuiTempFunc(3,5)
 //        myNewLeixingFunc()(3,5)//同上
         
-        func chooseStepFunction(backwards: Bool) -> (Int)->Int{
+        func chooseStepFunction(_ backwards: Bool) -> (Int)->Int{
             //xcode6 beta6 - Cannot reference a local function from another local function
             return backwards ? setpBackward : setpForward
         }
@@ -167,11 +167,11 @@ class Function: CSJSwiftViewController {
         
         
         //nested func
-        func newChooseStepFunction(backwards: Bool) -> (Int)->Int{
-            func stepForward(input:Int) -> Int{
+        func newChooseStepFunction(_ backwards: Bool) -> (Int)->Int{
+            func stepForward(_ input:Int) -> Int{
                 return input + 1
             }
-            func stepBackward(input:Int) -> Int{
+            func stepBackward(_ input:Int) -> Int{
                 return input - 1
             }
             return backwards ? stepBackward : stepForward
@@ -200,13 +200,13 @@ class Function: CSJSwiftViewController {
 }
 
 //Function Types as Return Types - NO.2
-func setpForward(input:Int) -> Int{
+func setpForward(_ input:Int) -> Int{
     return input+1
 }
-func setpBackward(input:Int) -> Int{
+func setpBackward(_ input:Int) -> Int{
     return input-1
 }
 //Function Types as Parameter Types
-func myLeixingFunc(a:Int,b:Int)->Int{
+func myLeixingFunc(_ a:Int,b:Int)->Int{
     return a + b
 }

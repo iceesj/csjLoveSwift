@@ -29,8 +29,8 @@ class Enumerations_New: UIViewController {
     }
     
     enum Barcode {
-        case UPCA(Int, Int, Int)
-        case QRCode(String)
+        case upca(Int, Int, Int)
+        case qrCode(String)
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,9 +78,9 @@ class Enumerations_New: UIViewController {
         }
         
         
-        let productBarcode = Barcode.UPCA(8, 85909_51226, 3)//相关值
+        let productBarcode = Barcode.upca(8, 85909_51226, 3)//相关值
         switch productBarcode {
-        case .UPCA(let numberSystem, let identifier, let check):
+        case .upca(let numberSystem, let identifier, let check):
             print("UPC-A的值有： \(numberSystem),\(identifier),\(check).")
         default:
             print("QR code 的值有:\(productBarcode)")

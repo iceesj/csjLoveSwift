@@ -10,9 +10,9 @@ import UIKit
 
 
 enum ViewControllerType :Int {
-    case NumOne
-    case NumTwo
-    case NumThree
+    case numOne
+    case numTwo
+    case numThree
 }
 
 class ViewController: UIViewController {
@@ -23,15 +23,15 @@ class ViewController: UIViewController {
     //生命周期
     
     //view将要消失 -(void)viewWillDisappear:(BOOL)animated
-    override func viewWillDisappear(animated:Bool){
+    override func viewWillDisappear(_ animated:Bool){
         super.viewWillDisappear(animated)
     }
     //view将要出现
-    override func viewWillAppear(animated:Bool){
+    override func viewWillAppear(_ animated:Bool){
         super.viewWillAppear(animated)
     }
     //view已经出现
-    override func viewDidAppear(animated: Bool){
+    override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
     }
     
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         //xcode6 beta 1,2,3
 //        buttonOne.setTitle("Basic knowledge",forState: .Normal)
         //xcode6 beta 4
-        buttonOne?.setTitle("Basic knowledge", forState: .Normal)
+        buttonOne?.setTitle("Basic knowledge", for: UIControlState())
         
         //methods
         
@@ -110,14 +110,14 @@ class ViewController: UIViewController {
     
     //各种方法
     
-    @IBAction func buttonOnePressed(sender : AnyObject) {
+    @IBAction func buttonOnePressed(_ sender : AnyObject) {
         //xcode6 beta7 添加!
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FirstBetaViewController") as! FirstBetaViewController
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "FirstBetaViewController") as! FirstBetaViewController
         vc.hidesBottomBarWhenPushed = true
         self.navigationController!.pushViewController(vc,animated:true)
     }
     
-    @IBAction func alertViewPressed(sender : AnyObject) {
+    @IBAction func alertViewPressed(_ sender : AnyObject) {
         CSJSwiftLog.showAlertView("提示",message:"已经按下")
     }
     
@@ -199,8 +199,8 @@ class ViewController: UIViewController {
         incrementTest(7,"hello")
         
         //传入Int，返回另一个函数的返回值Int
-        func makeIncrementer() -> (Int -> Int) {
-            func addOne(number: Int) -> Int {
+        func makeIncrementer() -> ((Int) -> Int) {
+            func addOne(_ number: Int) -> Int {
                 return 1 + number
             }
             return addOne
@@ -210,7 +210,7 @@ class ViewController: UIViewController {
         
         //函数也可以当做参数传入另一个函数。 swift failed with exit code 254 :-(
         //Xcode6 beta3
-        func hasAnyMatches(list: [Int], condition: Int -> Bool) -> Bool {
+        func hasAnyMatches(_ list: [Int], condition: (Int) -> Bool) -> Bool {
             for item in list {
                 if condition(item) {
                     return true
@@ -219,7 +219,7 @@ class ViewController: UIViewController {
             return false
         }
         //准备传入的函数
-        func lessThanTen(number: Int) -> Bool {
+        func lessThanTen(_ number: Int) -> Bool {
             return number < 10
         }
         var numbers = [20, 19, 7, 12]
@@ -249,7 +249,7 @@ class ViewController: UIViewController {
         print("sortTestArr1 = \(sortTestArr)")
 
         //like
-        func backwards (s1:Int, s2:Int)->Bool{
+        func backwards (_ s1:Int, s2:Int)->Bool{
             print("\(s1):\(s2)")
             return s1>s2
         }
@@ -260,7 +260,7 @@ class ViewController: UIViewController {
 
     //secondBiji
     //传入方法输出
-    func great(name: String,day :String){
+    func great(_ name: String,day :String){
         print( "Hello \(name),today is\(day)")
     }
     //返回元组
@@ -268,7 +268,7 @@ class ViewController: UIViewController {
         return (3.59, 3.69, 3.79)
     }
     //传入参数数量可变
-    func sumOf(numbers:Int...) -> Int{
+    func sumOf(_ numbers:Int...) -> Int{
         var sum = 0
         //遍历传进来的数组
         for number in numbers{
@@ -290,7 +290,7 @@ class ViewController: UIViewController {
     }
     //函数可以作为另一个函数的返回值
     func makeIncrementerString() -> ((Int,String) -> String) {
-        func addOne(number: Int , str:String) -> String {
+        func addOne(_ number: Int , str:String) -> String {
             return str + String(number)
         }
         return addOne
@@ -304,7 +304,7 @@ class ViewController: UIViewController {
 }
 @objc protocol Downloadable{
     //20140722 xcode6 beta3 @optional ，，xcode6 beta4 optional
-    optional func download(toPath:String)->Bool;
+    @objc optional func download(_ toPath:String)->Bool;
 }
 
 

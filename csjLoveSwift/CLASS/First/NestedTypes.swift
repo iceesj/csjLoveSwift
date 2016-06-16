@@ -28,21 +28,21 @@ class NestedTypes: CSJSwiftViewController {
         struct BlackjackCard{
             //nested Suit enumeration 嵌套适合的枚举
             enum Suit: Character{//性格品质
-                case Spades = "♠", Hearts = "♡", Diamonds = "♢", Clubs = "♣"
+                case spades = "♠", hearts = "♡", diamonds = "♢", clubs = "♣"
             }
             
             enum Rank: Int {
-                case Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten
-                case Jack, Queen, King, Ace
+                case two = 2, three, four, five, six, seven, eight, nine, ten
+                case jack, queen, king, ace
                 
                 struct Values {
                     let first: Int, second: Int?
                 }
                 var values : Values{
                     switch self{
-                    case .Ace:
+                    case .ace:
                         return Values(first: 1, second: 11)
-                    case .Jack, .Queen, .King:
+                    case .jack, .queen, .king:
                         return Values(first: 10, second: nil)
                     default:
                         //使用toRaw 和fromRaw 两个函数，实现原始值和枚举值之间进行切换
@@ -72,13 +72,13 @@ class NestedTypes: CSJSwiftViewController {
             
         }
         
-        let theAceOfSpades = BlackjackCard(rank: .Ace, suit: .Spades)
+        let theAceOfSpades = BlackjackCard(rank: .ace, suit: .spades)
         print("theAceOfSpades: \(theAceOfSpades.description)")
         //theAceOfSpades : suit is ♠,value is lor 11
         
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
-        let heartsSymbol = BlackjackCard.Suit.Hearts.rawValue//转化成实际值，
+        let heartsSymbol = BlackjackCard.Suit.hearts.rawValue//转化成实际值，
         print("heartsSymbol = \(heartsSymbol)")
         
     }

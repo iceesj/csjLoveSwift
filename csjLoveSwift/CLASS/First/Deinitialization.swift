@@ -51,7 +51,7 @@ class Deinitialization: CSJSwiftViewController {
             static var coinsInBank = 10_000
             //出售金币
             //Swift 2.2
-            static func vendCoins(numberOfCoinsToVend:Int)->Int{
+            static func vendCoins(_ numberOfCoinsToVend:Int)->Int{
                 print("numberOfCoinsToVend = \(numberOfCoinsToVend)")
                 print("coinsInBank = \(coinsInBank)")
                 var numberOfCoinsToVend_new = numberOfCoinsToVend
@@ -63,7 +63,7 @@ class Deinitialization: CSJSwiftViewController {
             }
             
             //收到金币
-            static func receiveCoins(coins:Int){
+            static func receiveCoins(_ coins:Int){
                 coinsInBank += coins
             }
         }
@@ -77,7 +77,7 @@ class Deinitialization: CSJSwiftViewController {
                 print("Player.init.coinsInPurse = \(coinsInPurse)")
             }
             //赢得的钱币
-            func winCoins(coins:Int){
+            func winCoins(_ coins:Int){
                 coinsInPurse += Bank.vendCoins(coins)
             }
             //析构过程

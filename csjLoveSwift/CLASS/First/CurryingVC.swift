@@ -16,7 +16,7 @@ class CurryingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white()
         
         let result: Int = curryInstance.add(10)(b: 20)(c: 30)
         print("result = \(result)")
@@ -35,14 +35,18 @@ class CurryingVC: UIViewController {
         let res: Int = functionC(c: 30)
         print("res = \(res)")
         
-        
-        //
+        //Swift3
+        let funcB = curryInstance.addCur(30,30,30)
+        print("funcB = \(funcB)")
+        //Swift2.2
+        /*
         let funcB = curryInstance.addCur(30)
         print("funcB = \(funcB)")
-        let funcC = funcB(b: 30)
+        let funcC = funcB(30)
         print("funC = \(funcC)")
         let res2 : Int = funcC(c: 30)
         print("res2 = \(res2)")
+        */
         
 //        curryInstance.function()
         
@@ -61,7 +65,7 @@ class CurryingVC: UIViewController {
     }
     
     
-    func addCur(a: Int, b: Int, c: Int) -> Int{
+    func addCur(_ a: Int, b: Int, c: Int) -> Int{
         print("\(a) + \(b) + \(c)")
         return a + b + c
     }
@@ -87,11 +91,11 @@ class Currying
         print("function = \(#function)")
     }
     
-    func functionParam(a: Int){
+    func functionParam(_ a: Int){
         print("functionParam = \(#function)")
     }
     
-    func functionParam(a: Int, b : Int){
+    func functionParam(_ a: Int, b : Int){
         print(#function)
     }
     
@@ -101,7 +105,7 @@ class Currying
     
     /*** uncurried:普通函数 ***/
     // 接收多个参数的函数
-    func add(a: Int, b: Int, c: Int) -> Int{
+    func add(_ a: Int, b: Int, c: Int) -> Int{
         print("\(a) + \(b) + \(c)")
         return a + b + c
     }
@@ -112,7 +116,7 @@ class Currying
     // (a: Int) : 参数
     // (b:Int) -> (c: Int) -> Int : 函数返回值（一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数)
     // 定义一个接收参数a,并且返回一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数
-    func add(a: Int) -> (b:Int) -> (c: Int) -> Int{
+    func add(_ a: Int) -> (b:Int) -> (c: Int) -> Int{
         // 一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数
         return { (b:Int) -> (c: Int) -> Int in
             // 返回一个接收余下第一个参数c，并且有返回结果为Int类型的函数
@@ -129,7 +133,7 @@ class Currying
     }
     
     /*** curried: 系统自带的柯里化函数 ***/
-    func addCur(a: Int)(b: Int)(c: Int) -> Int{
+    func addCur(_ a: Int, _ b: Int, _ c: Int) -> Int{
         print("\(a) + \(b) + \(c)")
         return a + b + c
     }
@@ -137,12 +141,12 @@ class Currying
 
 
 protocol CombineUI{
-    func combine (top: () -> (), bottom: () -> ())
+    func combine (_ top: () -> (), bottom: () -> ())
     
 }
 
 class UI: CombineUI {
-    func combine(top: () -> (), bottom: () -> ()) {
+    func combine(_ top: () -> (), bottom: () -> ()) {
         top()
         
         bottom()

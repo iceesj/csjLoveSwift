@@ -42,7 +42,7 @@ class Enumerations: CSJSwiftViewController {
             case North,South,East,West
         }
         enum Planet {
-            case Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+            case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
         }
         
         //Swift 2.2
@@ -83,8 +83,8 @@ class Enumerations: CSJSwiftViewController {
         //关联值，Associated Values
         //Barcod不存储任何东西，仅仅定义了类型，需要再定义变量
         enum Barcode{
-            case UPCA(Int,Int,Int,Int)
-            case QRCode(String)
+            case upca(Int,Int,Int,Int)
+            case qrCode(String)
         }
         
         //Swift 2.2
@@ -112,15 +112,15 @@ class Enumerations: CSJSwiftViewController {
         
         //可以为enum定义值，Raw Values
         enum ASCIIControlCharacter :Character{
-            case Tab = "\t", LineFeed = "\n", CarriageReturn = "\r"
+            case tab = "\t", lineFeed = "\n", carriageReturn = "\r"
         }
         enum NewPlanet:Int{
-            case Mercury = 1, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+            case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
         }
         //toRaw 取到枚举的值
         //swift 1.0 toRaw()
         //swift 1.1 rawValue
-        let earthsOrder = NewPlanet.Earth.rawValue
+        let earthsOrder = NewPlanet.earth.rawValue
         print("earthsOrder 取值 ＝ \(earthsOrder)")
         //fromRaw 通过值取到NewPlanet成员
         //swift 1.0 toRaw()

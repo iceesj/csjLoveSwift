@@ -50,7 +50,7 @@ class ArrayAndDict: CSJSwiftViewController {
         // repeatedValue重复值
 //        var myDouble = Double[](count:3,repeatedValue:0.0)
         //20140707 Xcode6 beta3
-        let myDouble = [Double](count:3,repeatedValue:0.0)
+        let myDouble = [Double](repeating: 0.0,count: 3)
         print("myDouble = \(myDouble)")
         
         //数量
@@ -70,11 +70,11 @@ class ArrayAndDict: CSJSwiftViewController {
 //        print("数组最后添加元素 \(myArray)")
         
         //指定位置插入
-        myArray.insert("need",atIndex:0)
+        myArray.insert("need",at:0)
         print("数组插入数据 \(myArray)")
         
         //删除指定下标位置元素
-        myArray.removeAtIndex(0)
+        myArray.remove(at: 0)
         print("数组删除指定下标元素 \(myArray)")
         
         //删除最后一个元素

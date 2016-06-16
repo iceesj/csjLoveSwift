@@ -38,7 +38,7 @@ class wwdcRoom102: CSJSwiftViewController {
         var specialWords = ["klaatu","barada","nikto"]
         var specialNumbers = [4,8,15,16,23,42]
         //Xcode6 beta3
-        func sum(array:[Int])->Int{
+        func sum(_ array:[Int])->Int{
             var result = 0
             for value in array {result += value}
             print("result = \(result)")
@@ -46,7 +46,7 @@ class wwdcRoom102: CSJSwiftViewController {
         }
         var resultsum = sum(specialNumbers)
         print("resultsum = \(resultsum)")
-        func sumAndAverage(array:[Int ]) -> (sum:Int, average:Double){
+        func sumAndAverage(_ array:[Int ]) -> (sum:Int, average:Double){
             var result = 0
             for value in array {result += value}
             let avg = Double(result) / Double(array.count)
@@ -55,7 +55,7 @@ class wwdcRoom102: CSJSwiftViewController {
         
         //Swift 2 去除没有使用的
 //        var result = sumAndAverage(specialNumbers)
-        let rect = CGRectMake(10.0, 5.0, 10.0, 10.0)
+        let rect = CGRect(x: 10.0, y: 5.0, width: 10.0, height: 10.0)
         let sameRect = CGRect(x:10.0, y:5.0, width:10.0, height: 10.0)
         if rect == sameRect{
             NSLog("rect = sameRect")

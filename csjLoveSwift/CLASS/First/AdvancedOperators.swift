@@ -140,11 +140,11 @@ prefix func - (vector: Vector2D) -> Vector2D {
 }
 
 //复合赋值操作符，Compound Assignment Operators
-func += (inout left: Vector2D, right: Vector2D) {
+func += (left: inout Vector2D, right: Vector2D) {
     left = left + right
 }
 
-prefix func ++ (inout vector: Vector2D) -> Vector2D {
+prefix func ++ (vector: inout Vector2D) -> Vector2D {
     vector += Vector2D(x: 1.0, y: 1.0)
     return vector
 }
@@ -162,7 +162,7 @@ func != (left: Vector2D, right: Vector2D) -> Bool {
 //定义了一个前置运算符 +++，定义运算符关键字operator
 prefix operator +++ {}
 
-prefix func +++  (inout vector: Vector2D) -> Vector2D{
+prefix func +++  (vector: inout Vector2D) -> Vector2D{
     vector += vector
     return vector
 }

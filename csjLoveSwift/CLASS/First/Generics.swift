@@ -90,26 +90,26 @@ class Generics: CSJSwiftViewController {
     //泛型一阶段
     //交换2个数的值，The Problem That Generics Solve
     //inout作为函数声明时，引用传值的关键字
-    func swapTwoInts(inout a: Int, inout b: Int){
+    func swapTwoInts(_ a: inout Int, b: inout Int){
         let temporaryA = a //声明常量temporaryA 等于 a 的值
         a = b //a 等于 b 的值
         b = temporaryA//b 等于 a的常量值
     }
     
-    func swapTwoStrings(inout a: String, inout b: String){
+    func swapTwoStrings(_ a: inout String, b: inout String){
         let temporaryA = a
         a = b
         b = temporaryA
     }
     
-    func swapTwoDoubles(inout a: Double, inout b: Double){
+    func swapTwoDoubles(_ a: inout Double, b: inout Double){
         let temporaryA = a
         a = b
         b = temporaryA
     }
     
     //泛型二阶段
-    func swapTwoValues<T> (inout a: T, inout b: T){
+    func swapTwoValues<T> (_ a: inout T, b: inout T){
         let temporaryA = a
         a = b
         b = temporaryA
@@ -117,11 +117,11 @@ class Generics: CSJSwiftViewController {
     
     
     //类型约束，Type Constraints
-    func findStringIndex(array: [String], valueToFind: String) -> Int? {
+    func findStringIndex(_ array: [String], valueToFind: String) -> Int? {
         //Swift 1.2
 //        for (index, value) in enumerate(array){
         //Swift 2
-        for (index, value) in array.enumerate(){
+        for (index, value) in array.enumerated(){
             if value == valueToFind{
                 return index
             }
@@ -133,8 +133,8 @@ class Generics: CSJSwiftViewController {
     //if use
     //func findIndex <T> (array: [T], valueToFind: T) -> Int? {
     //Error:'T' is not convertible to 'MirrorDisposition'
-    func findIndex <T: Equatable> (array: [T], valueToFind: T) -> Int? {
-        for (index, value) in array.enumerate() {
+    func findIndex <T: Equatable> (_ array: [T], valueToFind: T) -> Int? {
+        for (index, value) in array.enumerated() {
             if value == valueToFind {
                 return index
             }
@@ -149,7 +149,7 @@ class Generics: CSJSwiftViewController {
 //mutating关键词用于标示这个方法会修改结构
 struct intStack{
     var items = [Int]()
-    mutating func push(item: Int){
+    mutating func push(_ item: Int){
         items.append(item)
     }
     
@@ -159,7 +159,7 @@ struct intStack{
 }
 struct Stack<T>{
     var items = [T]()
-    mutating func push(item: T){
+    mutating func push(_ item: T){
         items.append(item)
     }
     mutating func pop() -> T{
@@ -180,14 +180,14 @@ protocol Container{
     associatedtype ItemType//Swift 2.2
 //    typealias ItemType//Swift 2.1
     
-    mutating func append(item: ItemType)
+    mutating func append(_ item: ItemType)
     var count: Int {get}
     subscript(i: Int) -> ItemType {get}
     
 }
 struct IntStack: Container {
     var items = [Int]()
-    mutating func push(item: Int){
+    mutating func push(_ item: Int){
         items.append(item)
     }
     mutating func pop() -> Int{
@@ -197,7 +197,7 @@ struct IntStack: Container {
     //protocol
     typealias ItemType = Int
     //因为swift会自动推导类型的，所以这里的typealias ItemType ＝ Int其实可以省略。
-    mutating func append(item: Int) {
+    mutating func append(_ item: Int) {
         self.push(item)
     }
     var count: Int{
@@ -220,7 +220,7 @@ extension Array: Container {} //这样就可以将任何Array当作是Container�
 //C1,C2 是2个参数类型，他们都遵循Container约束
 //C1的ItemType与C2的ItemType必须相同，并且C1的ItemType是遵循Equatable协议的。
 //即C2的ItemType与C1的ItemType必须相同，所以这里不必单独写个C2的ItemType也符合Equatable
-func allItemsMatch<C1: Container, C2: Container where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>(someContainer: C1, anotherContainer: C2) -> Bool{
+func allItemsMatch<C1: Container, C2: Container where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>(_ someContainer: C1, anotherContainer: C2) -> Bool{
     if someContainer.count != anotherContainer.count{
         return false
     }

@@ -29,7 +29,7 @@ class Methods: CSJSwiftViewController {
         //swift会为方法的第一个参数只提供函数内部使用的名字，从第二个参数开始，既可以外部用，也可以内部用
         class CsjClass{
             var myNum : Int = 0
-            func increaseNum(base:Int, numberOfTimes:Int){
+            func increaseNum(_ base:Int, numberOfTimes:Int){
                 myNum += base * numberOfTimes
             }
         }
@@ -44,7 +44,7 @@ class Methods: CSJSwiftViewController {
         class NewCsjClass{
             var myNum : Int = 0
             //"_ "这样swift就不再会自动提供外部使用名字了
-            func increaseNum(base:Int, _ numberOfTimes:Int){
+            func increaseNum(_ base:Int, _ numberOfTimes:Int){
                 myNum += base * numberOfTimes
             }
         }
@@ -57,7 +57,7 @@ class Methods: CSJSwiftViewController {
         class CSJSedClass {
             var num : Int = 0
             //传入参数名叫num，设置属性也叫num的时候，到底是传入的值，还是实例的属性，我们为实例属性前面加了self，表示这个是实例自己的属性
-            func setNume(num:Int){
+            func setNume(_ num:Int){
                 self.num = num
             }
         }
@@ -66,7 +66,7 @@ class Methods: CSJSwiftViewController {
         //上述都是class的情况，对于struct，enum这样的值传递类型，却不能使用实例方法来改变属性的值
         struct CSJPoint{
             var x = 0, y = 0
-            mutating func moveByXY(deltaX: Int, y deltaY:Int){
+            mutating func moveByXY(_ deltaX: Int, y deltaY:Int){
                 x += deltaX
                 y += deltaY
             }
@@ -80,7 +80,7 @@ class Methods: CSJSwiftViewController {
         //在mutating方法中，给self赋值
         struct CSJTwoPoint{
             var x = 0 ,y = 0
-            mutating func changeSelf(deltaX:Int, y deltaY:Int){
+            mutating func changeSelf(_ deltaX:Int, y deltaY:Int){
                 self = CSJTwoPoint(x:deltaX,y:deltaY)
             }
         }
@@ -89,22 +89,26 @@ class Methods: CSJSwiftViewController {
         print("x:\(csjTwoPoint.x),y:\(csjTwoPoint.y)")
         //达到了改变csjTwoPoint中x和y的目的，给self赋值的方法，却是生成了一个新的CSJTwoPoint实例（内部做了内存释放工作）
         enum CSJStateMachine{
-            case None,Init,Run,Deinit
+            case none,`init`,run,`deinit`
             //实例方法
+            /*
             mutating func nextState(){
                 switch self{
-                case None:self = Init
-                case Init:self = Run
-                case Run:self = Deinit
-                case Deinit:self = None
+                case none:self = `init`
+                case init:self = run
+                case run:self = `deinit`
+                case deinit:self = none
                 }
             }
+            */
         }
-        var csjStateMachine = CSJStateMachine.None
+        /*
+        var csjStateMachine = CSJStateMachine.none
         csjStateMachine.nextState() //self变成Init
-        print(csjStateMachine == CSJStateMachine.Init)//ture
+        print(csjStateMachine == CSJStateMachine)//ture
         csjStateMachine.nextState()
-        print(csjStateMachine == CSJStateMachine.Run)//ture
+        print(csjStateMachine == CSJStateMachine.run)//ture
+        */
         //状态机的状态切换代码可以直接写在enum的定义中
         
         //类型方法，Type Methods
@@ -121,18 +125,18 @@ class Methods: CSJSwiftViewController {
         struct LevelTracker{//等级跟踪器
             static var highestUnlockedLevel = 1//类型属性，所有的实例共用这个值
             //类方法
-            static func unlockLevel(level: Int){
+            static func unlockLevel(_ level: Int){
                 if level > highestUnlockedLevel{
                     highestUnlockedLevel = level
                 }
             }
             //类方法
-            static func levelIsUnlocked(level : Int) -> Bool{
+            static func levelIsUnlocked(_ level : Int) -> Bool{
                 return level <= highestUnlockedLevel
             }
             var currentLevel = 1
             
-            mutating func advanceToLevel(level:Int) ->Bool{
+            mutating func advanceToLevel(_ level:Int) ->Bool{
                 if LevelTracker.levelIsUnlocked(level){
                     currentLevel = level
                     return true
@@ -145,7 +149,7 @@ class Methods: CSJSwiftViewController {
         class Player {
             var tracker = LevelTracker()
             let playName : String
-            func completedLevel(level:Int){
+            func completedLevel(_ level:Int){
                 LevelTracker.unlockLevel(level+1)//调用结构体类方法
                 tracker.advanceToLevel(level+1) //调用了tracker的实例advanceToLevel
             }

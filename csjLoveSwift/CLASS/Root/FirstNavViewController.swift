@@ -15,17 +15,17 @@ class FirstNavViewController: UINavigationController {
     override func awakeFromNib() {
         super.awakeFromNib()
         //swift 1.1
-        self.tabBarItem.image = UIImage(named: zcTabBarFirstString)?.imageWithRenderingMode(.AlwaysOriginal)
-        self.tabBarItem.selectedImage = UIImage(named: zcTabBarFirstSelectedString)?.imageWithRenderingMode(.AlwaysOriginal)
+        self.tabBarItem.image = UIImage(named: zcTabBarFirstString)?.withRenderingMode(.alwaysOriginal)
+        self.tabBarItem.selectedImage = UIImage(named: zcTabBarFirstSelectedString)?.withRenderingMode(.alwaysOriginal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let version: NSString = UIDevice.currentDevice().systemVersion;
+        let version: NSString = UIDevice.current().systemVersion;
         if version.intValue > 7 {
             //            print("设备高于iOS7 \(version)")
-            UITabBar.appearance().translucent = false
+            UITabBar.appearance().isTranslucent = false
         }
     }
 

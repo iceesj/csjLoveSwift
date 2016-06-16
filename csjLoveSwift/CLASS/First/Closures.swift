@@ -35,7 +35,7 @@ class Closures: CSJSwiftViewController {
         //变量名
         //Trailing closure syntax
         let names = ["Chris","Alex","Ewa","Barry","Daniella"]
-        func backwards(s1:String, s2:String) -> Bool {
+        func backwards(_ s1:String, s2:String) -> Bool {
             return s1 > s2
         }
 //        var reversed = sorted(names, backwards)
@@ -59,7 +59,7 @@ class Closures: CSJSwiftViewController {
         
         
         //Trailing Closures
-        func someFunctionThatTakesAClosure(closure:() -> () ){
+        func someFunctionThatTakesAClosure(_ closure:() -> () ){
             //func body goes here
         }
         // here's how you call this function without using a trailing closure:

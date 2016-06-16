@@ -84,12 +84,12 @@ class ClassesAndStructures: CSJSwiftViewController {
         
         //同样的行为也适用于枚举，The same behavior applies to enumerations:
         enum CompassPoint{
-            case North,South,East,West
+            case north,south,east,west
         }
-        var currentDirection = CompassPoint.West
+        var currentDirection = CompassPoint.west
         let rememberedDirection = currentDirection
-        currentDirection = .East
-        if rememberedDirection == .West {
+        currentDirection = .east
+        if rememberedDirection == .west {
             print("The remembered direction is still .West")
         }
         

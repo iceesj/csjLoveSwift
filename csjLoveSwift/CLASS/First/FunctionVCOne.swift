@@ -17,7 +17,7 @@ class FunctionVCOne: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "函数的返回值"
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white()
         
         
         print(maxvalue(5, 1, "Hello", "Swift"))
@@ -42,7 +42,7 @@ class FunctionVCOne: UIViewController {
     }
     
     
-    func maxvalue(value1:Int, _ value2:Int, _ value3: String, _ value4:String) -> (Int, String){
+    func maxvalue(_ value1:Int, _ value2:Int, _ value3: String, _ value4:String) -> (Int, String){
         var maxInt = 0
         var maxString:String
         
@@ -63,39 +63,39 @@ class FunctionVCOne: UIViewController {
         
     }
     //相加
-    func add(a: Int , b:Int) -> Int {
+    func add(_ a: Int , b:Int) -> Int {
         return a+b
     }
     //相乘
-    func multiply(a:Int, b: Int) -> Int{
+    func multiply(_ a:Int, b: Int) -> Int{
         return a*b
     }
     //相除
-    func Divided(a: Int, b: Int) -> Int{
+    func Divided(_ a: Int, b: Int) -> Int{
         return a/b
     }
     //输出函数
-    func printresult(fun:(Int,Int)->Int, a: Int, b:Int){
+    func printresult(_ fun:(Int,Int)->Int, a: Int, b:Int){
         print(fun(a,b))
     }
     
     
     //MARK:通过给定的值，输出一系列的值
-    func setpForward(input: Int) -> Int{
+    func setpForward(_ input: Int) -> Int{
         return input + 1
     }
     //返回一个比输入值小1得值
-    func setpBackward(input : Int) -> Int{
+    func setpBackward(_ input : Int) -> Int{
         return input - 1
     }
     //选择返回哪个函数，返回方法
-    func chooseStepFunction(backwards : Bool) -> (Int) -> Int{
+    func chooseStepFunction(_ backwards : Bool) -> (Int) -> Int{
         return backwards ? setpBackward : setpForward
     }
     
     
     //MARK:函数嵌套
-    func f1(q: Int) -> Int {
+    func f1(_ q: Int) -> Int {
         var c : Int = 1
         for i in 1...q{//1...4
             //4=4*1
@@ -106,7 +106,7 @@ class FunctionVCOne: UIViewController {
         return c//获取阶乘的值
     }
     
-    func f2(p:Int) -> Int {
+    func f2(_ p:Int) -> Int {
         var k : Int
         var r : Int
         k = p*p//求平方
@@ -116,7 +116,7 @@ class FunctionVCOne: UIViewController {
     }
     
     //MARK:递归调用
-    func factorial(value : Int) -> Int {
+    func factorial(_ value : Int) -> Int {
         if (value == 1) {
             return value
         }else{
