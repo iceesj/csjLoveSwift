@@ -132,7 +132,10 @@ class CSJSwiftRequest: NSObject {
 //        let dict : NSDictionary?
 //        var session = NSURLSession.sharedSession()
 //        func dataTaskWithRequest(request: NSURLRequest!, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)!) -> NSURLSessionDataTask!
-        URLSession.shared().dataTask(with: req) { (dataA, response, error) -> Void in
+        //Swift3beta1
+//        URLSession.shared().dataTask(with: req) { (dataA, response, error) -> Void in
+        //Swift3beta2
+        URLSession.shared.dataTask(with: req) { (dataA, response, error) -> Void in
             print("异步")
             if error != nil {
                 DispatchQueue.main.async(execute: { () -> Void in

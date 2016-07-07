@@ -151,7 +151,8 @@ class Methods: CSJSwiftViewController {
             let playName : String
             func completedLevel(_ level:Int){
                 LevelTracker.unlockLevel(level+1)//调用结构体类方法
-                tracker.advanceToLevel(level+1) //调用了tracker的实例advanceToLevel
+                //Swift3beta2 去除
+//                tracker.advanceToLevel(level+1) //调用了tracker的实例advanceToLevel
             }
             
             init(name:String){

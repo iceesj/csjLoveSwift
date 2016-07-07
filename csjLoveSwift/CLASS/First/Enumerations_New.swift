@@ -61,6 +61,7 @@ class Enumerations_New: UIViewController {
         }
         
         
+        
         let onevalue = Digital.one.rawValue
         print("onevalue = \(onevalue)")
         
