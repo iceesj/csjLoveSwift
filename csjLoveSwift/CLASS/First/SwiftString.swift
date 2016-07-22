@@ -61,6 +61,7 @@ class SwiftString: CSJSwiftViewController {
         //包含
         let myStringOne = "你猜"
         myStringOne.hasSuffix("你")
+        print("myStringOne = \(myStringOne)")
         
         //大小写转换
         let myWord = "Hellow World"
@@ -69,9 +70,11 @@ class SwiftString: CSJSwiftViewController {
         
         //编码
         let myBianma = "apple"
+        
         myBianma.utf8
         myBianma.utf16
         myBianma.unicodeScalars
+        
         
         
     }
