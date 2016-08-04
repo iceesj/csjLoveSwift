@@ -17,7 +17,9 @@ class FunctionVCOne: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "函数的返回值"
-        self.view.backgroundColor = UIColor.white()
+        
+        //Swift3beta4
+        self.view.backgroundColor = UIColor.white
         
         
         print(maxvalue(5, 1, "Hello", "Swift"))

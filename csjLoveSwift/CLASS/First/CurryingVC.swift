@@ -16,7 +16,8 @@ class CurryingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white()
+        //Swift3beta4
+        self.view.backgroundColor = UIColor.white
         
         let result: Int = curryInstance.add(10)(b: 20)(c: 30)
         print("result = \(result)")

@@ -21,8 +21,11 @@ class FourthNavViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let version: NSString = UIDevice.current().systemVersion;
+        
+        //Swift3beta4
+        let version: NSString = UIDevice.current.systemVersion;
+        //Swift3beta3
+//        let version: NSString = UIDevice.current().systemVersion
         if version.intValue > 7 {
             //            print("设备高于iOS7 \(version)")
             UITabBar.appearance().isTranslucent = false
