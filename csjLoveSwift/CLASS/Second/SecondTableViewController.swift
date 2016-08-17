@@ -10,7 +10,8 @@ import UIKit
 
 class SecondTableViewController: CSJFetchedResultsTableViewController {
     
-    var coredataTestperson = []
+//    var coredataTestperson = []
+    var coredataTestperson : [Dictionary<String,String>] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

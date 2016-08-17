@@ -39,7 +39,11 @@ class ArrayAndDict: CSJSwiftViewController {
         //简写为
         var myArray = ["var1","var2","var3"];
         //混杂类型
-        let myArrayMix = ["string1",1,2]
+        //Swift3beta5
+//        let myArrayMix = ["string1",1,2]
+        //Swift3beta6
+        let myArrayMix = ["string1",1,2] as [Any]
+        
         print("myArrayMix = \(myArrayMix)")
         
         //空array

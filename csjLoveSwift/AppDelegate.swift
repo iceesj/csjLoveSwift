@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    //Swift3beta6
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
 //    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
 //        MagicalRecord.setupAutoMigratingCoreDataStack()
 //        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("csjLoveSwift.sqlite")
@@ -69,7 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 //test return Array
-func fenleiDataResource() -> Array<AnyObject>{
+///*
+
+//Array<AnyObject>
+func fenleiDataResource() -> [Dictionary<String,String>]{
 //    var dictArray = Array<Dictionary<String,String>>()
     var dictArray = [Dictionary<String, String>]()
     let dict1 = ["firstName":"曹","lastName":"操","onlyID":"001"]
@@ -78,6 +83,7 @@ func fenleiDataResource() -> Array<AnyObject>{
     print("dictArray = \(dictArray)")
     return dictArray
 }
+//*/
 
 //init and save data
 func fenleiDataIntoDocument() {

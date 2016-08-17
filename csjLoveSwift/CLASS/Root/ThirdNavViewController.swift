@@ -24,7 +24,7 @@ class ThirdNavViewController: UINavigationController {
         // Do any additional setup after loading the view.
         
         //Swift3beta4
-        let version: NSString = UIDevice.current.systemVersion;
+        let version: NSString = UIDevice.current.systemVersion as NSString
         if version.intValue > 7 {
             //            print("设备高于iOS7 \(version)")
             UITabBar.appearance().isTranslucent = false

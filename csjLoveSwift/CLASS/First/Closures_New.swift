@@ -152,10 +152,10 @@ class Closures_New: UIViewController {
     }
     
     //闭包表达式最长的用于其他的函数中，并不是单独去使用
-    func copare(_ arr:[Int] , _ value: Int, _ cb:(Num:Int, Value:Int)->Bool) -> Bool{
+    func copare(_ arr:[Int] , _ value: Int, _ cb:(_ Num:Int,_ Value:Int)->Bool) -> Bool{
         for item in arr{
             //判断闭包是否为真
-            if (cb(Num: item, Value: value)){
+            if (cb(item, value)){
                 return true
             }
         }

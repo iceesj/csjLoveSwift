@@ -19,7 +19,7 @@ class CurryingVC: UIViewController {
         //Swift3beta4
         self.view.backgroundColor = UIColor.white
         
-        let result: Int = curryInstance.add(10)(b: 20)(c: 30)
+        let result: Int = curryInstance.add(10)(20)(30)
         print("result = \(result)")
         
         // 让我来帮你们拆解下，更容易看懂
@@ -29,11 +29,11 @@ class CurryingVC: UIViewController {
         print("functionB = \(functionB)")
         // functionB(b: 20):调用一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数
         // functionC: 一个接收参数c,返回值为Int类型的函数
-        let functionC = functionB(b: 20)
+        let functionC = functionB(20)
         print("functionC = \(functionC)")
         // functionC(c: 30): 调用一个接收参数c,返回值为Int类型的函数
         // result: 函数的返回值
-        let res: Int = functionC(c: 30)
+        let res: Int = functionC(30)
         print("res = \(res)")
         
         //Swift3
@@ -117,9 +117,9 @@ class Currying
     // (a: Int) : 参数
     // (b:Int) -> (c: Int) -> Int : 函数返回值（一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数)
     // 定义一个接收参数a,并且返回一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数
-    func add(_ a: Int) -> (b:Int) -> (c: Int) -> Int{
+    func add(_ a: Int) -> (_ b:Int) -> (_ c: Int) -> Int{
         // 一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数
-        return { (b:Int) -> (c: Int) -> Int in
+        return { (b:Int) -> (_ c: Int) -> Int in
             // 返回一个接收余下第一个参数c，并且有返回结果为Int类型的函数
             return { (c: Int) -> Int in
                 return a + b + c;

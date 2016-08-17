@@ -43,7 +43,7 @@ class CSJSwiftRequest: NSObject {
     
     
     //同步NSURLConnection
-    class func requestSynchronousWithURL(_ urlString:String,completionHandler:(data:AnyObject)->Void){
+    class func requestSynchronousWithURL(_ urlString:String,completionHandler:(_ data:AnyObject)->Void){
         //swift 1.1
 //        var URL = NSURL.URLWithString(urlString)
         let URL = Foundation.URL(string: urlString)
@@ -53,11 +53,13 @@ class CSJSwiftRequest: NSObject {
         
         do {
             let responseData = try NSURLConnection.sendSynchronousRequest(req, returning: &httpResponse)
-            if responseData != NSNull() {
+//            if responseData != NSNull {
+            if responseData != nil{
+//            if responseData != NSNull() {
                 
                 do {
                     let jsonData : NSDictionary = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary
-                    completionHandler(data: jsonData)
+                    completionHandler(jsonData)
                 } catch {
                     print("同步请求回的Data出错")
                 }
@@ -85,7 +87,7 @@ class CSJSwiftRequest: NSObject {
     
     
     //异步NSURLConnection
-    class func requestWithURL(_ urlString:String,completionHandler:(data:AnyObject)->Void){
+    class func requestWithURL(_ urlString:String,completionHandler:@escaping (_ data:AnyObject)->Void){
         //swift 1.1
 //        var URL = NSURL.URLWithString(urlString)
         let URL = Foundation.URL(string: urlString)
@@ -99,7 +101,7 @@ class CSJSwiftRequest: NSObject {
             if (error != nil) {
                 DispatchQueue.main.async(execute: {
                     print(error)
-                    completionHandler(data:NSNull())
+                    completionHandler(NSNull())
                 })
             }else{
                 //Swift 1.2
@@ -114,7 +116,7 @@ class CSJSwiftRequest: NSObject {
                 do {
                     let jsonData : NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary
                     DispatchQueue.main.async(execute: { () -> Void in
-                        completionHandler(data: jsonData)
+                        completionHandler(jsonData)
                     })
                 } catch {
                     print("An error occurred. = requestWithURL")
@@ -124,7 +126,7 @@ class CSJSwiftRequest: NSObject {
     }
     
     //异步NSURLSession
-    class func requestWithURLbyiOS7Later(_ urlString:String, completionHandler:(data:AnyObject)->Void){
+    class func requestWithURLbyiOS7Later(_ urlString:String, completionHandler:@escaping (_ data:AnyObject)->Void){
         //swift 1.1
 //        var URL = NSURL.URLWithString(urlString)
         let URL = Foundation.URL(string: urlString)
@@ -140,7 +142,7 @@ class CSJSwiftRequest: NSObject {
             if error != nil {
                 DispatchQueue.main.async(execute: { () -> Void in
                     print(error)
-                    completionHandler(data: NSNull())
+                    completionHandler(NSNull())
                 })
             }else{
                 //Swift 1.2
@@ -155,7 +157,7 @@ class CSJSwiftRequest: NSObject {
                 do {
                     let jsonData : NSDictionary = try JSONSerialization.jsonObject(with: dataA!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
                     DispatchQueue.main.async(execute: { () -> Void in
-                        completionHandler(data: jsonData)
+                        completionHandler(jsonData)
                     })
                 } catch{
                     print("An error occurred. = parseJSON")

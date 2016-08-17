@@ -23,7 +23,7 @@ class FourthNavViewController: UINavigationController {
         super.viewDidLoad()
         
         //Swift3beta4
-        let version: NSString = UIDevice.current.systemVersion;
+        let version: NSString = UIDevice.current.systemVersion as NSString
         //Swift3beta3
 //        let version: NSString = UIDevice.current().systemVersion
         if version.intValue > 7 {

@@ -196,10 +196,10 @@ enum OnOffSwitch: Togglable {
     case off,on
     mutating func toggle() {
         switch self {
-        case off:
-            self = on
-        case on:
-            self = off
+        case .off:
+            self = .on
+        case .on:
+            self = .off
         }
     }
 }
@@ -359,7 +359,9 @@ struct NewPerson: Named, Aged{
     var name: String
     var age: Int
 }
-func wishHappyBirthday(_ celebrator : protocol<Named,Aged>){
+//func wishHappyBirthday(_ celebrator : protocol<Named,Aged>){
+//Swift3beta6
+func wishHappyBirthday(_ celebrator : Named & Aged){
     print("Happy birthday \(celebrator.name) - you're \(celebrator.age)!")
 }
 
