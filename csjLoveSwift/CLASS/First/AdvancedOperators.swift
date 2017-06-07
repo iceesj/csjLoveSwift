@@ -160,7 +160,7 @@ func != (left: Vector2D, right: Vector2D) -> Bool {
 
 //自定义运算符，Custom Operators
 //定义了一个前置运算符 +++，定义运算符关键字operator
-prefix operator +++ {}
+prefix operator +++
 
 prefix func +++  (vector: inout Vector2D) -> Vector2D{
     vector += vector

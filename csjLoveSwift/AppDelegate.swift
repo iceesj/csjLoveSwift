@@ -29,13 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Swift3beta4
         UITabBar.appearance().barTintColor = UIColor.white
         //Nav字体颜色 全局
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)]
+        //Swift3 ： NSForegroundColorAttributeName，Swift 4：NSAttributedStringKey.foregroundColor.rawValue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue:UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)]
 //        UITabBar.appearance().backgroundImage? = self.image
         //Swift3beta4
         UITabBar.appearance().backgroundColor? = UIColor.blue
         //Swift3beta4
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState())
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1)], for: UIControlState.selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], for: UIControlState())
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor.rawValue : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1)], for: UIControlState.selected)
         
         
         return true

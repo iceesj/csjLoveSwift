@@ -220,7 +220,7 @@ extension Array: Container {} //这样就可以将任何Array当作是Container�
 //C1,C2 是2个参数类型，他们都遵循Container约束
 //C1的ItemType与C2的ItemType必须相同，并且C1的ItemType是遵循Equatable协议的。
 //即C2的ItemType与C1的ItemType必须相同，所以这里不必单独写个C2的ItemType也符合Equatable
-func allItemsMatch<C1: Container, C2: Container where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>(_ someContainer: C1, anotherContainer: C2) -> Bool{
+func allItemsMatch<C1: Container, C2: Container>(_ someContainer: C1, anotherContainer: C2) -> Bool where C1.ItemType == C2.ItemType, C1.ItemType: Equatable{
     if someContainer.count != anotherContainer.count{
         return false
     }

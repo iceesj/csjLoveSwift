@@ -122,6 +122,8 @@ class ControlFlow: CSJSwiftViewController {
         case (let x , 0): print("myNewPoint is \(x),0")//get
 //        case (0, let y): print("myNewPoint is 0,\(y)")
 //        case let(x,y): print("myNewPoint is \(x),\(y)");
+        case (_, _):
+            print("other")
         }
         
         //switch where
@@ -130,6 +132,8 @@ class ControlFlow: CSJSwiftViewController {
 //                case let (x,y) where x == y: print(" x==y")
                 case let (x,y) where x == -y: print(" x== -y")
 //                case let (x,y):print("x,y")
+            case (_, _):
+                print("测试")
         }
         
         //fallthrough
