@@ -90,8 +90,10 @@ class ViewController: UIViewController {
         print("A shape With \(shapeDescription) sides")
         
         let test = Square(sideLength:5.2, name:"my test square")
-        test.area()
-        test.simpleDescription()
+        let testArea = test.area()
+        print("test = \(testArea)")
+        let simpleDescription = test.simpleDescription()
+        print("simp = \(simpleDescription)")
         
         let triangle = EquilateralTriangle(sideLength:3.1, name:"a triangle")
         triangle.perimeter = 9.9
@@ -187,15 +189,17 @@ class ViewController: UIViewController {
         //传入方法输出
         great("dev", day: " wwdc day")
         //返回元组
-        getGasPrices()
+        let getGasPrices = self.getGasPrices()
+        print(getGasPrices)
         //传入参数数量可变
-        sumOf(42,597,12)
+        let sumOf = self.sumOf(42,597,12)
+        print("sumOf = \(sumOf)")
         
         //函数嵌套
-        returnFifteen()
+        self.returnFifteen()
         
         //函数外调用
-        var incrementTest = makeIncrementerString()
+        var incrementTest = self.makeIncrementerString()
         incrementTest(7,"hello")
         
         //传入Int，返回另一个函数的返回值Int
@@ -208,16 +212,7 @@ class ViewController: UIViewController {
         var increment = makeIncrementer()
         increment(7)
         
-        //函数也可以当做参数传入另一个函数。 swift failed with exit code 254 :-(
-        //Xcode6 beta3
-        func hasAnyMatches(_ list: [Int], condition: (Int) -> Bool) -> Bool {
-            for item in list {
-                if condition(item) {
-                    return true
-                }
-            }
-            return false
-        }
+        
         //准备传入的函数
         func lessThanTen(_ number: Int) -> Bool {
             return number < 10
@@ -227,7 +222,6 @@ class ViewController: UIViewController {
 //        hasAnyMatches(numbers, lessThanTen)
         //Swift 2
         hasAnyMatches(numbers, condition: lessThanTen)
-        
         
         //用{}来创建一个匿名闭包，使用in将参数和返回值类型与闭包函数函数体进行分离
         //Swift 2.2
@@ -257,7 +251,18 @@ class ViewController: UIViewController {
         print("sortTestArr2 = \(sortTestArr)")
 //        print("backwardsVar =  \(backwardsVar)")
     }
-
+    
+    //函数也可以当做参数传入另一个函数。 swift failed with exit code 254 :-(
+    //Xcode6 beta3
+    func hasAnyMatches(_ list: [Int], condition: (Int) -> Bool) -> Bool {
+        for item in list {
+            if condition(item) {
+                return true
+            }
+        }
+        return false
+    }
+    
     //secondBiji
     //传入方法输出
     func great(_ name: String,day :String){
