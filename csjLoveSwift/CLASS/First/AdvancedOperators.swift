@@ -117,8 +117,8 @@ class AdvancedOperators: CSJSwiftViewController {
         let firstVector = Vector2D(x: 1.0, y: 2.0)
         let secondVector = Vector2D(x: 3.0, y: 4.0)
         //增加减去vector
-        let plusMinusVector = firstVector +- secondVector
-        print("plusMinusVector = \(plusMinusVector)")
+//        let plusMinusVector = firstVector +- secondVector
+//        print("plusMinusVector = \(plusMinusVector)")
         
     }
     
@@ -168,8 +168,8 @@ prefix func +++  (vector: inout Vector2D) -> Vector2D{
 }
 
 //自定义中置运算符的结合性和优先级，Precedence and Associativity for Custom Infix Operators
-infix operator +- {associativity left precedence 140}
-func +- (left: Vector2D, right: Vector2D) -> Vector2D {
-    return Vector2D(x: left.x + right.x, y: left.y - right.y)
-}
+//infix operator +- {associativity left precedence 140}
+//func +- (left: Vector2D, right: Vector2D) -> Vector2D {
+//    return Vector2D(x: left.x + right.x, y: left.y - right.y)
+//}
 

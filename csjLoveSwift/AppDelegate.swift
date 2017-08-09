@@ -31,7 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Nav字体颜色 全局
         //Swift3 ： NSForegroundColorAttributeName，Swift 4：NSAttributedStringKey.foregroundColor.rawValue
 //        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)]
-        UINavigationBar.appearance().titleTextAttributes = ([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue).rawValue : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)])
+        //swift 4 beta4
+//        UINavigationBar.appearance().titleTextAttributes = ([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue).rawValue : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)])
+        //swift 4 beta5
+        UINavigationBar.appearance().titleTextAttributes = ([NSAttributedStringKey(rawValue: NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue).rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)])
+
 //        UITabBar.appearance().backgroundImage? = self.image
         //Swift3beta4
         UITabBar.appearance().backgroundColor? = UIColor.blue
