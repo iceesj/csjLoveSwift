@@ -307,6 +307,7 @@ class ViewController: UIViewController {
     
     
 }
+
 @objc protocol Downloadable{
     //20140722 xcode6 beta3 @optional ，，xcode6 beta4 optional
     @objc optional func download(_ toPath:String)->Bool;

@@ -41,7 +41,6 @@ class Enumerations_New: UIViewController {
         super.viewDidLoad()
         
         let flower = Parterre.nickname1
-        print("flower = \(flower)")
         
         switch flower {
         case .nickname1:
@@ -59,6 +58,7 @@ class Enumerations_New: UIViewController {
 //            default:
 //                print("其他")
         }
+        print("flower = \(flower)")
         
         
         
@@ -81,10 +81,10 @@ class Enumerations_New: UIViewController {
         
         let productBarcode = Barcode.upca(8, 85909_51226, 3)//相关值
         switch productBarcode {
-        case .upca(let numberSystem, let identifier, let check):
-            print("UPC-A的值有： \(numberSystem),\(identifier),\(check).")
-        default:
-            print("QR code 的值有:\(productBarcode)")
+            case .upca(let numberSystem, let identifier, let check):
+                print("UPC-A的值有： \(numberSystem),\(identifier),\(check).")
+            default:
+                print("QR code 的值有:\(productBarcode)")
         }
         
         
