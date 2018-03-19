@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690DB0361FFE48FA00FE65A1 /* CodableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DB0351FFE48FA00FE65A1 /* CodableDictionary.swift */; };
 		7B1624C91CF7DABD005C720F /* Classes_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1624C81CF7DABD005C720F /* Classes_New.swift */; };
 		7B6AD2701CE978FC00EA5EBA /* FunctionVCOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */; };
 		7B6AD2721CEAE40600EA5EBA /* Closures_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690DB0351FFE48FA00FE65A1 /* CodableDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDictionary.swift; sourceTree = "<group>"; };
 		7B1624C81CF7DABD005C720F /* Classes_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes_New.swift; sourceTree = "<group>"; };
 		7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionVCOne.swift; sourceTree = "<group>"; };
 		7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures_New.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				7BFC36C31CF6C9B00033704D /* Enumerations_New.swift */,
 				7B1624C81CF7DABD005C720F /* Classes_New.swift */,
 				7BBB11B61CFBE301004B8BDE /* CurryingVC.swift */,
+				690DB0351FFE48FA00FE65A1 /* CodableDictionary.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -407,7 +410,9 @@
 				TargetAttributes = {
 					D33E8423193DB97200A8BAF5 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 4V56X8NHD3;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
 					};
 					D33E8435193DB97200A8BAF5 = {
 						CreatedOnToolsVersion = 6.0;
@@ -474,6 +479,7 @@
 				D3870F0319A73B450073A1B7 /* CSJFetchedResultsTableViewController.swift in Sources */,
 				7B1624C91CF7DABD005C720F /* Classes_New.swift in Sources */,
 				D30DA92C196E7A3E0060107A /* Protocols.swift in Sources */,
+				690DB0361FFE48FA00FE65A1 /* CodableDictionary.swift in Sources */,
 				D38E7DA5194981BF005FE76E /* CSJSwiftLog.swift in Sources */,
 				D38B55BC1963EF7E009A24CA /* Shape.swift in Sources */,
 				D3F8437219654D60008E140E /* SwiftBasis.swift in Sources */,
@@ -633,11 +639,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4V56X8NHD3;
 				INFOPLIST_FILE = csjLoveSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iceesj.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a38afc0b-09ae-4c46-97fa-72fc0493562a";
+				PROVISIONING_PROFILE_SPECIFIER = csjdev2018;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/csjLoveSwift-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -649,11 +659,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4V56X8NHD3;
 				INFOPLIST_FILE = csjLoveSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iceesj.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a38afc0b-09ae-4c46-97fa-72fc0493562a";
+				PROVISIONING_PROFILE_SPECIFIER = csjdev2018;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/csjLoveSwift-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

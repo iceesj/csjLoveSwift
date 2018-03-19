@@ -8,14 +8,27 @@
 
 import UIKit
 
+enum VCType : Int{
+    case wwdcVC
+    
+    case count
+
+    var viewController: UIViewController {
+        switch self {
+        case .wwdcVC: return wwdcRoom102(nibName :nil, bundle: nil)
+        case .count:                      return UIViewController()
+        }
+    }
+}
+
 class FirstBetaViewController: UITableViewController {
-    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举","柯里化"]
+    
+    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举","柯里化","Codable"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "FirstViewController"
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,12 +72,14 @@ class FirstBetaViewController: UITableViewController {
 //        var data = baseArray[indexPath!.row]
         //xcode6 beta7 所有navigationController 变成 navigationController?
         let data = baseArray[(indexPath as NSIndexPath).row]
-        if data == "wwdcRoom102"{
-            let wwdcVC = wwdcRoom102(nibName :nil, bundle: nil)
-//            self.navigationController.pushViewController(wwdcVC, animated:true)
-            self.navigationController!.pushViewController(wwdcVC, animated: true)
+        if let vctype = VCType(rawValue : indexPath.row){
+            self.navigationController!.pushViewController(vctype.viewController, animated: true)
         }
-        else if data == "基础" {
+        
+//        if data == "wwdcRoom102"{
+//            self.navigationController!.pushViewController(vctype.view, animated: true)
+//        }
+        if data == "基础" {
             let basisVC = SwiftBasis(nibName: nil, bundle: nil)
             self.navigationController!.pushViewController(basisVC, animated: true)
         }
@@ -165,6 +180,10 @@ class FirstBetaViewController: UITableViewController {
         }else if (data == "柯里化"){
             let Currying = CurryingVC(nibName: nil,bundle:  nil)
             self.navigationController?.pushViewController(Currying, animated: true)
+        }
+        else if data == "Codable"{
+            let codableDictionary = CodableDictionary(nibName: nil ,bundle : nil)
+            self.navigationController?.pushViewController(codableDictionary, animated: true)
         }
         
     }

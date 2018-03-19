@@ -19,7 +19,6 @@ class wwdcRoom102: CSJSwiftViewController {
         super.init(coder: aDecoder)
     }
     */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "wwdcRoom102"
