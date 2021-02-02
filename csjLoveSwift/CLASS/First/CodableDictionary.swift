@@ -40,10 +40,10 @@ class CodableDictionary: CSJSwiftViewController {
         if #available(iOS 11.0, *) {
             let encoder = JSONEncoder()
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-            let encoded = try! encoder.encode(dict)
-            let jsonText = String(decoding: encoded, as: UTF8.self)
+//            let encoded = try! encoder.encode(dict)
+//            let jsonText = String(decoding: encoded, as: UTF8.self)
 //            print(jsonText)
-            return jsonText
+            return "14"
         } else {
             // Fallback on earlier versions
             return "before iOS 11"
