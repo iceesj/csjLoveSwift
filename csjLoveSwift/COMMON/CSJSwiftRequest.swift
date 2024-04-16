@@ -41,35 +41,79 @@ class CSJSwiftRequest: NSObject {
         super.init();
     }
     
+    // 异步
+    class func sendRequest(request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            completionHandler(data, response, error)
+        }
+        task.resume()
+    }
+    
+    // 同步
+    class func sendSynchronousRequest(request: URLRequest) -> (Data?, URLResponse?, Error?) {
+        let semaphore = DispatchSemaphore(value: 0)
+        var responseData: Data?
+        var response: URLResponse?
+        var responseError: Error?
+
+        let task = URLSession.shared.dataTask(with: request) { data, resp, error in
+            responseData = data
+            response = resp
+            responseError = error
+            semaphore.signal()
+        }
+        task.resume()
+        semaphore.wait()
+
+        return (responseData, response, responseError)
+    }
     
     //同步NSURLConnection
     class func requestSynchronousWithURL(_ urlString:String,completionHandler:(_ data:AnyObject)->Void){
         //swift 1.1
 //        var URL = NSURL.URLWithString(urlString)
         let URL = Foundation.URL(string: urlString)
-        let req = URLRequest(url: URL!)
+        var req = URLRequest(url: URL!)
         var httpResponse: URLResponse? = nil
+        req.httpMethod = "GET"
 //    class func sendSynchronousRequest(request: NSURLRequest!, returningResponse response: AutoreleasingUnsafePointer<NSURLResponse?>, error: NSErrorPointer) -> NSData!
-        
-        do {
-            let responseData = try NSURLConnection.sendSynchronousRequest(req, returning: &httpResponse)
-//            if responseData != NSNull {
-            if responseData != nil{
-//            if responseData != NSNull() {
-                
-                do {
-                    let jsonData : NSDictionary = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary
+        let (data, response, error) = sendSynchronousRequest(request: req)
+        if let error = error {
+            print("Error: \(error)")
+        } else if let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode), let data = data {
+            do {
+                if let jsonData = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? NSDictionary {
+                    // 现在 jsonData 是 NSDictionary 类型，你可以安全地使用它
+                    print("Received JSON data: \(jsonData)")
                     completionHandler(jsonData)
-                } catch {
-                    print("同步请求回的Data出错")
+                } else {
+                    // 如果数据不是字典，将执行这里的代码
+                    print("The JSON is not a dictionary")
                 }
-                
-            }else{
-                
+            } catch {
+                // 如果解析出错，将执行这里的代码
+                print("Failed to parse JSON: \(error)")
             }
-        } catch {
-            print("同步请求出错")
+            print("Received data: \(String(data: data, encoding: .utf8) ?? "No data")")
+        } else {
+            print("Server error or no data")
         }
+//        do {
+//            let responseData = try NSURLConnection.sendSynchronousRequest(req, returning: &httpResponse)
+//            if responseData != nil{
+//                do {
+//                    let jsonData : NSDictionary = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary
+//                    completionHandler(jsonData)
+//                } catch {
+//                    print("同步请求回的Data出错")
+//                }
+//            }else{
+//                
+//            }
+//        } catch {
+//            print("同步请求出错")
+//        }
         
         //Swift 1.2
         /*

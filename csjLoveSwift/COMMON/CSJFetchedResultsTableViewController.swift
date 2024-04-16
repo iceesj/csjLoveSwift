@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 //UITableViewRowAnimation.Fade，，UITableViewRowAnimation.None
-let CSJSwift_UITableViewRowAnimation = UITableViewRowAnimation.fade
+let CSJSwift_UITableViewRowAnimation = UITableView.RowAnimation.fade
 
 class CSJFetchedResultsTableViewController: UITableViewController , NSFetchedResultsControllerDelegate {
     //iOS7，iOS8 Swift NSFetchedResultsController Tableview

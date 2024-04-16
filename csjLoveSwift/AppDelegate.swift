@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     //Swift3beta6
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
 //    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
@@ -24,29 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fenleiDataIntoDocument()
         
         
-        UINavigationBar.appearance().barTintColor? = UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0);
-        
+//        UINavigationBar.appearance().barTintColor? = UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0);
+//        UINavigationBar.appearance().barTintColor? = UIColor.blue;
         //Swift3beta4
-        UITabBar.appearance().barTintColor = UIColor.white
+//        UITabBar.appearance().backgroundColor? = UIColor.blue
+        UITabBar.appearance().backgroundColor = UIColor.white
+        //Swift3beta4
+        UITabBar.appearance().barTintColor = UIColor.black
         //Nav字体颜色 全局
         //Swift3 ： NSForegroundColorAttributeName，Swift 4：NSAttributedStringKey.foregroundColor.rawValue
 //        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)]
         //swift 4 beta4
 //        UINavigationBar.appearance().titleTextAttributes = ([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue).rawValue : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)])
         //swift 4 beta5
-        UINavigationBar.appearance().titleTextAttributes = ([NSAttributedStringKey(rawValue: NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue).rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)])
+        UINavigationBar.appearance().titleTextAttributes = ([NSAttributedString.Key(rawValue: NSAttributedString.Key(rawValue: NSAttributedString.Key.backgroundColor.rawValue).rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1.0)])
 
 //        UITabBar.appearance().backgroundImage? = self.image
         //Swift3beta4
-        UITabBar.appearance().backgroundColor? = UIColor.blue
-        //Swift3beta4
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : UIColor.black], for: UIControlState())
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1)], for: UIControlState.selected)
-        
-        
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue) : UIColor.white], for: UIControl.State())
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue) : UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1)], for: UIControl.State.selected)
+        // 设置 UITabBarItem 的文本颜色
+        let normalTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        let selectedTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 174/255.0, green: 7/255.0, blue: 22/255, alpha: 1)]
+
+        UITabBarItem.appearance().setTitleTextAttributes(normalTextAttributes, for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(selectedTextAttributes, for: .selected)
         return true
     }
-    
 //    func imageWithColor(color : UIColor, size : CGSize) -> UIImage?{
 //    }
     

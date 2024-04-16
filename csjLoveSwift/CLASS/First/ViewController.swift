@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         //xcode6 beta 1,2,3
 //        buttonOne.setTitle("Basic knowledge",forState: .Normal)
         //xcode6 beta 4
-        buttonOne?.setTitle("Basic knowledge", for: UIControlState())
+        buttonOne?.setTitle("Basic knowledge", for: UIControl.State())
         
         //methods
         
