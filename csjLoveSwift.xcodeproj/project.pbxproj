@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		690DB0361FFE48FA00FE65A1 /* CodableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DB0351FFE48FA00FE65A1 /* CodableDictionary.swift */; };
+		69A11F492BD0AFBC006AB634 /* ParentAndChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A11F482BD0AFBC006AB634 /* ParentAndChild.swift */; };
 		7B1624C91CF7DABD005C720F /* Classes_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1624C81CF7DABD005C720F /* Classes_New.swift */; };
 		7B6AD2701CE978FC00EA5EBA /* FunctionVCOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */; };
 		7B6AD2721CEAE40600EA5EBA /* Closures_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		690DB0351FFE48FA00FE65A1 /* CodableDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDictionary.swift; sourceTree = "<group>"; };
+		69A11F482BD0AFBC006AB634 /* ParentAndChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAndChild.swift; sourceTree = "<group>"; };
 		7B1624C81CF7DABD005C720F /* Classes_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes_New.swift; sourceTree = "<group>"; };
 		7B6AD26F1CE978FC00EA5EBA /* FunctionVCOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionVCOne.swift; sourceTree = "<group>"; };
 		7B6AD2711CEAE40600EA5EBA /* Closures_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures_New.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				D3E3003E196D30B200B5BD4A /* Function.swift */,
 				D30DA90F196E721F0060107A /* Closures.swift */,
 				D30DA911196E74C10060107A /* Enumerations.swift */,
+				69A11F482BD0AFBC006AB634 /* ParentAndChild.swift */,
 				D30DA913196E75050060107A /* ClassesAndStructures.swift */,
 				D30DA915196E75290060107A /* Properties.swift */,
 				D30DA917196E75530060107A /* Methods.swift */,
@@ -513,6 +516,7 @@
 				B07EE7AF1A7CA92A002CA98E /* ThirdNavViewController.swift in Sources */,
 				D30DA92E196E7A6D0060107A /* Generics.swift in Sources */,
 				D30DA910196E721F0060107A /* Closures.swift in Sources */,
+				69A11F492BD0AFBC006AB634 /* ParentAndChild.swift in Sources */,
 				B0B31062196AF05D00485D2E /* ControlFlow.swift in Sources */,
 				D3784D301949AC4500030DC9 /* Model.xcdatamodeld in Sources */,
 				D3EBA3BE196BD0D8009D2B2B /* FirstBetaViewController.swift in Sources */,

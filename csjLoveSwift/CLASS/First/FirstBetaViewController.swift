@@ -12,6 +12,7 @@ import UIKit
 enum VCType : Int{
     case wwdcVC
     case swiftBasis
+    case parentAndChild
     case swiftString
     case arrayAndDict
     case controlFlow
@@ -45,6 +46,7 @@ enum VCType : Int{
         switch self {
             case .wwdcVC: return wwdcRoom102(nibName :nil, bundle: nil)
             case .swiftBasis: return SwiftBasis(nibName: nil, bundle: nil)
+            case .parentAndChild: return ParentAndChild(nibName: nil, bundle: nil) // 父类和子类
             case .swiftString: return SwiftString(nibName: nil, bundle: nil)//字符和字符串
             case .arrayAndDict: return ArrayAndDict(nibName: nil, bundle: nil)//集合类型
             case .controlFlow: return ControlFlow(nibName: nil, bundle: nil)//控制流[控制语句]
@@ -80,7 +82,7 @@ enum VCType : Int{
 
 class FirstBetaViewController: UITableViewController {
     
-    var baseArray = ["wwdcRoom102","基础","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举","柯里化","Codable"]
+    var baseArray = ["wwdcRoom102","基础","父类和子类","字符和字符串","集合类型","控制流[控制语句]","函数","闭包","枚举","类和结构体","属性","方法","下标","继承","构造过程","析构过程","ARC","可选链","类型转换","嵌套类型","扩展","协议","泛型","高级运算符","2.2函数的返回值","2.2闭包","2.2枚举","柯里化","Codable"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
